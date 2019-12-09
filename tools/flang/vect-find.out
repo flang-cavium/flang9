@@ -1,0 +1,4157 @@
+/** Does this index correspond to a bitvector (true) or plain value (false) */
+is_xflag_bitvector(int index)
+  case 16:  /* lower bound loop iter count for vectorizer */
+  case 33:  /* upper limit on strip size in complex-vector loops */
+  case 139: /* Limit of #vili for vectorizing single precision loop */
+  case 140: /* Limit of #vili for vectorizing double precision loop */
+  case 188: /* openacc default vector length */
+  if (is_xflag_bitvector(index))
+  if (is_xflag_bitvector(index))
+./lib/ArgParser/xflag.c
+grep: input file ‘./vect-find.out’ is also the output
+reference, or vector reference.  The assignment operation may be by 
+.MS S 81 "Matrix/vector $ illegal as subprogram argument"
+A matrix/vector reference cannot be used as a subprogram argument.
+.MS S 83 "Vector expression used where scalar expression required"
+A vector expression was used in an illegal context.  For example, 
+Also, character and record references are not vectorizable.
+.MS S 100 "Expression cannot be promoted to a vector"
+to a vector illegally.  For example, the assignment of a character constant
+string to a character array.  Records, too, cannot be promoted to vectors.
+.MS S 101 "Vector operation not allowed on $"
+.MS W 178 "F77 extension: matrix/vector reference $"
+./include/flang/Error/errmsg.n
+reference, or vector reference.  The assignment operation may be by
+.MS S 83 "Vector expression used where scalar expression required"
+A vector expression was used in an illegal context.  For example,
+Also, character and record references are not vectorizable.
+.MS S 100 "Expression cannot be promoted to a vector"
+to a vector illegally.  For example, the assignment of a character constant
+string to a character array.  Records, too, cannot be promoted to vectors.
+.MS S 101 "Vector operation not allowed on $"
+.MS S 161 "Vector subscript must be rank-one array"
+.MS E 424 "Equivalence using substring or vector triplets is not allowed"
+such as PARALLEL, VECTOR, WORKER or GANG, may not appear inside a loop
+./include/flang/Error/errmsg-in.n
+ * X-flags are an array of integers, some of which are bitvectors and some are
+/** \brief Query whether x flag index corresponds to a bit vector
+bool is_xflag_bitvector(int index);
+ * bitvector, otherwise just assign it.
+ * bitvector, otherwise just set it to zero.
+ * \param value  mask to unset (if value is a bit vector)
+./include/flang/ArgParser/xflag.h
+static int vect_error = 0;
+    if (vect_error == -1)
+	printf("---------------------- vector test PASSED\n");
+    else if (vect_error == 1)
+	printf("---------------------- vector test FAILED\n");
+/* --------------- vector test support utilities ------------------------- */
+    vect_error = -1;
+    vect_error = -1;
+	vect_error = 1;
+    else if (vect_error == 0)
+	vect_error = -1;		/* set flag for test driver */
+	vect_error = 1;
+    else if (vect_error == 0)
+	vect_error = -1;		/* set flag for test driver */
+./test/mp_correct/src/main.c
+    function square_v(x)		!"vector" version
+function square_v(x)		!"vector" version
+./test/f90_correct/src/md17.f90
+* Vectorizer - zero strides & streaming data
+c     Swap vectors.
+./test/f90_correct/src/kv08.f
+* Vectorizer - invariant expandable array reference bug discovered in
+cpgi$l novector
+cpgi$l novector
+./test/f90_correct/src/kv23.f
+* Vectorizer - distribution, interchange, split
+cpgi$l novector
+./test/f90_correct/src/kv09.f
+* Vectorizer - Loops should vectorize when the option -Mcray=pointer is used
+c  the loops in this code will not vectorize as long as the pointers
+c   compile with pgf77 -c -Mvect -Minfo=loop test32.f
+./test/f90_correct/src/kv10.f
+* Vectorizer - zero strides & streaming data
+c     Swap vectors.
+./test/f90_correct/src/kv03.f
+    ! Create space for a string vector
+./test/f90_correct/src/ch23.f90
+! Software (test) vector lengths have been chosen to try and exercise all
+! supported hardware vector lengths.
+./test/f90_correct/src/cm01.f90
+* Vectorizer - decremented induction variables and streaming
+./test/f90_correct/src/kv06.f
+      function  vector  (a,b,c)
+      integer,  pointer  ::  vector(:)
+      allocate  (vector  (a))
+      vector(i) = j
+      result(2:7) = vector(6,2,2)
+      v => vector(4,1,1)
+      result(12:15) = vector(4,2,2)
+      result(16:23) = vector(8,22,-2)
+./test/f90_correct/src/fn01.f90
+* Vectorizer - stripmine, incorrect placement of temp stores of variant
+c     Swap vectors.
+./test/f90_correct/src/kv02.f
+* Vectorizer - argonne loop s422
+cpgi$g novector
+cpgi$g vector
+./test/f90_correct/src/kv14.f
+* Vectorizer - argonne loop s243
+cpgi$g novector
+cpgi$g vector
+./test/f90_correct/src/kv12.f
+* Vectorizer - store is replaced with call; need special ili so optimizer
+./test/f90_correct/src/kv05.f
+* Vectorizer - store is replaced with call; need special ili so optimizer
+./test/f90_correct/src/kv00.f
+  type :: vector
+  end type vector
+    class(vector) :: vec
+  type(vector) :: vec
+./test/f90_correct/src/oop730.f90
+* Vectorizer - decremented induction variables and streaming
+./test/f90_correct/src/kv01.f
+* Vectorizer - distribution, interchange, split
+cpgi$l novector
+./test/f90_correct/src/kv04.f
+* Vectorizer 'induction variable retained' test
+./test/f90_correct/src/ka61.f
+c Test case from MOLPRO.  The inner loop below should not be vectorized.
+./test/f90_correct/src/kv31.f
+* Vectorizer - argonne loop s343
+cpgi$g novector
+cpgi$g vector
+./test/f90_correct/src/kv13.f
+* Vectorizer - stripmine, incorrect placement of temp stores of variant
+c     Swap vectors.
+./test/f90_correct/src/kv07.f
+#include <vector>
+  std::vector<std::string> lines; //!< human explanation of an error
+   * other fields are default initialized to empty strings and vector.
+   * This constructor is used when the vector of messages is created
+  std::vector<const char *> input_filenames; //!< one or more input files
+  std::vector<std::string> initial_lines;
+  std::vector<Message> messages; //!< recorded error messages
+    for (std::vector<const char *>::iterator it = input_filenames.begin();
+    std::vector<std::string> *lines = &initial_lines;
+      std::vector<Message>::size_type num;
+    for (std::vector<std::string>::iterator it = initial_lines.begin();
+    for (std::vector<Message>::iterator m = messages.begin();
+        for (std::vector<std::string>::iterator it = m->lines.begin() + 1;
+    for (std::vector<std::string>::iterator it = initial_lines.begin();
+    for (std::vector<Message>::iterator m = messages.begin();
+      for (std::vector<std::string>::iterator it = m->lines.begin();
+    for (std::vector<Message>::size_type num = 0; num < messages.size();
+    for (std::vector<Message>::iterator m = messages.begin();
+        for (std::vector<std::string>::iterator it = m->lines.begin() + 1;
+./utils/errmsg/errmsg.cpp
+# If you use STL classes (i.e. std::string, std::vector, etc.) but do not want
+./docs/doxygen.cfg.in
+ *  \brief - include file for high-level vectorizer
+#ifndef NOVECTORIZE
+  int shortloop;    /* a.k.a. smallvect */
+  int mincnt;       /* flg.x[30] = min lp count for vectorization */
+ * Vectorizer loop structure.
+ * A direction vector is a 32-bit integer.  It consists of up to
+/* a number bigger than max # of elements in a direction vector */
+      uint16_t invec : 1; /* invariant vector in two nested loops */
+ * Vectorizer induction information
+  int llvi;         /* low-level vectorizer info */
+} HLVECT;
+extern HLVECT hlv;
+extern void vect_flg_defaults(void);
+extern void vectorize(void);
+extern void llvect(void);
+./tools/flang1/flang1exe/hlvect.h.orig
+      /* nonvector dimension */
+        /* vector dimension after nonvector dimension
+./tools/flang1/flang1exe/outconv.c
+        /* any dimension having a vector subscript is bad */
+ * vector subscripts, they are handled by creating a section.
+          /* ignore vector subscripts here */
+ * vector subscripts, they are handled by creating a section.
+          /* ignore vector subscripts here */
+./tools/flang1/flang1exe/rest.c
+ * the vectorizer calls compute_last_values).  When this occurs, stores
+./tools/flang1/flang1exe/induc.c
+   * the vectorize, will not delete empty blocks if it's labeled
+     *  num (bitvector):
+./tools/flang1/flang1exe/lowerilm.c
+   The bit vector representation for a set of size N is a sequence of
+   Bit vector support routines:
+./tools/flang1/flang1exe/optutil.c
+   for a given loop.  Used by the optimizer and vectorizer.
+        vectorizer).
+ * perform invariant analysis only (no code motion); used by vectorizer
+ * cleanup invariant table after it's not needed by the vectorize.
+./tools/flang1/flang1exe/invar.c
+  int astnew, vector;
+  vector = 0;
+            vector = 1;
+            vector = 1;
+          vector = 1;
+  if (vector) {
+ * For an indirectly indexed dimension, the axis vector indicates which
+ * vector.  The size of the axis vector is equal to the rank of the index
+ * vector.  If the order of the index variables is not permuted, i.e. the
+ * axis vector is (/1, 2, 3, .. N/), then the corresponding permuted bit
+    if (is_vector_subscript(subs[i], list)) {
+    if (is_vector_subscript(subs[i], list))
+    if (is_vector_subscript(ASD_SUBS(asd1, i), list)) {
+    /* change astnew for vector dimension */
+        is_vector_subscript(ASD_SUBS(asd1, i), list)) {
+    if (is_vector_subscript(ASD_SUBS(asd1, i), list)) {
+  /* change astnew for vector dimension */
+  A_BVECTP(ast, 0);
+        is_vector_subscript(ASD_SUBS(asd1, i), list)) {
+./tools/flang1/flang1exe/comm.c
+    0,     /* vect: 0 = none:    num == vect item */
+./tools/flang1/flang1exe/flgdf.h
+    if (vector_member(expr)) {
+vector_member(int memast)
+} /* vector_member */
+  int shape, vectmem;
+  vectmem = vector_member(arr_ast);
+    /* this is a vector subscript. Use the ast list that was passed in */
+        /* vector subscript */
+  if (vectmem) {
+    if (vector_member(asgn_ast)) {
+    if (vector_member(asgn_ast)) {
+          /* vector subscript, ugly */
+      && !has_vector_subscript_ast(astsrc)) {
+    int ast, i, vector;
+    for (i = 0, vector = 0; i < n; ++i) {
+        int tmp = ASD_SUBS(asd, vector);
+        vector++;
+        sub = ASD_SUBS(asd, vector);
+        vector++;
+    if (vector == 0) {
+    if (vector_member(aref)) {
+./tools/flang1/flang1exe/transfrm.c
+    if (A_BVECTG(ast))
+      print_ast((int)A_BVECTG(ast));
+    if (A_BVECTG(ast))
+      print_ast((int)A_BVECTG(ast));
+    if (A_BVECTG(ast))
+      print_ast((int)A_BVECTG(ast));
+        put_string("vector_length(");
+    case PR_ACCVECTOR:
+      put_string("loop vector");
+./tools/flang1/flang1exe/astout.c.orig
+#include "hlvect.h"
+static int savevectflag;
+static char *who[] = {"init",     "parser",   "bblock", "vectorize", "optimize",
+  savevectflag = flg.vect;
+  int vect_val;        /* Vectorizer settings */
+  register_integer_arg(arg_parser, "vect", &(vect_val), 0);
+  /* Vectorizer settings */
+  flg.vect |= vect_val;
+  if (flg.vect & 0x10)
+  if (flg.vect & 0x20)
+  flg.vect = savevectflag;
+./tools/flang1/flang1exe/main.c
+  /* to simplify memory allocation, we allocate one big vector to hold
+   * a matrix of information.  Here, we give the index into the vector
+./tools/flang1/flang1exe/pointsto.c
+    \brief Rewrite subscript vectors for lhs and rhs, etc.
+ *       - it has to be one dimension vector
+  if (!is_vector_indirection_in_it(lhs, list))
+ *    - vector subscript,
+            !is_vector_subscript(ASD_SUBS(asd, i), list))
+        if (is_vector_subscript(ASD_SUBS(asd, i), list)) {
+            !is_vector_subscript(ASD_SUBS(asd, i), list))
+is_vector_subscript(int a, int list)
+      if (is_vector_subscript(ASD_SUBS(asd, i), list)) {
+        !is_vector_subscript(ASD_SUBS(asd, i), list))
+  LOGICAL has_vector_subs;
+./tools/flang1/flang1exe/vsub.c
+#define CL_VECTOR 21
+#define CL_VECTOR_LENGTH 55
+    {0, 0, NULL, NULL, "VECTOR",
+    {0, 0, NULL, NULL, "UNROLL", /* for vector loops */
+    {0, 0, NULL, NULL, "VECTOR_LENGTH",
+   *	<accel attr> ::= VECTOR ( <ident> : <expression> ) |
+   *	<accel attr> ::= VECTOR ( <expression> ) |
+    clause = CL_VECTOR;
+   *	<accel attr> ::= VECTOR |
+    clause = CL_VECTOR;
+    case CL_VECTOR:
+   *	<accel attr> ::= VECTOR_LENGTH ( <expression> ) |
+          BITMASK64 illegal_region /* bit vector - which directives cannot
+./tools/flang1/flang1exe/semsmp.c.orig
+  int exist;     /* bit vector indicating which attributes exist */
+  char intent;   /* bit vector formed from INTENT_... */
+  int no; /* bit vector of attributes which do not coexist */
+  int exist;   /* bit vector indicating which attributes exist */
+  int no; /* bit vector of attributes which do not coexist */
+        /* This is a possible form of a substring.  Vector triplet
+        /* Legally this can only mean character substringing.  Vector
+   *	<accel routine list> ::= <accel routine list> <opt comma> VECTOR |
+ *  \param attr attributes (bit vector), same as entity_attr.exist
+ *  \param attr attributes (bit vector), same as entity_attr.exist
+./tools/flang1/flang1exe/semant.c
+           scalar (i.e., not an array/vector form).
+           scalar (i.e., not an array/vector form) and integer (i.e., not
+    Comparisons between vector typed  and typeless operands require typed
+    vectors to be casted to typeless vectors.
+  int im, from, isvector;
+  isvector = FALSE;
+    isvector = TRUE;
+  if (isvector)
+    assert(fromisv && toisv, "chgshape:both vectors", 0, 3);
+    \param promote if true, promote scalar to vector
+          /* double subscripting with vector subscripts */
+   * determine if it is vector or element
+    /* A vector slice reference */
+  /* catch vector ops on hollerith constants before changing their type */
+./tools/flang1/flang1exe/semutil.c
+#ifndef NOVECTORIZE
+#include "hlvect.h"
+  DV *dvlist;           /* list of direction vectors */
+   * for each flowgraph node, a bit vector giving all the successors of
+   * Then, a transitive closure is performed on those bit vectors.
+  /* build successor bit vector */
+   * now compute data dependence vector indicating when a
+  /* compute all possible dependence vectors */
+   * intersect the execution order direction vector with the
+   * dependence direction vectors to determine true dependence
+   * direction vector
+    /* i preceeds j; must invert dependence vector */
+   * deals with is initial values that the vectorizer added for induction
+/* check for dependence with direction vector dir */
+  /* create equations describing this direction vector */
+   * determines a direction vector under which those subscripts will
+  /* 4. Direction vector hierarchy if dependent */
+   * further: if (no dependence with direction vector dir) return 0;
+   * we're at the bottom level.  Test dependence with this direction vector
+   * & return 0 or this direction vector.  In addition, need to set the
+   * all-equals bit if this direction vector is all equals
+/** \brief Invert a direction vector */
+/** \brief Generate legal execution order direction vectors.
+  /* outermost loop: legal vectors are '<='; for rest they are '*' */
+ * Return the direction vector that corresponds to the input
+ * direction vector dir under the mapping m.  If m is NULL, the
+  /* Initialize vectorizer's memory. */
+  /* Allocate ntriples vectorizer loops. */
+    /* Generate direction vectors. */
+./tools/flang1/flang1exe/datadep.c
+ * optimizer and vectorizer.
+   * to findloop on this function (i.e., by the vectorizer) has converted
+./tools/flang1/flang1exe/findloop.c
+static INT bitv;              /* bit vector for IOSTAT, END, and ERR: */
+              /* a vector subscript -- illegal! */
+                    "array with a vector subscript",
+       * If an input item is an array section containing vector
+       * subscripts, the dimensions containing the vector subscripts
+       * ast bounded by do 'begin-end' pairs, one for each vector
+       * subscript; if more than one vector subscript appears, the
+       * resulting loops will be nested, where the left-most vector
+       * are derived from the shape of the index vector.
+                        * vector subscripts are present.
+      LOGICAL anyvec;  /* any vector subscripts found */
+          /* vector subscript */
+          /* create a DOINFO record for this vector; the index
+           * are extracted from the shape of the index vector.
+           * a subscripted reference of the index vector and the
+        /* vector subscripts were found; if any triples were present,
+/* we have a one-dimensional expression, replace a vector subscript
+replace_vector_subscript(int ast, int indexast)
+    newl = replace_vector_subscript(oldl, indexast);
+    newr = replace_vector_subscript(oldr, indexast);
+    newl = replace_vector_subscript(oldl, indexast);
+    newl = replace_vector_subscript(oldl, indexast);
+    newl = replace_vector_subscript(oldl, indexast);
+    newl = replace_vector_subscript(oldl, indexast);
+          replace_vector_subscript(ARGT_ARG(argt, i), indexast);
+        interr("replace_vector_subscript: >1 dimensional array ",
+      newl = replace_vector_subscript(oldl, indexast);
+    /* go through the subscripts looking for a vector one */
+      newss = replace_vector_subscript(oldss, indexast);
+    interr("replace_vector_subscript: unexpected subscript operation",
+} /* replace_vector_subscript */
+         * a subscripted reference of the index vector and the
+          subs[i] = replace_vector_subscript(astss, astivar);
+./tools/flang1/flang1exe/semantio.c
+  SW_VECT,
+./tools/flang1/flang1exe/main.h
+  VTX_NODE(opt.dfn) = LABEL(v) = v; /* set dfn vector */
+  RVTX_NODE(rdfn) = LABEL(v) = v; /* set dfn vector */
+./tools/flang1/flang1exe/fgraph.c
+ * only allows one vector subscript in a member tree */
+./tools/flang1/flang1exe/semutil2.c
+#include "hlvect.h"
+./tools/flang1/flang1exe/commopt.c
+            /* vector subscript */
+      otriple1, dim, bvect, ddesc, sdesc, mdesc, vsub, chunk, npar, start,
+    bvect = ast_rewrite(A_BVECTG(ast));
+    if (lop != A_LOPG(ast) || bvect != A_BVECTG(ast)) {
+      A_BVECTP(astnew, bvect);
+    bvect = ast_rewrite(A_BVECTG(ast));
+        sdesc != A_SDESCG(ast) || bvect != A_BVECTG(ast)) {
+      A_BVECTP(astnew, bvect);
+    bvect = ast_rewrite(A_BVECTG(ast));
+        mdesc != A_MDESCG(ast) || bvect != A_BVECTG(ast)) {
+      A_BVECTP(astnew, bvect);
+    if (A_BVECTG(ast))
+      _ast_trav((int)A_BVECTG(ast), extra_arg);
+    if (A_BVECTG(ast))
+      _ast_trav((int)A_BVECTG(ast), extra_arg);
+    if (A_BVECTG(ast))
+      _ast_trav((int)A_BVECTG(ast), extra_arg);
+    fprintf(file, " bvect:%5d", A_BVECTG(i));
+    fprintf(file, " bvect:%5d", A_BVECTG(i));
+    fprintf(file, " bvect:%5d", A_BVECTG(i));
+   hexadecimal constants can be promoted to vectors.
+has_vector_subscript_ast(int ast)
+      return has_vector_subscript_ast(A_LOPG(ast));
+      return has_vector_subscript_ast(A_PARENTG(ast));
+      return has_vector_subscript_ast(A_LOPG(ast));
+              A_SHAPEG(subscript) > 0 /* vector-valued subscript */) {
+       * or there's a subscript triplet or vector-valued subscript.
+./tools/flang1/flang1exe/ast.c
+    portions of this module are used by the vectorizer.
+        the by optimizer and vectorizer
+        by the optimizer or vectorizer.
+        by the optimizer or vectorizer.
+        shared by the optimizer and vectorizer.
+/*   SHARED init and end routines for the vectorizer and optimizer */
+ * vectorizer and optimizer.  These data structures represent the
+ * information created by those modules that are shared by the vectorizer
+ * source file during a given pass (vectorizer and optimizer); for Fortran,
+ * Since it's possible for the vectorizer/optimizer to see more than one
+ * A skeleton of the vectorizer/optimizer for using these routines is:
+./tools/flang1/flang1exe/optimize.c
+                 * for vector array - it is also OK to do it here(if it
+                 * vector array).
+ * TARGET and POINTER attributes.  Arrays with a vector-valued subscript
+         !has_vector_subscript_ast(ast);
+./tools/flang1/flang1exe/semant3.c
+ * It can have vector subscript
+ *    but vector subscript has to has scalar or idx.
+  /* test that vector subscript must not be diagonal access */
+        } else if (is_vector_subscript(ss, list)) {
+ * where the extent of vector V covers extent of A.
+is_vector_indirection_in_it(int a, int list)
+        if (is_array_in_expr(sub) && is_vector_subscript(sub, list))
+./tools/flang1/flang1exe/detect.c
+#include "hlvect.h"
+    putint("bvect", A_BVECTG(0));
+    A_BVECTP(0, 0);
+    putint("bvect", A_BVECTG(0));
+    A_BVECTP(0, 0);
+    putint("bvect", A_BVECTG(0));
+    A_BVECTP(0, 0);
+/* hlvect.h */
+./tools/flang1/flang1exe/dump.c.orig
+  hlvect.c
+./tools/flang1/flang1exe/CMakeLists.txt
+ *    not -Mvect   (!flg.vect)
+  flg.debug && !flg.vect && !XBIT(34, 0x200) && !XBIT(123, 0x400)
+  BIGUINT nest;   /* bit vector indicating the structures are present
+  int none_implicit; /* bit vector indicating presence of implicit
+./tools/flang1/flang1exe/semant.h
+/* * * * *  Bit Vector Set Representation  * * * * */
+  int scr;     /* scratch field -- BIH_ASSN for vectorizer */
+  int scr2;    /* scratch field -- BIH_RGSET for vectorizer */
+./tools/flang1/flang1exe/optimize.h
+#define CL_VECTOR 21
+#define CL_VECTOR_LENGTH 55
+    {0, 0, NULL, NULL, "VECTOR",
+    {0, 0, NULL, NULL, "UNROLL", /* for vector loops */
+    {0, 0, NULL, NULL, "VECTOR_LENGTH",
+   *	<accel attr> ::= VECTOR ( <ident> : <expression> ) |
+   *	<accel attr> ::= VECTOR ( <expression> ) |
+    clause = CL_VECTOR;
+   *	<accel attr> ::= VECTOR |
+    clause = CL_VECTOR;
+    case CL_VECTOR:
+   *	<accel attr> ::= VECTOR_LENGTH ( <expression> ) |
+          BITMASK64 illegal_region /* bit vector - which directives cannot
+./tools/flang1/flang1exe/semsmp.c
+#include "hlvect.h"
+    putint("bvect", A_BVECTG(0));
+    A_BVECTP(0, 0);
+    putint("bvect", A_BVECTG(0));
+    A_BVECTP(0, 0);
+    putint("bvect", A_BVECTG(0));
+    A_BVECTP(0, 0);
+/* hlvect.h */
+./tools/flang1/flang1exe/dump.c
+#ifndef NOVECTORIZE
+#include "hlvect.h"
+  DV *dvlist;           /* list of direction vectors */
+   * for each flowgraph node, a bit vector giving all the successors of
+   * Then, a transitive closure is performed on those bit vectors.
+  /* build successor bit vector */
+   * now compute data dependence vector indicating when a
+  /* compute all possible dependence vectors */
+   * intersect the execution order direction vector with the
+   * dependence direction vectors to determine true dependence
+   * direction vector
+    /* i preceeds j; must invert dependence vector */
+   * deals with is initial values that the vectorizer added for induction
+/* check for dependence with direction vector dir */
+  /* create equations describing this direction vector */
+   * determines a direction vector under which those subscripts will
+  /* 4. Direction vector hierarchy if dependent */
+   * further: if (no dependence with direction vector dir) return 0;
+   * we're at the bottom level.  Test dependence with this direction vector
+   * & return 0 or this direction vector.  In addition, need to set the
+   * all-equals bit if this direction vector is all equals
+/** \brief Invert a direction vector */
+/** \brief Generate legal execution order direction vectors.
+  /* outermost loop: legal vectors are '<='; for rest they are '*' */
+ * Return the direction vector that corresponds to the input
+ * direction vector dir under the mapping m.  If m is NULL, the
+  /* Initialize vectorizer's memory. */
+  /* Allocate ntriples vectorizer loops. */
+    /* Generate direction vectors. */
+./tools/flang1/flang1exe/datadep.c.orig
+     * considered a live-out of a loop, which inhibited vectorizing
+./tools/flang1/flang1exe/comminvar.c
+  int nvect, npermute;
+./tools/flang1/flang1exe/commgen.c
+ *  \brief - high level vectorization utils
+#ifndef NOVECTORIZE
+#include "hlvect.h"
+static void hlv_dovect(int loop);
+static void hlv_vectall(void);
+HLVECT hlv = {0};
+/* Causes of loops not being vectorized. See messages in report_cause(). */
+ * the end of processing by hlvect. */
+./tools/flang1/flang1exe/hlvect.c
+  int vector;
+  case I_DOT_PRODUCT: /* dot_product(vector_a, vector_b) */
+  case I_PACK: /* pack(array, mask, [vector]) */
+    vector = ARGT_ARG(func_args, 2);
+    if (vector == 0) {
+    if (vector == 0) {
+      /* pghpf_pack(result, array, mask, vector) */
+      ARGT_ARG(newargt, 3) = vector;
+  case I_UNPACK: /* unpack(vector, mask, field) */
+    vector = ARGT_ARG(func_args, 2); /* size */
+     * where vlb is a vector of lower bounds of arr_base. */
+      /* need to check for vector subscripts here */
+      /* either vector subscript, or array expression */
+          goto rewrite_this; /* vector subscript */
+    if (vector_member(inast)) {
+typedef struct { /* info for each fast matmul array/vector argument */
+   * VxM - matmul(vectorA, matrixB) -> vectorC
+   * MxV - matmul(matrixA, vectorB) -> vectorC
+     * Second argument is a vector.
+       * No vector indexing ...
+./tools/flang1/flang1exe/func.c
+    opc = ARRAYFG(sptr); /* Get ilm for Vectors */
+    /* Check if vectors disallowed and not a type conversion intrinsic.
+     * Vectors okay for type conversion intrinsics.
+      /* just mark as a type conversion, vectors ok - ILMG & ARRAYF
+       *             handle vectors (this includes the type conversion
+     * present, we only handle the matrix by vector case for real and
+    if ((stkp = ARG_STK(2))) { /* vector */
+      /* use size of vector */
+    stkp = ARG_STK(0); /* vector: any rank 1 array */
+    stkp = ARG_STK(2);         /* field: same type as vector */
+./tools/flang1/flang1exe/semfunc.c.orig
+LOGICAL vector_member(int memast);
+./tools/flang1/flang1exe/transfrm.h
+#include "hlvect.h"
+./tools/flang1/flang1exe/hpfutl.c
+        /* need to include the dimension if it is vector as well */
+        /* need to include the dimension if it is vector as well */
+        /* vector subscript */
+  k = 0; /* vector dimensions in array */
+        /*  has index vector */
+  /* find the first vector dimension of the first arg */
+  /* find the second vector dimension of the second arg */
+./tools/flang1/flang1exe/symutl.c
+    opc = ARRAYFG(sptr); /* Get ilm for Vectors */
+    /* Check if vectors disallowed and not a type conversion intrinsic.
+     * Vectors okay for type conversion intrinsics.
+      /* just mark as a type conversion, vectors ok - ILMG & ARRAYF
+       *             handle vectors (this includes the type conversion
+     * present, we only handle the matrix by vector case for real and
+    if ((stkp = ARG_STK(2))) { /* vector */
+      /* use size of vector */
+    stkp = ARG_STK(0); /* vector: any rank 1 array */
+    stkp = ARG_STK(2);         /* field: same type as vector */
+./tools/flang1/flang1exe/semfunc.c
+    if (A_BVECTG(ast))
+      print_ast((int)A_BVECTG(ast));
+    if (A_BVECTG(ast))
+      print_ast((int)A_BVECTG(ast));
+    if (A_BVECTG(ast))
+      print_ast((int)A_BVECTG(ast));
+        put_string("vector_length(");
+    case PR_ACCVECTOR:
+      put_string("loop vector");
+./tools/flang1/flang1exe/astout.c
+  hlvect.c
+./tools/flang1/flang1exe/CMakeLists.txt.orig
+#include "hlvect.h"
+./tools/flang1/flang1exe/iterat.c
+  int vect;
+./tools/flang1/flang1exe/global.h
+  int vector;
+  case I_DOT_PRODUCT: /* dot_product(vector_a, vector_b) */
+  case I_PACK: /* pack(array, mask, [vector]) */
+    vector = ARGT_ARG(func_args, 2);
+    if (vector == 0) {
+    if (vector == 0) {
+      /* pghpf_pack(result, array, mask, vector) */
+      ARGT_ARG(newargt, 3) = vector;
+  case I_UNPACK: /* unpack(vector, mask, field) */
+    vector = ARGT_ARG(func_args, 2); /* size */
+     * where vlb is a vector of lower bounds of arr_base. */
+      /* need to check for vector subscripts here */
+      /* either vector subscript, or array expression */
+          goto rewrite_this; /* vector subscript */
+    if (vector_member(inast)) {
+typedef struct { /* info for each fast matmul array/vector argument */
+   * VxM - matmul(vectorA, matrixB) -> vectorC
+   * MxV - matmul(matrixA, vectorB) -> vectorC
+     * Second argument is a vector.
+       * No vector indexing ...
+./tools/flang1/flang1exe/func.c.orig
+      dim_mask |= 1; /* vector dimension */
+./tools/flang1/flang1exe/dpm_out.c
+    rop = A_BVECTG(0);
+    A_BVECTP(ast, rop);
+    l3 = A_BVECTG(0);
+    A_BVECTP(ast, l3);
+    j = A_BVECTG(0);
+    A_BVECTP(ast, j);
+./tools/flang1/flang1exe/interf.c
+    struct {/**< vector slice triplet notation */
+./tools/flang1/flang1exe/semstk.h
+LOGICAL contains_call(int);           /* f90vect.c */
+LOGICAL is_vector_subscript(int, int);                /* vsub.c */
+LOGICAL is_vector_indirection_in_it(int, int);
+./tools/flang1/flang1exe/extern.h
+ *  \brief - include file for high-level vectorizer
+#ifndef NOVECTORIZE
+  int shortloop;    /* a.k.a. smallvect */
+  int mincnt;       /* flg.x[30] = min lp count for vectorization */
+ * Vectorizer loop structure.
+ * A direction vector is a 32-bit integer.  It consists of up to
+/* a number bigger than max # of elements in a direction vector */
+      uint16_t invec : 1; /* invariant vector in two nested loops */
+ * Vectorizer induction information
+  int llvi;         /* low-level vectorizer info */
+} HLVECT;
+extern HLVECT hlv;
+extern void vect_flg_defaults(void);
+extern void vectorize(void);
+extern void llvect(void);
+./tools/flang1/flang1exe/hlvect.h
+      Used by the optimizer and vectorizer.
+  int bv_len;      /* number of BV units for each bit vector */
+  BV *stg_base;    /* locates space of the flowgraphs' bit vectors */
+  BV *lp_stg_base; /* locates space for the loops' bit vectors */
+    case PR_ACCVECTOR:
+   * as a scratch bit vector.
+   * as a scratch bit vector.
+    which is impossible since the size of each bit vector cannot be
+  bv = opt.def_setb.stg_base; /* scratch bit vector */
+./tools/flang1/flang1exe/flow.c
+#include <vector>
+  std::vector<std::string> intr_kwd;
+  std::vector<std::string> ilms;
+  std::vector<int> intast_sym;
+./tools/flang1/utils/symtab/symini.cpp
+.AT transformational vector_a vector_b
+.AT transformational array mask *vector
+.AT transformational vector mask field
+.AT transformational vector_a vector_b
+./tools/flang1/utils/symtab/symini_ftn.n.orig
+#include <vector>
+  std::vector<std::string> intr_kwd;
+  std::vector<std::string> ilms;
+  std::vector<int> intast_sym;
+./tools/flang1/utils/symtab/symini.cpp.orig
+.AT transformational vector_a vector_b
+.AT transformational array mask *vector
+.AT transformational vector mask field
+.AT transformational vector_a vector_b
+./tools/flang1/utils/symtab/symini_ftn.n
+If set, variable is a vectorizer-created temporary.
+./tools/flang1/utils/symtab/symtab.n
+	    unsigned  ignore:1;	 /* used by hl vectorizer */
+LOGICAL has_vector_subscript_ast(int ast);
+./tools/flang1/utils/ast/ast.in.h
+Optimizer-/vectorizer-/communication optimizer- dependent field.
+Optimizer-/vectorizer-/communication optimizer- dependent field.
+.SE BVECT w10
+.SE BVECT
+.SE BVECT
+This AST copies a array indexed by vector subscripts into a regular
+   flags = bit 1<<(i-1) set if vector subscript in i'th dimension
+   vector subscripts (only for dimensions where the corresponding flag
+.SE BVECT
+AST of the bit mask indicating which dimensions contain a vector subscript.
+into an array indexed by vector subscripts.
+.SE BVECT
+AST of the bit mask indicating which dimensions contain a vector subscript.
+The entire bit vector is accessed by the macro \f(CWASTLI_FLAGS(i)\fP.
+./tools/flang1/utils/ast/ast.n
+  /*     the transition vector with no tackon. */
+  /*     the ptrlookahead vector, known in fortran as nlookset. */
+  /*     vector choosereduction also known as prod */
+  /*     vector redlength also known as lenred. */
+  /*     vector lefthandside also known as leftside */
+./tools/flang1/utils/prstab/prstab3.c
+VECTOR		    TK_VECTOR
+VECTOR_LENGTH TK_VECTOR_LENGTH
+./tools/flang1/utils/prstab/gram.tki
+		<accel routine list> <opt comma> VECTOR |
+		 VECTOR ( <ident> : <expression> ) |
+		 VECTOR ( <expression> ) |
+		 VECTOR |
+	         VECTOR_LENGTH ( <expression> ) |
+./tools/flang1/utils/prstab/gram.txt
+or a subscript triplet which denotes a vector slice.
+This contains the shape of vector references from the semantic stack.
+Each operand is checked to see if one requires a scalar to vector promotion.
+./tools/flang1/docs/semant.n
+phase). It also handles vector foralls, such as:
+./tools/flang1/docs/transform.n
+  PR_ACCVECTOR = 16,        /* accelerator vector clause */
+  PR_ACCVECUNROLL = 51,   /* unroll vector loop */
+  PR_ACCVLENGTH = 77,          /* accelerator vector_length clause */
+./tools/shared/pragma.h.orig
+#define FEATURE_SCALAR_NONTEMP 14  /* in llvect */
+#define FEATURE_AVX 28         /* supports AVX - Advanced Vector Extensions */
+./tools/shared/x86.h
+#define MSGVECT 0x0e
+#define MSGNEGVECT 0x0f
+#define MSGCVECT 0x22
+#define MSGNEGCVECT 0x23
+./tools/shared/ccffinfo.h.orig
+#ifdef TY_VECT
+  if (DTY(dtype) == TY_VECT)
+#ifdef TY_VECT
+  Precond(DTY(dtype) == TY_VECT);
+  Precond(DTY(dtype) == TY_VECT);
+./tools/shared/symfun.h.orig
+  return is_xflag_bitvector(indx);
+./tools/shared/miscutil.c
+#ifdef TY_VECT
+  if (DTY(dtype) == TY_VECT)
+#ifdef TY_VECT
+  Precond(DTY(dtype) == TY_VECT);
+  Precond(DTY(dtype) == TY_VECT);
+./tools/shared/symfun.h
+  PR_ACCVECTOR = 16,        /* accelerator vector clause */
+  PR_ACCVECUNROLL = 51,   /* unroll vector loop */
+  PR_ACCVLENGTH = 77,          /* accelerator vector_length clause */
+./tools/shared/pragma.h
+  return is_xflag_bitvector(indx);
+./tools/shared/miscutil.c.orig
+#define FEATURE_SCALAR_NONTEMP 14  /* in llvect */
+#define FEATURE_AVX 28         /* supports AVX - Advanced Vector Extensions */
+./tools/shared/x86.h.orig
+#define MSGVECT 0x0e
+#define MSGNEGVECT 0x0f
+#define MSGCVECT 0x22
+#define MSGNEGCVECT 0x23
+./tools/shared/ccffinfo.h
+                         * a vector of pointers used to locate a thread's
+  int vect;
+./tools/shared/utils/global.h.orig
+#include <vector>
+  std::vector<std::string> ocnames;
+  std::vector<std::string> scnames;
+  std::vector<std::string> iknames;
+  std::vector<Field> fields;
+    std::vector<int> fields; // fields for this sym
+  std::vector<Symbol> symbols;
+    std::vector<int> attribs;
+  std::vector<Type> types;
+  std::vector<PDType> pd_dtypes;
+  std::vector<std::string> attrnames;
+  Symutil(const std::vector<std::string> &args)
+    for (std::vector<std::string>::const_iterator arg = args.begin() + 1,
+    std::vector<std::string> dtfields;
+    std::vector<int> cursyms;
+        for (std::vector<int>::size_type idx = 0; !tok.empty(); ++idx) {
+  flushdt(std::vector<int> &cursyms, std::vector<std::string> &dtfields)
+    for (std::vector<int>::const_iterator it = cursyms.begin(),
+      for (std::vector<std::string>::size_type k = 0; k <= dtfields.size();
+      for (std::vector<std::string>::size_type k = 0; k != dtfields.size();
+        for (std::vector<std::string>::size_type i = 0; i != iknames.size();
+        for (std::vector<std::string>::size_type i = 0; i < attrnames.size();
+        for (std::vector<Type>::size_type i = 0; i != types.size(); ++i) {
+            for (std::vector<int>::size_type j = 1; j < k; ++j)
+        for (std::vector<Field>::size_type i = 0; i != fields.size(); ++i) {
+    for (std::vector<Symbol>::size_type i = 0; i != symbols.size(); ++i) {
+    for (std::vector<Symbol>::size_type i = 0; i != symbols.size(); ++i) {
+    for (std::vector<std::string>::size_type i = 0; i != ocnames.size(); ++i)
+    for (std::vector<std::string>::size_type i = 0; i != scnames.size(); ++i)
+    for (std::vector<Type>::size_type i = 0; i != types.size(); ++i) {
+      for (std::vector<Symbol>::size_type s = 0; s != symbols.size(); ++s) {
+        for (std::vector<Field>::size_type i = 0; i != fields.size(); ++i) {
+            for (std::vector<int>::size_type sf = 0;
+      for (std::vector<Field>::size_type i = 0; i != fields.size(); ++i) {
+  flushsym(std::vector<int> &cursyms)
+    for (std::vector<int>::const_iterator it = cursyms.begin(),
+      for (std::vector<Field>::size_type j = 0; j != fields.size(); ++j) {
+        for (std::vector<int>::size_type k = 0; k != symbols[*it].fields.size();
+  addoclass(std::vector<int> &cursyms, std::string &oc)
+    for (std::vector<int>::const_iterator it = cursyms.begin(),
+  add_field_to_symbol(std::vector<int> &cursyms, int field)
+    for (std::vector<int>::const_iterator it = cursyms.begin(),
+      for (std::vector<int>::const_iterator f = symbols[*it].fields.begin(),
+  addsname(std::vector<int> &cursyms, std::vector<int>::size_type symidx,
+   vector of command line arguments and run the application.
+  Symutil app(std::vector<std::string>(argv, argv + argc));
+./tools/shared/utils/symutil.cpp
+                         * a vector of pointers used to locate a thread's
+  int vect;
+./tools/shared/utils/global.h
+#include <vector>
+  std::vector<context> stack;
+  typedef std::vector<std::string> cell_type;
+  typedef std::vector<cell_type> table_row_type;
+  std::vector<std::string> tokens;
+  std::vector<std::string> listStack;
+      for (std::vector<std::string>::const_iterator it = tokens.begin() + 2,
+      for (std::vector<std::string>::const_iterator it = tokens.begin() + 1,
+        for (std::vector<std::string>::const_iterator it = tokens.begin() + 2,
+        for (std::vector<std::string>::const_iterator it = tokens.begin() + 2,
+        for (std::vector<std::string>::const_iterator it = tokens.begin() + 1,
+        for (std::vector<std::string>::const_iterator it = tokens.begin() + 2,
+        for (std::vector<std::string>::size_type it = 3; it < tokens.size();
+        std::vector<std::string>::const_iterator it = tokens.begin() + 1,
+        for (std::vector<std::string>::const_iterator it = tokens.begin() + 1,
+    std::vector<cell_type> formatting;
+    std::vector<std::string::size_type> widths;
+    std::vector<table_row_type> table;
+        for (std::vector<std::string>::const_iterator it = tokens.begin(),
+      std::vector<std::string> refined_tokens;
+      for (std::vector<std::string>::iterator it = tokens.begin();
+          for (std::vector<cell_type>::size_type it = 0; it < formatting.size();
+      for (std::vector<cell_type>::const_iterator it = formatting.begin(),
+    for (std::vector<table_row_type>::const_iterator r = table.begin(),
+    for (std::vector<std::string::size_type>::iterator it = widths.begin(),
+      for (std::vector<table_row_type>::const_iterator r = table.begin(),
+      for (std::vector<std::string::size_type>::const_iterator
+    for (std::vector<table_row_type>::iterator r = table.begin(),
+      std::vector<std::string::size_type>::const_iterator w = widths.begin();
+    for (std::vector<table_row_type>::const_iterator r = table.begin(),
+      for (std::vector<std::string::size_type>::const_iterator
+        std::vector<std::string::size_type>::const_iterator w = widths.begin();
+    for (std::vector<std::string::size_type>::const_iterator
+      for (std::vector<std::string>::const_iterator it = tokens.begin() + 2,
+  std::vector<std::string> tokens; ///< array of tokens in the last line
+  std::vector<std::string>::const_iterator token; ///< tokens array iterator
+./tools/shared/utils/common/utils.h
+  std::vector<std::vector<DTypeInfo>> dtypeinfo;
+  Machar(std::vector<std::string> args)
+    for (std::vector<std::string>::const_iterator arg = args.begin() + 1,
+    dtypeinfo.push_back(std::vector<DTypeInfo>(ty_max + 1));
+      dtypeinfo.push_back(std::vector<DTypeInfo>(ty_max + 1));
+  Machar app(std::vector<std::string>(argv, argv + argc));
+./tools/shared/utils/machar.cpp
+  std::vector<std::string> input_filenames; /// the arrays of input filenames.
+     Constructor takes as argument the vector of command line options given to
+  N2Rst(const std::vector<std::string> &args) : verbose(false)
+    for (std::vector<std::string>::const_iterator it = args.begin(),
+    for (std::vector<std::string>::const_iterator it = input_filenames.begin(),
+  // DO NOT add the program name to the vector of arguments.
+  N2Rst app(std::vector<std::string>(argv + 1, argv + argc));
+./tools/shared/utils/n2rst.cpp
+  /* -Mvect=simd:128 */
+  /* -Mvect=simd:256 or -Mvect=simd:512 */
+./tools/shared/x86.c
+  /* -Mvect=simd:128 */
+  /* -Mvect=simd:256 or -Mvect=simd:512 */
+./tools/shared/x86.c.orig
+                  * type (value vs bit vector) of the entry:
+                  * - if a bit vector:
+                  *      The new value of the bit vector is
+    currdir->vect = flg.vect = 0;
+      currdir->vect = flg.vect = 0;
+  flg.vect = currdir->vect;
+  currdir->vect = flg.vect;
+          currdir->opt, _FNO(currdir->depchk), _TNO(currdir->vect & 0x4),
+  fprintf(gbl.dbgfil, "   altcode: vector=%d,swpipe=%d,unroll=%d\n",
+  if (old->vect ^ older->vect)
+    df->change.vect = 1;
+  df->change.vect = new->vect ^ old->vect;
+  if (dd->change.vect)
+    fprintf(ff, "v:%x %x\n", dd->change.vect, dd->newset.vect);
+    case 'v': /* read vect line */
+        ST_BV(vect);
+        ST_VAL(vect);
+./tools/shared/direct.c.orig
+    case MSGVECT:
+    case MSGCVECT:
+    case MSGNEGVECT:
+    case MSGNEGCVECT:
+    case MSGVECT:
+    case MSGCVECT:
+    case MSGNEGVECT:
+    case MSGNEGCVECT:
+    case MSGVECT:
+    case MSGCVECT:
+    case MSGNEGVECT:
+    case MSGNEGCVECT:
+./tools/shared/ccffinfo.c.orig
+  int vect;
+./tools/shared/direct.h
+#define SW_SMALLVECT 5
+#define SW_VECTOR 7
+    {"shortloop", SW_SMALLVECT, true, S_LOOP, S_LOOP | S_ROUTINE | S_GLOBAL},
+    {"smallvect", SW_SMALLVECT, true, S_LOOP, S_LOOP | S_ROUTINE | S_GLOBAL},
+    {"vector", SW_VECTOR, true, S_LOOP, S_LOOP | S_ROUTINE | S_GLOBAL},
+      bset(DIR_OFFSET(currdir, vect), 0x04);
+      bclr(DIR_OFFSET(currdir, vect), 0x04);
+  case SW_SMALLVECT:
+  case SW_VECTOR:
+      assn(DIR_OFFSET(currdir, x[16]), 0);        /* scalar | vector */
+     * altcode [(n)] scalar | vector | swpipe | unroll | concur |
+    if (strcmp(ctok, "scalar") == 0 || strcmp(ctok, "vector") == 0) {
+      if (craydir && table[fnd].caselabel == SW_VECTOR)
+./tools/shared/pragma.c
+    case MSGVECT:
+    case MSGCVECT:
+    case MSGNEGVECT:
+    case MSGNEGCVECT:
+    case MSGVECT:
+    case MSGCVECT:
+    case MSGNEGVECT:
+    case MSGNEGCVECT:
+    case MSGVECT:
+    case MSGCVECT:
+    case MSGNEGVECT:
+    case MSGNEGCVECT:
+./tools/shared/ccffinfo.c
+                  * type (value vs bit vector) of the entry:
+                  * - if a bit vector:
+                  *      The new value of the bit vector is
+    currdir->vect = flg.vect = 0;
+      currdir->vect = flg.vect = 0;
+  flg.vect = currdir->vect;
+  currdir->vect = flg.vect;
+          currdir->opt, _FNO(currdir->depchk), _TNO(currdir->vect & 0x4),
+  fprintf(gbl.dbgfil, "   altcode: vector=%d,swpipe=%d,unroll=%d\n",
+  if (old->vect ^ older->vect)
+    df->change.vect = 1;
+  df->change.vect = new->vect ^ old->vect;
+  if (dd->change.vect)
+    fprintf(ff, "v:%x %x\n", dd->change.vect, dd->newset.vect);
+    case 'v': /* read vect line */
+        ST_BV(vect);
+        ST_VAL(vect);
+./tools/shared/direct.c
+#include <vector>
+  std::vector<std::string> ilms;
+  SyminiF90(const std::vector<std::string> &args)
+    for (std::vector<std::string>::const_iterator arg = args.begin() + 1,
+  SyminiF90 app(std::vector<std::string>(argv, argv + argc));
+./tools/flang2/utils/symtab/symini.cpp
+For a threadprivate common block or variable, a vector of pointers will be
+The vector will be represented by an \f(CWST_ARRAY\fP with a storage class
+the variable may represent a threadprivate common's vector of pointers.
+For a threadprivate common block, a vector of pointers will be created
+The vector will be represented by an \f(CWST_ARRAY\fP with storage
+.ip "Vector"
+values of constant's vector elements.
+The number of elements in the vector constant is stored in
+the constant's \f(CWTY_VECT\fP data type record.
+.TY TY_VECT "vect" VECT
+\(em vectn of ...
+The values of a vector constant are stored in the auxilary
+is dependent on the element data type of the vector; an entry
+value of the vector element
+of the vector element
+value of the vector element
+representing the value of the vector element
+./tools/flang2/utils/symtab/symtab.n.orig
+#define DT_ISVECT(dt)   (dttypes[DTY(dt)]&_TY_VECT)
+#define TY_ISVECT(t)    (dttypes[t]&_TY_VECT)
+#define TY_VECT_MAXLEN 16
+   int     vtypes[TY_MAX+1][TY_VECT_MAXLEN];
+   \brief get a vector constant of a zero which suits the element type
+./tools/flang2/utils/symtab/symtab.in.h
+#define DT_ISVECT(dt)   (dttypes[DTY(dt)]&_TY_VECT)
+#define TY_ISVECT(t)    (dttypes[t]&_TY_VECT)
+#define TY_VECT_MAXLEN 16
+   int     vtypes[TY_MAX+1][TY_VECT_MAXLEN];
+   \brief get a vector constant of a zero which suits the element type
+./tools/flang2/utils/symtab/symtab.in.h.orig
+For a threadprivate common block or variable, a vector of pointers will be
+The vector will be represented by an \f(CWST_ARRAY\fP with a storage class
+the variable may represent a threadprivate common's vector of pointers.
+For a threadprivate common block, a vector of pointers will be created
+The vector will be represented by an \f(CWST_ARRAY\fP with storage
+.ip "Vector"
+values of constant's vector elements.
+The number of elements in the vector constant is stored in
+the constant's \f(CWTY_VECT\fP data type record.
+.TY TY_VECT "vect" VECT
+\(em vectn of ...
+The values of a vector constant are stored in the auxilary
+is dependent on the element data type of the vector; an entry
+value of the vector element
+of the vector element
+value of the vector element
+representing the value of the vector element
+./tools/flang2/utils/symtab/symtab.n
+.SI vector lat(10)
+.SI vector lat(8)
+(used by llvect.c as a convenience).
+Single-precision divide - operands reversed (used by llvect.c
+Special ili created by the vectorizer indicating that the variable
+the vectorizer replaces assignments with calls.  The optimizer will process
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Vector dword integer compare; stc is the compare code;
+Vector qword integer compare; stc is the compare code;
+Vector compare of single precision values.  'stc' is comparison code.
+Vector compare of double precision values.  'stc' is comparison code.
+The execution mode will be selected by the compiler (gang/worker/vector/seq)
+.IL ACCVECTOR lnk lnk stc
+The iterations of the loop will be executed in vector mode on the accelerator
+Trip count is less than the maximum size of a vector operation
+(for vector schedule) or less than the maximum number of
+How long a vector to instantiate
+Control loop unrolling; the 3rd element tells whether it's the parallel, vector, or sequential loop to be unrolled
+Used in accelerator code, to generate an explicit 'vector' loop.
+Used in accelerator code, to end an explicit 'vector' loop.
+.AT cons null lnk cse vect
+For all vector ILI except VCON the last operand is the vector dtype
+.AT load null lnk vect
+.AT load null lnk vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+Vector divide where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector remainder where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Reinterpret the bits of a vector as if they were a different vector type.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector unsigned (logical) right shift by a scalar
+.AT arth null lnk cse vect
+Vector minimum
+.AT arth null lnk cse vect
+Vector maximum
+.AT arth null lnk cse vect
+Vector absolute value
+.AT arth null lnk cse vect
+Vector square root 
+.AT arth null lnk cse vect
+Vector cosine - final link is potential mask as it is
+.AT arth null lnk cse vect
+Vector sine
+.AT arth null lnk cse vect
+Vector sine-cosine
+.AT arth null lnk cse vect
+Vector arc sine
+.AT arth null lnk cse vect
+Vector arc cosine
+.AT arth null lnk cse vect
+Vector arctangent
+.AT arth null lnk cse vect
+Vector arctangent2
+.AT arth null lnk cse vect
+Vector tangent
+.AT arth null lnk cse vect
+Vector hyperbolic sine
+.AT arth null lnk cse vect
+Vector hyperbolic cosine
+.AT arth null lnk cse vect
+Vector hyperbolic tangent
+.AT arth null lnk cse vect
+Vector natural exponential
+.AT arth null lnk cse vect
+Vector natural logarithm
+.AT arth null lnk cse vect
+Vector logarithm base 10
+.AT arth null lnk cse vect
+Vector pow float
+.AT arth null lnk cse vect
+Vector pow float to integer
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow double to integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer
+.AT arth null lnk cse vect
+Vector reciprocal square root
+.AT arth null lnk cse vect
+Vector reciprocal
+.AT arth null lnk cse vect
+.AT store null trm vect
+.AT store null trm vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+.AT other null lnk vect
+Vector blend/select of lnk2 & lnk3. lnk1 is the mask, stc is the dtype
+.AT other null lnk cse vect
+Vector compare of lnk1 & lnk2. stc1 is the condition code, stc2 is the 
+bit-vector dtype
+.AT arth null lnk cse vect
+./tools/flang2/utils/ilitp/ppc64le/ilitp.n
+.SI vector lat(10)
+.SI vector lat(8)
+(used by llvect.c as a convenience).
+Single-precision divide - operands reversed (used by llvect.c
+Special ili created by the vectorizer indicating that the variable
+the vectorizer replaces assignments with calls.  The optimizer will process
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Vector dword integer compare; stc is the compare code;
+Vector qword integer compare; stc is the compare code;
+Vector compare of single precision values.  'stc' is comparison code.
+Vector compare of double precision values.  'stc' is comparison code.
+The execution mode will be selected by the compiler (gang/worker/vector/seq)
+.IL ACCVECTOR lnk lnk stc
+The iterations of the loop will be executed in vector mode on the accelerator
+Trip count is less than the maximum size of a vector operation
+(for vector schedule) or less than the maximum number of
+How long a vector to instantiate
+Control loop unrolling; the 3rd element tells whether it's the parallel, vector, or sequential loop to be unrolled
+Used in accelerator code, to generate an explicit 'vector' loop.
+Used in accelerator code, to end an explicit 'vector' loop.
+.AT cons null lnk cse vect
+For all vector ILI except VCON the last operand is the vector dtype
+.AT load null lnk vect
+.AT load null lnk vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+Vector divide where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector remainder where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Reinterpret the bits of a vector as if they were a different vector type.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector unsigned (logical) right shift by a scalar
+.AT arth null lnk cse vect
+Vector minimum
+.AT arth null lnk cse vect
+Vector maximum
+.AT arth null lnk cse vect
+Vector absolute value
+.AT arth null lnk cse vect
+Vector square root 
+.AT arth null lnk cse vect
+Vector cosine - final link is potential mask as it is
+.AT arth null lnk cse vect
+Vector sine
+.AT arth null lnk cse vect
+Vector sine-cosine
+.AT arth null lnk cse vect
+Vector arc sine
+.AT arth null lnk cse vect
+Vector arc cosine
+.AT arth null lnk cse vect
+Vector arctangent
+.AT arth null lnk cse vect
+Vector arctangent2
+.AT arth null lnk cse vect
+Vector tangent
+.AT arth null lnk cse vect
+Vector hyperbolic sine
+.AT arth null lnk cse vect
+Vector hyperbolic cosine
+.AT arth null lnk cse vect
+Vector hyperbolic tangent
+.AT arth null lnk cse vect
+Vector natural exponential
+.AT arth null lnk cse vect
+Vector natural logarithm
+.AT arth null lnk cse vect
+Vector logarithm base 10
+.AT arth null lnk cse vect
+Vector pow float
+.AT arth null lnk cse vect
+Vector pow float to integer
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow double to integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer
+.AT arth null lnk cse vect
+Vector reciprocal square root
+.AT arth null lnk cse vect
+Vector reciprocal
+.AT arth null lnk cse vect
+.AT store null trm vect
+.AT store null trm vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+.AT other null lnk vect
+Vector blend/select of lnk2 & lnk3. lnk1 is the mask, stc is the dtype
+.AT other null lnk cse vect
+Vector compare of lnk1 & lnk2. stc1 is the condition code, stc2 is the 
+bit-vector dtype
+.AT arth null lnk cse vect
+./tools/flang2/utils/ilitp/ppc64le/ilitp.n.orig
+// Indexed by opcode.  A vector is needed because "ILI template expansion"
+std::vector<processed_flags> processed;
+    else if (strcmp(attr[i], "vect") == 0)
+    else if (strcmp(attr[i], "vector") == 0)
+./tools/flang2/utils/ilitp/ilitp.cpp.orig
+// Indexed by opcode.  A vector is needed because "ILI template expansion"
+std::vector<processed_flags> processed;
+    else if (strcmp(attr[i], "vect") == 0)
+    else if (strcmp(attr[i], "vector") == 0)
+./tools/flang2/utils/ilitp/ilitp.cpp
+.SI vector lat(10)
+.SI vector lat(8)
+(used by llvect.c as a convenience).
+Single-precision divide - operands reversed (used by llvect.c
+Special ili created by the vectorizer indicating that the variable
+the vectorizer replaces assignments with calls.  The optimizer will process
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Vector dword integer compare; stc is the compare code;
+Vector qword integer compare; stc is the compare code;
+Vector compare of single precision values.  'stc' is comparison code.
+Vector compare of double precision values.  'stc' is comparison code.
+The execution mode will be selected by the compiler (gang/worker/vector/seq)
+.IL ACCVECTOR lnk lnk stc
+The iterations of the loop will be executed in vector mode on the accelerator
+Trip count is less than the maximum size of a vector operation
+(for vector schedule) or less than the maximum number of
+How long a vector to instantiate
+Control loop unrolling; the 3rd element tells whether it's the parallel, vector, or sequential loop to be unrolled
+Used in accelerator code, to generate an explicit 'vector' loop.
+Used in accelerator code, to end an explicit 'vector' loop.
+.AT cons null lnk cse vect
+For all vector ILI except VCON the last operand is the vector dtype
+.AT load null lnk vect
+.AT load null lnk vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+Vector divide where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector remainder where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Reinterpret the bits of a vector as if they were a different vector type.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector unsigned (logical) right shift by a scalar
+.AT arth null lnk cse vect
+Vector minimum
+.AT arth null lnk cse vect
+Vector maximum
+.AT arth null lnk cse vect
+Vector absolute value
+.AT arth null lnk cse vect
+Vector square root
+.AT arth null lnk cse vect
+Vector cosine - final link is potential mask as it is
+.AT arth null lnk cse vect
+Vector sine
+.AT arth null lnk cse vect
+Vector sine-cosine
+.AT arth null lnk cse vect
+Vector arc sine
+.AT arth null lnk cse vect
+Vector arc cosine
+.AT arth null lnk cse vect
+Vector arctangent
+.AT arth null lnk cse vect
+Vector arctangent2
+.AT arth null lnk cse vect
+Vector tangent
+.AT arth null lnk cse vect
+Vector hyperbolic sine
+.AT arth null lnk cse vect
+Vector hyperbolic cosine
+.AT arth null lnk cse vect
+Vector hyperbolic tangent
+.AT arth null lnk cse vect
+Vector natural exponential
+.AT arth null lnk cse vect
+Vector natural logarithm
+.AT arth null lnk cse vect
+Vector logarithm base 10
+.AT arth null lnk cse vect
+Vector pow float
+.AT arth null lnk cse vect
+Vector pow float to integer
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow double to integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer
+.AT arth null lnk cse vect
+Vector reciprocal square root
+.AT arth null lnk cse vect
+Vector reciprocal
+.AT arth null lnk cse vect
+.AT store null trm vect
+.AT store null trm vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+.AT other null lnk vect
+Vector blend/select of lnk2 & lnk3. lnk1 is the mask, stc is the dtype
+.AT other null lnk cse vect
+Vector compare of lnk1 & lnk2. stc1 is the condition code, stc2 is the dtype
+.AT arth null lnk cse vect
+./tools/flang2/utils/ilitp/aarch64/ilitp.n
+.SI vector lat(10)
+.SI vector lat(8)
+(used by llvect.c as a convenience).
+Single-precision divide - operands reversed (used by llvect.c
+Special ili created by the vectorizer indicating that the variable
+the vectorizer replaces assignments with calls.  The optimizer will process
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Vector dword integer compare; stc is the compare code;
+Vector qword integer compare; stc is the compare code;
+Vector compare of single precision values.  'stc' is comparison code.
+Vector compare of double precision values.  'stc' is comparison code.
+The execution mode will be selected by the compiler (gang/worker/vector/seq)
+.IL ACCVECTOR lnk lnk stc
+The iterations of the loop will be executed in vector mode on the accelerator
+Trip count is less than the maximum size of a vector operation
+(for vector schedule) or less than the maximum number of
+How long a vector to instantiate
+Control loop unrolling; the 3rd element tells whether it's the parallel, vector, or sequential loop to be unrolled
+Used in accelerator code, to generate an explicit 'vector' loop.
+Used in accelerator code, to end an explicit 'vector' loop.
+.AT cons null lnk cse vect
+For all vector ILI except VCON the last operand is the vector dtype
+.AT load null lnk vect
+.AT load null lnk vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+Vector divide where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector remainder where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Reinterpret the bits of a vector as if they were a different vector type.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector unsigned (logical) right shift by a scalar
+.AT arth null lnk cse vect
+Vector minimum
+.AT arth null lnk cse vect
+Vector maximum
+.AT arth null lnk cse vect
+Vector absolute value
+.AT arth null lnk cse vect
+Vector square root
+.AT arth null lnk cse vect
+Vector cosine - final link is potential mask as it is
+.AT arth null lnk cse vect
+Vector sine
+.AT arth null lnk cse vect
+Vector sine-cosine
+.AT arth null lnk cse vect
+Vector arc sine
+.AT arth null lnk cse vect
+Vector arc cosine
+.AT arth null lnk cse vect
+Vector arctangent
+.AT arth null lnk cse vect
+Vector arctangent2
+.AT arth null lnk cse vect
+Vector tangent
+.AT arth null lnk cse vect
+Vector hyperbolic sine
+.AT arth null lnk cse vect
+Vector hyperbolic cosine
+.AT arth null lnk cse vect
+Vector hyperbolic tangent
+.AT arth null lnk cse vect
+Vector natural exponential
+.AT arth null lnk cse vect
+Vector natural logarithm
+.AT arth null lnk cse vect
+Vector logarithm base 10
+.AT arth null lnk cse vect
+Vector pow float
+.AT arth null lnk cse vect
+Vector pow float to integer
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow double to integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer
+.AT arth null lnk cse vect
+Vector reciprocal square root
+.AT arth null lnk cse vect
+Vector reciprocal
+.AT arth null lnk cse vect
+.AT store null trm vect
+.AT store null trm vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+.AT other null lnk vect
+Vector blend/select of lnk2 & lnk3. lnk1 is the mask, stc is the dtype
+.AT other null lnk cse vect
+Vector compare of lnk1 & lnk2. stc1 is the condition code, stc2 is the dtype
+.AT arth null lnk cse vect
+./tools/flang2/utils/ilitp/aarch64/ilitp.n.orig
+.SI ld vector fst lat(10)
+.SI ld vector fst lat(10)
+.SI ld vector fadd fmul fstore lat(10)
+.SI ld vector fadd fmul fstore lat(10)
+.SI vector lat(10)
+.SI vector lat(8)
+(used by llvect.c as a convenience).
+Single-precision divide - operands reversed (used by llvect.c
+.SI vector lat(6:4)
+.SI vector fadd lat(5:4)
+.SI vector fadd lat(5:4)
+.SI vector fadd lat(5:4)
+Special ili created by the vectorizer indicating that the variable
+the vectorizer replaces assignments with calls.  The optimizer will process
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+.\" and are generated by llvect().
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+extension to 16 bytes.  E.g. llvect uses this followed by PI4SHUF to
+this is done in the preheader of a vectorised loop to initialise the
+zero extension to 16 bytes.  E.g. llvect uses this followed by
+register.  Typically this is done in the preheader of a vectorised
+Vector dword integer compare; stc is the compare code;
+Vector qword integer compare; stc is the compare code;
+Vector compare of single precision values.  'stc' is comparison code.
+Vector compare of double precision values.  'stc' is comparison code.
+The execution mode will be selected by the compiler (gang/worker/vector/seq)
+.IL ACCVECTOR lnk lnk stc
+The iterations of the loop will be executed in vector mode on the accelerator
+Second link is to the vector size expression, or to IL_NULL if not set.
+Trip count is less than the maximum size of a vector operation
+(for vector schedule) or less than the maximum number of
+How long a vector to instantiate.
+Second argument is the vector length expression.
+Control loop unrolling; the 3rd element tells whether it's the parallel, vector, or sequential loop to be unrolled
+3 to unroll vector loop, 0 to unroll the original loop.
+Used in accelerator code, to generate an explicit 'vector' loop.
+Used in accelerator code, to end an explicit 'vector' loop.
+.AT cons null lnk cse vect
+For all vector ILI except VCON the last operand is the vector dtype
+.AT load null lnk vect
+.AT load null lnk vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+Vector divide where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector remainder where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Reinterpret the bits of a vector as if they were a different vector type.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector unsigned (logical) right shift by a scalar
+.AT arth null lnk cse vect
+Vector minimum
+.AT arth null lnk cse vect
+Vector maximum
+.AT arth null lnk cse vect
+Vector absolute value
+.AT arth null lnk cse vect
+Vector square root
+.AT arth null lnk cse vect
+Vector cosine - final link is potential mask as it is
+.AT arth null lnk cse vect
+Vector sine
+.AT arth null lnk cse vect
+Vector sine-cosine
+.AT arth null lnk cse vect
+Vector arc sine
+.AT arth null lnk cse vect
+Vector arc cosine
+.AT arth null lnk cse vect
+Vector arctangent
+.AT arth null lnk cse vect
+Vector arctangent2
+.AT arth null lnk cse vect
+Vector tangent
+.AT arth null lnk cse vect
+Vector hyperbolic sine
+.AT arth null lnk cse vect
+Vector hyperbolic cosine
+.AT arth null lnk cse vect
+Vector hyperbolic tangent
+.AT arth null lnk cse vect
+Vector natural exponential
+.AT arth null lnk cse vect
+Vector natural logarithm
+.AT arth null lnk cse vect
+Vector logarithm base 10
+.AT arth null lnk cse vect
+Vector pow float lnk
+.AT arth null lnk cse vect
+Vector pow float to integer
+.AT arth null lnk cse vect
+Vector pow double to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow double to integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer
+.AT arth null lnk cse vect
+Vector reciprocal square root
+.AT arth null lnk cse vect
+Vector reciprocal
+.AT arth null lnk cse vect
+.AT store null trm vect
+.AT store null trm vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be 
+.AT other null lnk vect
+Vector blend/select of lnk2 & lnk3. lnk1 is the mask, stc is the dtype
+.AT other  null lnk cse vect
+Vector compare of lnk1 & lnk2. stc1 is the condition code, stc2 is the dtype
+.AT arth null lnk cse vect
+./tools/flang2/utils/ilitp/x86_64/ilitp.n
+.SI ld vector fst lat(10)
+.SI ld vector fst lat(10)
+.SI ld vector fadd fmul fstore lat(10)
+.SI ld vector fadd fmul fstore lat(10)
+.SI vector lat(10)
+.SI vector lat(8)
+(used by llvect.c as a convenience).
+Single-precision divide - operands reversed (used by llvect.c
+.SI vector lat(6:4)
+.SI vector fadd lat(5:4)
+.SI vector fadd lat(5:4)
+.SI vector fadd lat(5:4)
+Special ili created by the vectorizer indicating that the variable
+the vectorizer replaces assignments with calls.  The optimizer will process
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+XR_XMM0 or XR_XMM1) in preparation for call to vector intrinsic function.
+.\" and are generated by llvect().
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+Move 16-byte register 'stc' containing result of vector intrinsic function,
+extension to 16 bytes.  E.g. llvect uses this followed by PI4SHUF to
+this is done in the preheader of a vectorised loop to initialise the
+zero extension to 16 bytes.  E.g. llvect uses this followed by
+register.  Typically this is done in the preheader of a vectorised
+Vector dword integer compare; stc is the compare code;
+Vector qword integer compare; stc is the compare code;
+Vector compare of single precision values.  'stc' is comparison code.
+Vector compare of double precision values.  'stc' is comparison code.
+The execution mode will be selected by the compiler (gang/worker/vector/seq)
+.IL ACCVECTOR lnk lnk stc
+The iterations of the loop will be executed in vector mode on the accelerator
+Second link is to the vector size expression, or to IL_NULL if not set.
+Trip count is less than the maximum size of a vector operation
+(for vector schedule) or less than the maximum number of
+How long a vector to instantiate.
+Second argument is the vector length expression.
+Control loop unrolling; the 3rd element tells whether it's the parallel, vector, or sequential loop to be unrolled
+3 to unroll vector loop, 0 to unroll the original loop.
+Used in accelerator code, to generate an explicit 'vector' loop.
+Used in accelerator code, to end an explicit 'vector' loop.
+.AT cons null lnk cse vect
+For all vector ILI except VCON the last operand is the vector dtype
+.AT load null lnk vect
+.AT load null lnk vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+Vector divide where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector remainder where divide by zero does not fault.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Reinterpret the bits of a vector as if they were a different vector type.
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth comm lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+.AT arth null lnk cse vect
+Vector unsigned (logical) right shift by a scalar
+.AT arth null lnk cse vect
+Vector minimum
+.AT arth null lnk cse vect
+Vector maximum
+.AT arth null lnk cse vect
+Vector absolute value
+.AT arth null lnk cse vect
+Vector square root
+.AT arth null lnk cse vect
+Vector cosine - final link is potential mask as it is
+.AT arth null lnk cse vect
+Vector sine
+.AT arth null lnk cse vect
+Vector sine-cosine
+.AT arth null lnk cse vect
+Vector arc sine
+.AT arth null lnk cse vect
+Vector arc cosine
+.AT arth null lnk cse vect
+Vector arctangent
+.AT arth null lnk cse vect
+Vector arctangent2
+.AT arth null lnk cse vect
+Vector tangent
+.AT arth null lnk cse vect
+Vector hyperbolic sine
+.AT arth null lnk cse vect
+Vector hyperbolic cosine
+.AT arth null lnk cse vect
+Vector hyperbolic tangent
+.AT arth null lnk cse vect
+Vector natural exponential
+.AT arth null lnk cse vect
+Vector natural logarithm
+.AT arth null lnk cse vect
+Vector logarithm base 10
+.AT arth null lnk cse vect
+Vector pow float lnk
+.AT arth null lnk cse vect
+Vector pow float to integer
+.AT arth null lnk cse vect
+Vector pow double to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow float to integer*8
+.AT arth null lnk cse vect
+Vector pow float to scalar integer*8
+.AT arth null lnk cse vect
+Vector pow double to integer
+.AT arth null lnk cse vect
+Vector pow double to scalar integer
+.AT arth null lnk cse vect
+Vector reciprocal square root
+.AT arth null lnk cse vect
+Vector reciprocal
+.AT arth null lnk cse vect
+.AT store null trm vect
+.AT store null trm vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2+lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Vector FMA for LLVM intrinsic - -lnk1*lnk2-lnk3, with stc the dtype
+.AT arth null lnk cse vect
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be 
+.AT other null lnk vect
+Vector blend/select of lnk2 & lnk3. lnk1 is the mask, stc is the dtype
+.AT other  null lnk cse vect
+Vector compare of lnk1 & lnk2. stc1 is the condition code, stc2 is the dtype
+.AT arth null lnk cse vect
+./tools/flang2/utils/ilitp/x86_64/ilitp.n.orig
+  std::vector<ILI_data> ilis;
+  std::vector<std::string> ilmaux;
+  std::vector<int> ilmopnd;
+  std::vector<int> ilmtp;
+  std::vector<ILMO> ilmo;
+  std::vector<ILMO>::const_iterator found_ilmo;
+  std::vector<std::string> ilmtypes;
+  std::vector<std::string> names;
+  std::vector<ILMINFO> ilms;
+  ILMTPApp(const std::vector<std::string>& args)
+    for (std::vector<std::string>::const_iterator
+      for (std::vector<std::string>::const_iterator
+    for (std::vector<ILMO>::const_iterator it = ilmo.begin(), E = ilmo.end();
+  ILMTPApp app(std::vector<std::string>(argv, argv + argc));
+./tools/flang2/utils/ilmtp/ilmtp.cpp
+Vector 16-bit logical and
+corresponding vector ILM.
+stc2 - a bit vector:
+stc1 - attributes (bit vector):
+.IL VECTFUNC proc n lnk stc lnk*
+Call function which returns a vector
+stc  - the function's vector data type.
+Represents the address of a scalar component of a vector
+lnk  - base address of vector
+vector
+Represents the address of selecting multiple components from a vector
+lnk  - base address of vector
+sym  - component mask (int vector constant)
+stc  - result vector data type of the components
+Vector load.
+stc  - its vector data type
+Vector load (unaligned)
+stc  - its vector data type
+Vector divide where divide by zero does not fault.
+Vector remainder where divide by zero does not fault.
+Vector convert from vector
+Vector convert from scalar
+Reinterpret a vector object as if it were a different vector type (a.k.a. an
+lnk - the vector value to be reinterpreted
+stc1 - the vector dtype to convert to
+stc2 - the vector dtype being converted from, which is the type of lnk
+Vector >> by scalar
+Vector >> by vector
+Vector << by scalar
+Vector >> by scalar
+A generic vector comparison.  The result is a single boolean scalar.
+Element-wise vector comparison for equality.  The result is a vector.
+Element-wise vector comparison for inequality.  The result is a vector.
+Element-wise vector comparison for less-than.  The result is a vector.
+Element-wise vector comparison for greater-than.  The result is a vector.
+Element-wise vector comparison for less-equal.  The result is a vector.
+Element-wise vector comparison for greater-equal.  The result is a vector.
+Element-wise vector conditional operator.  The result is a vector where for
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+Vector store.
+stc  - its vector data type
+Vector store (unaligned)
+stc  - its vector data type
+of a threadprivate's vector.
+stc1 - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+./tools/flang2/utils/ilmtp/ppc64le/ilmtp.n.orig
+Vector 16-bit logical and
+corresponding vector ILM.
+stc2 - a bit vector:
+stc1 - attributes (bit vector):
+.IL VECTFUNC proc n lnk stc lnk*
+Call function which returns a vector
+stc  - the function's vector data type.
+Represents the address of a scalar component of a vector
+lnk  - base address of vector
+vector
+Represents the address of selecting multiple components from a vector
+lnk  - base address of vector
+sym  - component mask (int vector constant)
+stc  - result vector data type of the components
+Vector load.
+stc  - its vector data type
+Vector load (unaligned)
+stc  - its vector data type
+Vector divide where divide by zero does not fault.
+Vector remainder where divide by zero does not fault.
+Vector convert from vector
+Vector convert from scalar
+Reinterpret a vector object as if it were a different vector type (a.k.a. an
+lnk - the vector value to be reinterpreted
+stc1 - the vector dtype to convert to
+stc2 - the vector dtype being converted from, which is the type of lnk
+Vector >> by scalar
+Vector >> by vector
+Vector << by scalar
+Vector >> by scalar
+A generic vector comparison.  The result is a single boolean scalar.
+Element-wise vector comparison for equality.  The result is a vector.
+Element-wise vector comparison for inequality.  The result is a vector.
+Element-wise vector comparison for less-than.  The result is a vector.
+Element-wise vector comparison for greater-than.  The result is a vector.
+Element-wise vector comparison for less-equal.  The result is a vector.
+Element-wise vector comparison for greater-equal.  The result is a vector.
+Element-wise vector conditional operator.  The result is a vector where for
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+Vector store.
+stc  - its vector data type
+Vector store (unaligned)
+stc  - its vector data type
+of a threadprivate's vector.
+stc1 - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+./tools/flang2/utils/ilmtp/ppc64le/ilmtp.n
+stc4 - bit vector(unused): 
+./tools/flang2/utils/ilmtp/ppc64le/ilmtp_atomic.n
+Vector 16-bit logical and
+corresponding vector ILM.
+stc2 - a bit vector:
+stc1 - attributes (bit vector):
+.IL VECTFUNC proc n lnk stc lnk*
+Call function which returns a vector
+stc  - the function's vector data type.
+Represents the address of a scalar component of a vector
+lnk  - base address of vector
+vector
+Represents the address of selecting multiple components from a vector
+lnk  - base address of vector
+sym  - component mask (int vector constant)
+stc  - result vector data type of the components
+Vector load.
+stc  - its vector data type
+Vector load (unaligned)
+stc  - its vector data type
+Vector divide where divide by zero does not fault.
+Vector remainder where divide by zero does not fault.
+Vector convert from vector
+Vector convert from scalar
+Reinterpret a vector object as if it were a different vector type (a.k.a. an
+lnk - the vector value to be reinterpreted
+stc1 - the vector dtype to convert to
+stc2 - the vector dtype being converted from, which is the type of lnk
+Vector >> by scalar
+Vector >> by vector
+Vector << by scalar
+Vector >> by scalar
+A generic vector comparison.  The result is a single boolean scalar.
+Element-wise vector comparison for equality.  The result is a vector.
+Element-wise vector comparison for inequality.  The result is a vector.
+Element-wise vector comparison for less-than.  The result is a vector.
+Element-wise vector comparison for greater-than.  The result is a vector.
+Element-wise vector comparison for less-equal.  The result is a vector.
+Element-wise vector comparison for greater-equal.  The result is a vector.
+Element-wise vector conditional operator.  The result is a vector where for
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+Vector store.
+stc  - its vector data type
+Vector store (unaligned)
+stc  - its vector data type
+of a threadprivate's vector.
+stc1 - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+./tools/flang2/utils/ilmtp/aarch64/ilmtp.n.orig
+Vector 16-bit logical and
+corresponding vector ILM.
+stc2 - a bit vector:
+stc1 - attributes (bit vector):
+.IL VECTFUNC proc n lnk stc lnk*
+Call function which returns a vector
+stc  - the function's vector data type.
+Represents the address of a scalar component of a vector
+lnk  - base address of vector
+vector
+Represents the address of selecting multiple components from a vector
+lnk  - base address of vector
+sym  - component mask (int vector constant)
+stc  - result vector data type of the components
+Vector load.
+stc  - its vector data type
+Vector load (unaligned)
+stc  - its vector data type
+Vector divide where divide by zero does not fault.
+Vector remainder where divide by zero does not fault.
+Vector convert from vector
+Vector convert from scalar
+Reinterpret a vector object as if it were a different vector type (a.k.a. an
+lnk - the vector value to be reinterpreted
+stc1 - the vector dtype to convert to
+stc2 - the vector dtype being converted from, which is the type of lnk
+Vector >> by scalar
+Vector >> by vector
+Vector << by scalar
+Vector >> by scalar
+A generic vector comparison.  The result is a single boolean scalar.
+Element-wise vector comparison for equality.  The result is a vector.
+Element-wise vector comparison for inequality.  The result is a vector.
+Element-wise vector comparison for less-than.  The result is a vector.
+Element-wise vector comparison for greater-than.  The result is a vector.
+Element-wise vector comparison for less-equal.  The result is a vector.
+Element-wise vector comparison for greater-equal.  The result is a vector.
+Element-wise vector conditional operator.  The result is a vector where for
+Shuffle contents of vector registers. lnk1 and lnk2 can be the same vector
+unless lnk2 is null. stc is the result dtype, lnk3 is a vector constant
+concatenated <lnk1,lnk2> vector is to be placed in corresponding result
+field. lnk3 size must match the size of the result vector, but can be
+Vector store.
+stc  - its vector data type
+Vector store (unaligned)
+stc  - its vector data type
+of a threadprivate's vector.
+stc1 - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+./tools/flang2/utils/ilmtp/aarch64/ilmtp.n
+stc4 - bit vector(unused): 
+./tools/flang2/utils/ilmtp/aarch64/ilmtp_atomic.n
+Vector 16-bit logical and
+corresponding vector ILM.
+Fake vector load ILM for vector expander.  stc is really
+index into vector table.
+stc2 - a bit vector:
+stc1 - attributes (bit vector):
+.IL VECTFUNC proc n lnk stc lnk*
+Call function which returns a vector
+stc  - the function's vector data type.
+Represents the address of a scalar component of a vector
+lnk  - base address of vector
+stc2 - which component [0, n-1], where n is the number of components in the vector
+Represents the address of selecting multiple components from a vector
+lnk  - base address of vector
+sym  - component mask (int vector constant)
+stc  - result vector data type of the components
+Vector load.
+stc  - its vector data type
+Vector load (unaligned)
+stc  - its vector data type
+Vector divide where divide by zero does not fault.
+Vector remainder where divide by zero does not fault.
+Vector convert from vector
+Vector convert from scalar
+Vector >> by scalar
+Vector >> by vector
+Vector << by scalar
+Vector >> by scalar
+Vector store.
+stc  - its vector data type
+Vector store (unaligned)
+stc  - its vector data type
+of a threadprivate's vector.
+stc1 - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector
+./tools/flang2/utils/ilmtp/x86_64/ilmtp.n.orig
+Vector 16-bit logical and
+corresponding vector ILM.
+Fake vector load ILM for vector expander.  stc is really
+index into vector table.
+stc2 - a bit vector:
+stc1 - attributes (bit vector):
+.IL VECTFUNC proc n lnk stc lnk*
+Call function which returns a vector
+stc  - the function's vector data type.
+Represents the address of a scalar component of a vector
+lnk  - base address of vector
+stc2 - which component [0, n-1], where n is the number of components in the vector
+Represents the address of selecting multiple components from a vector
+lnk  - base address of vector
+sym  - component mask (int vector constant)
+stc  - result vector data type of the components
+Vector load.
+stc  - its vector data type
+Vector load (unaligned)
+stc  - its vector data type
+Vector divide where divide by zero does not fault.
+Vector remainder where divide by zero does not fault.
+Vector convert from vector
+Vector convert from scalar
+Vector >> by scalar
+Vector >> by vector
+Vector << by scalar
+Vector >> by scalar
+Vector store.
+stc  - its vector data type
+Vector store (unaligned)
+stc  - its vector data type
+of a threadprivate's vector.
+stc1 - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector:
+stc - bit vector
+./tools/flang2/utils/ilmtp/x86_64/ilmtp.n
+stc4 - bit vector(unused): 
+./tools/flang2/utils/ilmtp/x86_64/ilmtp_atomic.n
+  case LL_VECTOR:
+    /* Allow naturally sized vectors only. */
+/* Check if dtype is a vector register candidate. */
+check_vector_registers(LL_Module *module, DTYPE dtype)
+   * be passed in vector registers. */
+  case LL_VECTOR:
+   * elements to be passed in vector registers.
+  /* Check for vector register arguments, including homogeneous aggregrates. */
+  if ((haggr = check_vector_registers(abi->module, dtype))) {
+./tools/flang2/flang2exe/ppc64le-Linux/ll_abi.cpp
+    0,          /* vect: 0 = none:    num == vect item */
+./tools/flang2/flang2exe/ppc64le-Linux/flgdf.h.orig
+    0,          /* vect: 0 = none:    num == vect item */
+./tools/flang2/flang2exe/ppc64le-Linux/flgdf.h
+#define XR_NUM_REGS 8 /* only used in {hammer,llvm}/src/llvect.c */
+  const char mapbase;      /* offset in register bit vector where
+typedef struct {/* three -word bit-vector */
+./tools/flang2/flang2exe/ppc64le-Linux/machreg.h
+    CASERET(DW_AT_GNU_vector);
+./tools/flang2/flang2exe/dwarf_names.cpp
+ *    not -Mvect   (!flg.vect)
+  flg.debug && !flg.vect && !XBIT(34, 0x200) && !XBIT(123, 0x400)
+  int nest;       /* bit vector indicating the structures are present
+  int threadprivate_dtype; /* dtype record used for the vector of pointers
+./tools/flang2/flang2exe/semant.h.orig
+#define DW_AT_GNU_vector 0x2107
+./tools/flang2/flang2exe/dwarf2.h
+  LL_VECTOR,
+  LL_CallConv_X86_VectorCall = 80,
+   \brief LLVM IR Feature Vector.
+   IR versions are translated to a feature vector that controls the shape of the
+   generated IR. Code generation should always check the feature vector instead
+     \li \c LL_VECTOR   [0] = lane type, sub_elements = \#lanes
+LL_Type *ll_get_vector_type(LL_Type *type, unsigned num_elements);
+./tools/flang2/flang2exe/ll_structure.h
+ * hexadecimal constants can be promoted to vectors.
+./tools/flang2/flang2exe/semutil0.cpp
+    interr("eval_fvec: vector not impl", ilmx, ERR_Severe);
+./tools/flang2/flang2exe/exp_fvec.cpp
+      unsigned ignore : 1; /* used by hl vectorizer */
+./tools/flang2/flang2exe/ilt.h
+                        *   1 -- IL_VECT
+#define IL_VECT(i) ((ilis[i].attr >> 13) & 0x1)   /* Yields 1 or 0 */
+ * compiling comp.shared/llvm/src/llvect.c.  Delete it when possible.
+#define XBIT_VECTORABI_FOR_SCALAR XBIT(26,2)
+./tools/flang2/flang2exe/ili.h
+      unsigned vint : 1;  /* vectorial int (ST140) */
+              * record if vector
+#define RATA_VECT 5
+      unsigned vint : 1;   /* vectorial int (ST140) */
+              * record if vector
+./tools/flang2/flang2exe/regutil.h.orig
+      unsigned vint : 1;  /* vectorial int (ST140) */
+              * record if vector
+#define RATA_VECT 5
+      unsigned vint : 1;   /* vectorial int (ST140) */
+              * record if vector
+./tools/flang2/flang2exe/regutil.h
+ *     __<ftype><data type>_<name>_<vectlen><mask>
+ * <vectlen>   : 1 (scalar), 2, 4, 8, 16
+./tools/flang2/flang2exe/mth.h
+  case LL_VECTOR:
+compute_ir_feature_vector(LLVMModuleRef module, enum LL_IRVersion vers)
+  compute_ir_feature_vector(new_module, llvm_ir_version);
+  case LL_VECTOR:
+  \brief Get a vector type <tt> \<num x elem\> </tt>
+ll_get_vector_type(LL_Type *type, unsigned num_elements)
+  new_type.data_type = LL_VECTOR;
+  case LL_CallConv_X86_VectorCall:
+    return "x86_vectorcallcc";
+  case LL_VECTOR:
+./tools/flang2/flang2exe/ll_structure.cpp
+static int create_thread_private_vector(int, int);
+            tptr = create_thread_private_vector(newsptr, oldsptr);
+              tptr = create_thread_private_vector(psptr, oldsptr);
+              tptr = create_thread_private_vector(psptr, oldsptr);
+          tptr = create_thread_private_vector(sptr, 0);
+             * treadprivate vector will be generated when
+            tptr = create_thread_private_vector(sptr, 0);
+            tptr = create_thread_private_vector(psptr, 0);
+        tptr = create_thread_private_vector(common, 0);
+        /* Link the common block and its vector */
+create_thread_private_vector(int sptr, int host_tpsym)
+     * need to use its threadprivate vector which is also declared in
+     * avoid adding the vector to the gbl.threadprivate list; doing so
+  /* Add the vector to the gbl.threadprivate list */
+/* create the datatype for the vector of pointers,
+./tools/flang2/flang2exe/upper.cpp.orig
+ * LLVM: we want to simply pass vectors as arguments in LLVM.
+  /* Since this is LLVM, then we want to pass vectors by value and not as
+  if (DT_ISVECT(dtype)) {
+  case TY_VECT:
+  /* This is a single vector register. */
+       Also 256-bit vectors: <4 x double>, ...
+    arg->type = ll_get_vector_type(ltype, lanes);
+  if ((DT_ISSCALAR(dtype) && !DT_ISCMPLX(dtype)) || DT_ISVECT(dtype)) {
+  if ((DT_ISSCALAR(dtype) && !DT_ISCMPLX(dtype)) || DT_ISVECT(dtype)) {
+./tools/flang2/flang2exe/x86_64-Linux/ll_abi.cpp
+    0,          /* vect: 0 = none:    num == vect item */
+./tools/flang2/flang2exe/x86_64-Linux/flgdf.h.orig
+    0,          /* vect: 0 = none:    num == vect item */
+./tools/flang2/flang2exe/x86_64-Linux/flgdf.h
+ * LLVM: we want to simply pass vectors as arguments in LLVM.
+  /* Since this is LLVM, then we want to pass vectors by value and not as
+  if (DT_ISVECT(dtype)) {
+  case TY_VECT:
+  /* This is a single vector register. */
+       Also 256-bit vectors: <4 x double>, ...
+    arg->type = ll_get_vector_type(ltype, lanes);
+  if ((DT_ISSCALAR(dtype) && !DT_ISCMPLX(dtype)) || DT_ISVECT(dtype)) {
+  if ((DT_ISSCALAR(dtype) && !DT_ISCMPLX(dtype)) || DT_ISVECT(dtype)) {
+./tools/flang2/flang2exe/x86_64-Linux/ll_abi.cpp.orig
+#define XR_NUM_REGS     16    /* only used in {hammer,llvm}/src/llvect.c */
+#define XR_SAVE_FOR_ECG  8    /* if llvect is not generating code for entire
+  const char mapbase;      /* offset in register bit vector where
+typedef struct {/* three -word bit-vector */
+./tools/flang2/flang2exe/x86_64-Linux/machreg.h
+#ifndef DW_TAG_vector_type
+#define DW_TAG_vector_type 0x103
+lldbg_create_vector_type_mdnode(LL_DebugInfo *db, LL_MDRef context, ISZ_T sz,
+  /* vector types are marked as arrays in LLVM debug information. */
+      case TY_VECT: {
+        /* TODO: Check that vector datatype is what's expected by LLVM */
+        type_mdnode = lldbg_create_vector_type_mdnode(
+./tools/flang2/flang2exe/lldebug.cpp
+      case PR_ACCVECTOR:
+        s = "ACCVECTOR";
+./tools/flang2/flang2exe/ilmutil.cpp.orig
+       * vector and then add the offset of this member. The
+       *    vector[_mp_lcpu3()]
+       * the threadprivate's vector.  The indirection will be of the form:
+       *    vector[_mp_lcpu3()]
+    case PR_ACCVECTOR:
+./tools/flang2/flang2exe/exp_ftn.cpp
+      case PR_ACCVECTOR:
+        s = "ACCVECTOR";
+./tools/flang2/flang2exe/ilmutil.cpp
+char *make_math(MTH_FN fn, SPTR *fptr, int vectlen, bool mask, DTYPE res_dt, int nargs, int arg1_dt_, ...);
+char *make_math_name(MTH_FN fn, int vectlen, bool mask, DTYPE res_dt);
+char *make_math_name_vabi(MTH_FN fn, int vectlen, bool mask, DTYPE res_dt);
+DTYPE ili_get_vect_dtype(int ilix);
+int ili_get_vect_arg_count(int ilix);
+void llmk_math_name(char *buff, int fn, int vectlen, bool mask, DTYPE res_dt);
+./tools/flang2/flang2exe/iliutil.h
+   * Always add a 4th element to a  3-element vector constant
+static int vc0[TY_MAX + 1][TY_VECT_MAXLEN];
+static int vc1[TY_MAX + 1][TY_VECT_MAXLEN];
+static int vcm0[TY_MAX + 1][TY_VECT_MAXLEN];
+  int arrsize = (TY_MAX + 1) * TY_VECT_MAXLEN;
+/** \brief Get a vector constant of a zero which suits the element type.
+  INT v[TY_VECT_MAXLEN];
+ * get a vector constant of a one which suits the element type.
+  INT one, v[TY_VECT_MAXLEN];
+  INT v[TY_VECT_MAXLEN];
+ * get a vector constant by expanding a scalar
+  INT v[TY_VECT_MAXLEN];
+  case TY_VECT:
+    strcpy(b, "vector constant");
+./tools/flang2/flang2exe/symtab.cpp.orig
+static int savevectflag;
+  savevectflag = flg.vect;
+  /* Vectorizer settings */
+  int vect_val;
+  register_integer_arg(arg_parser, "vect", &vect_val, 0);
+  /* Vectorizer settings */
+  flg.vect |= vect_val;
+  if (flg.vect & 0x10)
+  if (flg.vect & 0x20)
+    flg.x[36] |= 0x1;  /* vcache is on the stack for -Mvect */
+  flg.vect = savevectflag;
+./tools/flang2/flang2exe/main.cpp
+  "shufflevector", "extractvalue", "insertvalue", "malloc", "free", "alloca",
+static char *vect_llvm_intrinsic_name(int);
+static const char *vect_power_intrinsic_name(int);
+static OPERAND *gen_resized_vect(OPERAND *, int, int);
+static OPERAND *gen_vect_compare_operand(int);
+cons_novectorize_metadata(void)
+  LL_MDRef loopVect;
+  lvcomp[0] = ll_get_md_string(cpu_llvm_module, "llvm.loop.vectorize.enable");
+  loopVect = ll_get_md_node(cpu_llvm_module, LL_PlainMDNode, lvcomp, 2);
+  ll_extend_md_node(cpu_llvm_module, rv, loopVect);
+cons_vectorize_metadata(void)
+  lvcomp[0] = ll_get_md_string(cpu_llvm_module, "llvm.loop.vectorize.enable");
+        int opndCount = ili_get_vect_arg_count(call->ilix);
+        DEBUG_ASSERT(retTy->data_type == LL_VECTOR, "vector type expected");
+    // For llvm intrinsics, convert any parameter vectors with 64 overall bits 
+        if(is_vector_x86_mmx(abi->arg[i].type)) {
+    LL_MDRef vectorize = cons_vectorize_metadata();
+    ll_extend_md_node(cpu_llvm_module, md, vectorize);
+          LL_MDRef loop_md = cons_novectorize_metadata();
+   * similar code in llvect.c, cgoptim1.c, and llvm's cgmain.c & llvect.c
+  DTYPE vect_dtype;
+  int vect_size;
+  vect_dtype = ILI_DTyOPND(ilix, 3);
+  vect_size = DTyVecLength(vect_dtype);
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+    if (vect_size != 2 && vect_size != 4 && vect_size != 8 && vect_size != 16)
+    if (vect_size != 4 && vect_size != 8 && vect_size != 16)
+  type_size = zsize_of(DTySeqTyElement(vect_dtype)) * 8;
+  sprintf(buf, "@llvm.%s.v%d%c%d", mstr, vect_size, type, type_size);
+  return gen_call_to_builtin(ilix, buf, op1, make_lltype_from_dtype(vect_dtype),
+  DTYPE vect_dtype;
+  int vect_size; /* number of elements per vector */
+  vect_dtype = ILI_DTyOPND(ilix, 3);
+  vect_size = DTyVecLength(vect_dtype);
+  if (vect_size != 2 && vect_size != 4)
+  if (vect_size == 2)
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+  type_size = zsize_of(DTySeqTyElement(vect_dtype)) * 8;
+  return gen_call_to_builtin(ilix, buf, op1, make_lltype_from_dtype(vect_dtype),
+  DTYPE vect_dtype;
+  int vect_size;
+  vect_dtype = (DTYPE)ILI_OPND(ilix, 3);
+  vect_size = DTyVecLength(vect_dtype);
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+    if (vect_size != 2 && vect_size != 4)
+    if (vect_size != 4 && vect_size != 8)
+  type_size = zsize_of(DTySeqTyElement(vect_dtype)) * 8;
+  sprintf(buf, "@llvm.arm.neon.%s%c.v%d%c%d", mstr, sign, vect_size, type,
+  return gen_call_to_builtin(ilix, buf, op1, make_lltype_from_dtype(vect_dtype),
+      DTYPE vect_dtype = DT_NONE;
+      vect_dtype = ili_get_vect_dtype(ilix);
+      if (vect_dtype) {
+        store_flags = ldst_instr_flags_from_dtype(vect_dtype);
+        if ((DTyVecLength(vect_dtype) == 3) && (ILI_OPC(ilix) == IL_VST)) {
+          v4_llt = make_lltype_sz4v3_from_dtype(vect_dtype);
+          switch (zsize_of(vect_dtype)) {
+            if (DTyVecLength(vect_dtype) != 3)
+        if (vect_dtype) {
+            LL_Type *ty = make_lltype_from_dtype(vect_dtype);
+      if (vect_dtype) {
+          llt_expected = make_ptr_lltype(make_lltype_from_dtype(vect_dtype));
+  DTYPE vect_dtype;
+  vect_dtype = ili_get_vect_dtype(ilix);
+  if (vect_dtype) {
+    llt = make_lltype_from_dtype(vect_dtype);
+    switch (DTY(DTySeqTyElement(vect_dtype))) {
+      if (DT_ISUNSIGNED(DTySeqTyElement(vect_dtype)))
+  INT v[TY_VECT_MAXLEN];
+  INT v[TY_VECT_MAXLEN];
+ * into vector operand <vop>
+gen_insert_vector(OPERAND *vop, OPERAND *sop, int idx)
+ * from vector operand <vop>
+gen_extract_vector(OPERAND *vop, int idx)
+  assert(vop->ll_type->data_type == LL_VECTOR,
+         "gen_extract_vector(): vector type expected for operand\n",
+   \brief Create a new vector
+   vectors to 4 element vectors and vice-versa.
+   Let's assume \p vop is a vector of 4 floats and \p new_size is 3.  This will
+   %0 = shufflevector <4 x float> %vop, <4 x float> undef,
+   This will build a vector of 3 floats with 3 first elements from \p vop.
+gen_resized_vect(OPERAND *vop, int new_size, int start)
+  INT v[TY_VECT_MAXLEN];
+  assert(vop->ll_type->data_type == LL_VECTOR, "expecting vector type",
+  llt = ll_get_vector_type(vop->ll_type->sub_types[0], new_size);
+        get_vcon0_n(get_vector_dtype(DT_INT, new_size), start, new_size));
+        gen_imask(get_vcon(v, get_vector_dtype(DT_INT, new_size)));
+gen_scalar_to_vector_helper(int ilix, int from_ili, LL_Type *ll_vecttype)
+  operand = make_tmp_op(ll_vecttype, make_tmps());
+  undefop = make_undef_op(ll_vecttype);
+  arg = gen_llvm_expr(from_ili, ll_vecttype->sub_types[0]);
+  Curr_Instr->operands = gen_insert_vector(undefop, arg, 0);
+  Curr_Instr->operands->next = make_undef_op(ll_vecttype);
+      get_vector_dtype(DT_INT, ll_vecttype->sub_elements)));
+ * Create a vector from a scalar value represented by 'ilix'
+ * Let's assume ilix needs to be promoted to a vector of 4 floats
+ * %1 = shufflevector <4 x float> %0, <4 x float> undef, <4 x i32> <i32 0, i32
+gen_scalar_to_vector(int ilix, LL_Type *ll_vecttype)
+  return gen_scalar_to_vector_helper(ilix, from_ili, ll_vecttype);
+gen_scalar_to_vector_no_shuffle(int ilix, LL_Type *ll_vecttype)
+  OPERAND *undefop = make_undef_op(ll_vecttype);
+  OPERAND *arg = gen_llvm_expr(from_ili, ll_vecttype->sub_types[0]);
+  OPERAND *operand = gen_insert_vector(undefop, arg, 0);
+gen_temp_to_vector(int from_ili, LL_Type *ll_vecttype)
+  return gen_scalar_to_vector_helper(ilix, from_ili, ll_vecttype);
+gen_convert_vector(int ilix)
+  assert(ll_dst->data_type == LL_VECTOR,
+         "gen_convert_vector(): vector type expected for dst",
+  assert(ll_src->data_type == LL_VECTOR,
+         "gen_convert_vector(): vector type expected for src",
+    assert(0, "gen_convert_vector(): unhandled vector type for dst",
+  assert(0, "gen_convert_vector(): unhandled vector type for src",
+gen_bitcast_vector(int ilix)
+  assert(ll_src->data_type == LL_VECTOR,
+         "gen_bitcast_vector(): source type is not a vector", ll_src->data_type,
+  assert(ll_dst->data_type == LL_VECTOR,
+         "gen_bitcast_vector(): destination type is not a vector",
+  DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+  assert(vect_dtype,
+         "gen_binary_vexpr(): called with non vector type for ilix ", ilix,
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+    assert(0, "gen_binary_vexpr(): vector type not yet handled for ilix ", ilix,
+x86_promote_to_vector(LL_Type *eTy, LL_Type *vTy, OPERAND *op)
+  op1 = gen_insert_vector(undefop, gen_copy_op(op), 0);
+  op1->next = x86_promote_to_vector(eTy, vTy, next);
+  vTy = ll_get_vector_type(llTy, (isSinglePrec ? 4 : 2));
+  l_l = x86_promote_to_vector(llTy, vTy, l_l);
+  fmaop = gen_extract_vector(fmaop, 0);
+  int vect_type;
+  DTYPE vect_dtype = DT_NONE;
+  /* handle conditional vectorization  where we want the inverse mask -
+    vect_dtype = ili_get_vect_dtype(lhs_ili);
+    num_elem = DTyVecLength(vect_dtype);
+    switch (DTySeqTyElement(vect_dtype)) {
+      vdt = get_vector_dtype(ones_dtype, num_elem);
+      vdt = get_vector_dtype(ones_dtype, num_elem);
+      assert(0, "Unexpected dtype for VNOT", DTySeqTyElement(vect_dtype),
+    mask_type = ll_get_vector_type(bit_type, num_elem);
+      vect_dtype = ili_get_vect_dtype(ilix);
+      switch (DTY(DTySeqTyElement(vect_dtype))) {
+      vect_dtype = ILI_DTyOPND(ilix, 2);
+      lhs_ili = ad1ili(IL_VCON, get_vconm0(vect_dtype));
+      vect_type = DTY(DTySeqTyElement(vect_dtype));
+  vect_dtype = ili_get_vect_dtype(ilix);
+  if (vect_dtype) {
+    instr_type = make_lltype_from_dtype(vect_dtype);
+        gen_temp_to_vector(rhs_ili, make_vtype(DTySeqTyElement(vect_dtype),
+                                               DTyVecLength(vect_dtype)));
+  kind1 = (ty1->data_type == LL_VECTOR) ? ty1->sub_types[0]->data_type
+  kind2 = (ty2->data_type == LL_VECTOR) ? ty2->sub_types[0]->data_type
+  if (ty1->data_type == LL_VECTOR) {
+  if (ty2->data_type == LL_VECTOR) {
+  if (ty1->data_type != LL_VECTOR) {
+  if (ty2->data_type != LL_VECTOR) {
+  vdtype = ili_get_vect_dtype(ilix);
+gen_vsincos_return_type(LL_Type *vecTy)
+  LL_Type *elements[2] = {vecTy, vecTy};
+  const DTYPE dtype = ili_get_vect_dtype(ilix);
+  LL_Type *vecTy = make_lltype_from_dtype(dtype);
+  DTYPE dtypeName = (vecTy->sub_types[0] == floatTy) ? DT_FLOAT : DT_DBLE;
+  LL_Type *retTy = gen_vsincos_return_type(vecTy);
+  OPERAND *opnd = gen_llvm_expr(ILI_OPND(ilix, 1), vecTy);
+  int vecLen = vecTy->sub_elements;
+  int opndCount = ili_get_vect_arg_count(ilix);
+      opnd->next = gen_llvm_expr(mask_arg_ili, vecTy);
+    LL_Type *llt, *vect_lltype, *int_llt = NULL;
+    DTYPE vect_dtype = ILI_DTyOPND(ilix, 3);
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+    llt = make_ptr_lltype(vect_lltype);
+    if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+        (llt->sub_types[0]->data_type == LL_VECTOR) &&
+      LL_Type *vTy = ll_get_vector_type(veleTy, 4);
+    switch (zsize_of(vect_dtype)) {
+                          (MSZ)-2, ldst_instr_flags_from_dtype(vect_dtype));
+    if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+        if (int_llt && (zsize_of(vect_dtype) == 4))
+          operand = make_bitcast(operand, vect_lltype);
+    LL_Type *llt, *vect_lltype, *int_llt = NULL;
+    DTYPE vect_dtype = ILI_DTyOPND(ilix, 3);
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+    llt = make_ptr_lltype(vect_lltype);
+    if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+        (llt->sub_types[0]->data_type == LL_VECTOR) &&
+      LL_Type *vTy = ll_get_vector_type(veleTy, 4);
+    if (vect_lltype->sub_elements != 3) {
+      if (vect_lltype->sub_elements != 3) {
+        switch (zsize_of(vect_dtype)) {
+          if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+      } else if (vect_lltype->sub_elements == 3 && expected_type &&
+        operand = gen_resized_vect(operand, ll_type_bytes(expected_type), 0);
+    if (expected_type && expected_type->data_type == LL_VECTOR &&
+        if (int_llt && (zsize_of(vect_dtype) == 4))
+          operand = make_bitcast(operand, vect_lltype);
+     * what is done with the IL_FAND case, except with vectors.
+    dtype = (DTYPE)ILI_OPND(ilix, 3); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+    dtype = (DTYPE)ILI_OPND(ilix, 3); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+    operand = gen_convert_vector(ilix);
+    operand = gen_bitcast_vector(ilix);
+    operand = gen_scalar_to_vector(
+    intrinsic_name = vect_llvm_intrinsic_name(ilix);
+                      make_lltype_from_dtype(ili_get_vect_dtype(ilix))),
+    intrinsic_name = vect_llvm_intrinsic_name(ilix);
+                      make_lltype_from_dtype(ili_get_vect_dtype(ilix))),
+        make_lltype_from_dtype(ili_get_vect_dtype(ilix)), NULL, I_PICALL);
+    dtype = ili_get_vect_dtype(ilix); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+      assert(false, "gen_llvm_expr(): unexpected vector size", vsize,
+    dtype = ili_get_vect_dtype(ilix); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+      assert(false, "gen_llvm_expr(): unexpected vector size", vsize,
+    intrinsic_name = vect_llvm_intrinsic_name(ilix);
+    intrinsic_type = make_lltype_from_dtype(ili_get_vect_dtype(ilix));
+    LL_Type *vecTy = make_lltype_from_dtype(ili_get_vect_dtype(ilix));
+      LL_Type *retTy = gen_vsincos_return_type(vecTy);
+      operand = gen_llvm_select_vsincos(op, vecTy, retTy, (opc == IL_VCOS));
+      // standard call to vector sin (or vector cos)
+      OPERAND *opnd = gen_llvm_expr(ILI_OPND(ilix, 1), vecTy);
+      char *name = vect_llvm_intrinsic_name(ilix);
+      operand = gen_call_llvm_intrinsic(name, opnd, vecTy, NULL, I_PICALL);
+    DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+    llTy = make_lltype_from_dtype(vect_dtype);
+         and extract from vectors */
+      OPERAND *op1 = gen_scalar_to_vector_no_shuffle(ilix, vTy);
+      operand = gen_extract_vector(op2, 0);
+         and extract from vectors */
+      OPERAND *op1 = gen_scalar_to_vector(ilix, vTy);
+      operand = gen_extract_vector(op2, 0);
+    LL_Type *vect_lltype, *int_type, *op_lltype;
+    DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+    /* LLVM shufflevector instruction has a mask whose selector takes
+     * the concatenation of two vectors and numbers the elements as
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+    op_lltype = make_lltype_from_dtype(ili_get_vect_dtype(lhs_ili));
+    if (vect_lltype->sub_elements != op1->next->next->ll_type->sub_elements) {
+             vect_lltype->sub_elements, ERR_Severe);
+    operand = ad_csed_instr(I_SHUFFVEC, ilix, vect_lltype, op1,
+    LL_Type *vect_lltype, *int_type, *select_type, *op1_subtype,
+    DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+      op1 = gen_vect_compare_operand(mask_ili);
+      num_elem = DTyVecLength(vect_dtype);
+      select_type = ll_get_vector_type(int_type, num_elem);
+      num_elem = DTyVecLength(vect_dtype);
+      select_type = ll_get_vector_type(int_type, num_elem);
+      asrt(op1->ll_type->data_type == LL_VECTOR);
+          vdt = get_vector_dtype(DT_FLOAT, num_elem);
+          vdt = get_vector_dtype(DT_DBLE, num_elem);
+        /* type of the compare is the operands: convert from vect_dtype  */
+        compare_ll_type = make_lltype_from_dtype(vect_dtype);
+    op1->next = gen_llvm_expr(lhs_ili, vect_lltype);
+    op1->next->next = gen_llvm_expr(rhs_ili, vect_lltype);
+    operand = ad_csed_instr(I_SELECT, ilix, vect_lltype, op1,
+    operand = gen_vect_compare_operand(ilix);
+      expected_type = operand->ll_type; /* turn into bit-vector */
+      if ((operand->ll_type->data_type == LL_VECTOR) &&
+          (expected_type->data_type == LL_VECTOR) &&
+        operand = gen_resized_vect(operand, expected_type->sub_elements, 0);
+gen_vect_compare_operand(int mask_ili)
+  DTYPE vect_dtype, elem_dtype;
+         "gen_vect_compare_operand(): expected vector compare", mask_opc,
+  vect_dtype = ili_get_vect_dtype(mask_ili);
+  elem_dtype = DTySeqTyElement(vect_dtype);
+  num_elem = DTyVecLength(vect_dtype);
+  instr_type = ll_get_vector_type(int_type, num_elem);
+  compare_ll_type = make_lltype_from_dtype(vect_dtype);
+    assert(false, "gen_vect_compare_operand(): unsupported dtype", elem_dtype,
+  /* type of the instruction is a bit-vector: use instr_type */
+} /* gen_vect_compare_operand */
+vect_llvm_intrinsic_name(int ilix)
+  assert(IL_VECT(opc), "vect_llvm_intrinsic_name(): not vect ili", ilix,
+  dtype = ili_get_vect_dtype(ilix);
+  assert(DTY(dtype) == TY_VECT, "vect_llvm_intrinsic_name(): not vect dtype",
+    assert(0, "vect_llvm_intrinsic_name(): unhandled opc", opc, ERR_Fatal);
+    assert(0, "vect_llvm_intrinsic_name(): unhandled type", type, ERR_Fatal);
+} /* vect_llvm_intrinsic_name */
+    operand->ll_type = make_vector_lltype(vsize, op_type);
+           VECTOR_DTYPE(DTYPEG(sptr)))
+  DTYPE vect_dtype;
+  vect_dtype = get_vector_dtype(dtype, sz);
+  return make_lltype_from_dtype(vect_dtype);
+  } else if (ty1->data_type == LL_PTR && ty2->data_type == LL_VECTOR &&
+  if (dtype && DTY(dtype) == TY_VECT)
+bool is_vector_x86_mmx(LL_Type *type) {
+  /* Check if type is a vector with 64 bits overall. Works on pointer types. */
+  if(t->data_type == LL_VECTOR &&
+./tools/flang2/flang2exe/cgmain.cpp.orig
+    if (flg.opt >= 3 || flg.vect & 16)
+      dt = ili_get_vect_dtype(expr);
+           * vector and then add the offset of this member. The
+           *    vector[_mp_lcpu3()]
+           * indirection using the threadprivate's vector.  The
+           *    vector[_mp_lcpu3()]
+       * vector and then add the offset of this member. The
+       *    vector[_mp_lcpu3()]
+       * the threadprivate's vector.  The indirection will be of the form:
+       *    vector[_mp_lcpu3()]
+ * Generate an indirection using the threadprivate common's vector and
+ *    vector[_mp_lcpu3()] + offset(member)
+  SPTR vector;
+  /* compute the base address of vector */
+  vector = MIDNUMG(cmsym);
+  /* at this point, vector locates the common block */
+  vector = MIDNUMG(vector);
+  basenm = addnme(NT_VAR, vector, 0, (INT)0);
+  ili1 = ad_acon(vector, (INT)0);
+    /* compute the base address of vector */
+    vector = MIDNUMG(cmsym);
+    /* at this point, vector locates the common block */
+    vector = MIDNUMG(vector);
+    basenm = addnme(NT_VAR, vector, 0, (INT)0);
+    ili1 = ad_acon(vector, (INT)0);
+    ili1 = llGetThreadprivateAddr(vector);
+ * Generate an indirection using the threadprivate's vector.  The actual
+ *    vector[_mp_lcpu3()]
+  SPTR vector;
+  /* compute the base address of vector */
+  vector = MIDNUMG(cmsym);
+  basenm = addnme(NT_VAR, vector, 0, (INT)0);
+  ili1 = ad_acon(vector, (INT)0);
+    vector = MIDNUMG(cmsym);
+    basenm = addnme(NT_VAR, vector, 0, 0);
+    ili1 = ad_acon(vector, (INT)0);
+    ili1 = llGetThreadprivateAddr(vector);
+     * for a f90 pointer, subscripting of the TP vector gives the address
+./tools/flang2/flang2exe/expand.cpp
+ * hexadecimal constants can be promoted to vectors.
+./tools/flang2/flang2exe/semutil0.cpp.orig
+  NOVECTORIZE
+./tools/flang2/flang2exe/CMakeLists.txt
+                            * llvect.
+      unsigned vcand : 1;      /* bih is the head of a vector candidate loop */
+                  /*     used in hlvect to link bih's */
+./tools/flang2/flang2exe/bih.h
+ *    not -Mvect   (!flg.vect)
+  flg.debug && !flg.vect && !XBIT(34, 0x200) && !XBIT(123, 0x400)
+  int nest;       /* bit vector indicating the structures are present
+  int threadprivate_dtype; /* dtype record used for the vector of pointers
+./tools/flang2/flang2exe/semant.h
+#ifndef DW_TAG_vector_type
+#define DW_TAG_vector_type 0x103
+lldbg_create_vector_type_mdnode(LL_DebugInfo *db, LL_MDRef context, ISZ_T sz,
+  /* vector types are marked as arrays in LLVM debug information. */
+      case TY_VECT: {
+        /* TODO: Check that vector datatype is what's expected by LLVM */
+        type_mdnode = lldbg_create_vector_type_mdnode(
+./tools/flang2/flang2exe/lldebug.cpp.orig
+bool is_vector_x86_mmx(LL_Type *);
+./tools/flang2/flang2exe/cgmain.h
+  /** Number of floating point / vector registers used. */
+                   bool return_vector_as_struct);
+LL_Type *make_vector_lltype(int size, LL_Type *pts_to);
+./tools/flang2/flang2exe/llutil.h
+   (i.e., by the vectorizer).  An argument to the current function must be
+./tools/flang2/flang2exe/exp_rte.cpp
+  case TY_VECT:
+  case TY_VECT:
+  case TY_VECT:
+get_vector_dtype(DTYPE dtype, int n)
+    vecdt = get_type(3, TY_VECT, dtype);
+    case TY_VECT:
+  case TY_VECT:
+    fprintf(outfile, "vect   dtype=%3d   n =%2" ISZ_PF "d\n        ",
+  case TY_VECT: {
+./tools/flang2/flang2exe/dtypeutl.cpp
+  putnzint("flg.vect", mlg.vect);
+  mlg.vect = 0;
+  case TY_VECT:
+    r = appendstring1("vect");
+  case TY_VECT:
+./tools/flang2/flang2exe/mwd.cpp.orig
+                        *   1 -- IL_VECT
+#define IL_VECT(i) ((ilis[i].attr >> 13) & 0x1)   /* Yields 1 or 0 */
+ * compiling comp.shared/llvm/src/llvect.c.  Delete it when possible.
+#define XBIT_VECTORABI_FOR_SCALAR XBIT(26,2)
+./tools/flang2/flang2exe/ili.h.orig
+    {0, 0, 0, 0, 0, 0},                   /*  VECT  */
+   xmm regs are used by the vectorizer.
+./tools/flang2/flang2exe/machreg.cpp
+       * vector and then add the offset of this member. The
+       *    vector[_mp_lcpu3()]
+       * the threadprivate's vector.  The indirection will be of the form:
+       *    vector[_mp_lcpu3()]
+    case PR_ACCVECTOR:
+./tools/flang2/flang2exe/exp_ftn.cpp.orig
+    IL_KRDF, 0,       /* RATA_KR   , RATA_VECT */
+    IL_MVKR, 0,       /* RATA_KR   , RATA_VECT */
+    if (RCAND_RTYPE(candl) != RATA_VECT)
+  candl = reg[RATA_VECT].rcand;
+    fprintf(gbl.dbgfil, "\n*****  VECT Candidates  *****\n");
+  if (RAT_RTYPE(rat) != RATA_VECT)
+  rtype = RATA_VECT;
+        interr("endrcand: unexpected atype for RATA_VECT", RCAND_ATYPE(cand),
+    {'v', "va", DT_NONE, 0, 0, -1},   /* 8: vector temps */
+    if (IL_VECT(ILI_OPC(ili))) {
+      RCAND_MSIZE(rcand) = ili_get_vect_dtype(ili);
+      rtype = RCAND_RTYPE(rcand) = RATA_VECT;
+    if (IL_VECT(ILI_OPC(ili))) {
+      DTYPE dt = ili_get_vect_dtype(ili);
+./tools/flang2/flang2exe/regutil.cpp
+  return ll_get_vector_type(base_type, num_elements);
+  case TY_VECT:
+    return ll_get_vector_type(subtype, DTyVecLength(dtype));
+llis_vector_kind(DTYPE dtype)
+  return (DTY(dtype) == TY_VECT);
+               bool return_vector_as_struct)
+  case TY_VECT:
+    return return_vector_as_struct;
+make_vector_lltype(int size, LL_Type *pts_to)
+  return ll_get_vector_type(pts_to, size);
+  } else if (llis_vector_kind(sdtype)) {
+    DBGTRACE1("#setting dtype %d for vector type", sdtype)
+set_vect3_to_size4(LL_Type *ll_type)
+    ll_type = ll_get_array_type(set_vect3_to_size4(ll_type->sub_types[0]),
+  case LL_VECTOR:
+      ll_type = ll_get_vector_type(ll_type->sub_types[0], 4);
+    ll_type = ll_get_pointer_type(set_vect3_to_size4(ll_type->sub_types[0]));
+  return set_vect3_to_size4(llt);
+  return set_vect3_to_size4(llt);
+  case LL_VECTOR:
+    else if (p->ll_type->data_type == LL_VECTOR) {
+      assert(p->ll_type->data_type == LL_VECTOR, "expected vector",
+  if (DTY(dtype) == TY_VECT) {
+  case LL_VECTOR:
+./tools/flang2/flang2exe/llutil.cpp
+  /* Vector types just need matching sizes. Elements don't need to match. */
+  if (ha->base_type->data_type == LL_VECTOR && llt->data_type == LL_VECTOR)
+  case LL_VECTOR:
+    /* Only 64-bit or 128-bit vectors supported. */
+./tools/flang2/flang2exe/aarch64-Linux/ll_abi.cpp
+    0,          /* vect: 0 = none:    num == vect item */
+./tools/flang2/flang2exe/aarch64-Linux/flgdf.h
+#define XR_NUM_REGS 8 /* only used in {hammer,llvm}/src/llvect.c */
+  const char mapbase;      /* offset in register bit vector where
+typedef struct {/* three -word bit-vector */
+./tools/flang2/flang2exe/aarch64-Linux/machreg.h
+ *     __<ftype><data type>_<name>_<vectlen><mask>
+ * <vectlen>   : 1 (scalar), 2, 4, 8, 16
+./tools/flang2/flang2exe/mth.h.orig
+DTYPE get_vector_dtype(DTYPE dtype, int n);
+./tools/flang2/flang2exe/dtypeutl.h
+#define VECTOR_DTYPE(d) ((DTY(d)) == TY_VECT)
+./tools/flang2/flang2exe/cgllvm.h
+    case LL_VECTOR:
+./tools/flang2/flang2exe/llsched.cpp
+   (i.e., by the vectorizer).  An argument to the current function must be
+./tools/flang2/flang2exe/exp_rte.cpp.orig
+  return ll_get_vector_type(base_type, num_elements);
+  case TY_VECT:
+    return ll_get_vector_type(subtype, DTyVecLength(dtype));
+llis_vector_kind(DTYPE dtype)
+  return (DTY(dtype) == TY_VECT);
+               bool return_vector_as_struct)
+  case TY_VECT:
+    return return_vector_as_struct;
+make_vector_lltype(int size, LL_Type *pts_to)
+  return ll_get_vector_type(pts_to, size);
+  } else if (llis_vector_kind(sdtype)) {
+    DBGTRACE1("#setting dtype %d for vector type", sdtype)
+set_vect3_to_size4(LL_Type *ll_type)
+    ll_type = ll_get_array_type(set_vect3_to_size4(ll_type->sub_types[0]),
+  case LL_VECTOR:
+      ll_type = ll_get_vector_type(ll_type->sub_types[0], 4);
+    ll_type = ll_get_pointer_type(set_vect3_to_size4(ll_type->sub_types[0]));
+  return set_vect3_to_size4(llt);
+  return set_vect3_to_size4(llt);
+  case LL_VECTOR:
+    else if (p->ll_type->data_type == LL_VECTOR) {
+      assert(p->ll_type->data_type == LL_VECTOR, "expected vector",
+  if (DTY(dtype) == TY_VECT) {
+  case LL_VECTOR:
+./tools/flang2/flang2exe/llutil.cpp.orig
+  LL_VECTOR,
+  LL_CallConv_X86_VectorCall = 80,
+   \brief LLVM IR Feature Vector.
+   IR versions are translated to a feature vector that controls the shape of the
+   generated IR. Code generation should always check the feature vector instead
+     \li \c LL_VECTOR   [0] = lane type, sub_elements = \#lanes
+LL_Type *ll_get_vector_type(LL_Type *type, unsigned num_elements);
+./tools/flang2/flang2exe/ll_structure.h.orig
+  SPTR sptr; ///< either base sptr or TPpxxx thread private common block vector
+/* This is thread private so obtain address from the TP vector */
+         * its MIDNUM locates the variable's thread pointer vector
+       * MIDNUM locates the variable's thread pointer vector and
+    /* false: Because we want to always use the vector/cache (tpv)
+     * variable's thread pointer vector */
+       * _kmpc_threadprivate_cached(&cmn_block, &cmn_vector, size(cmn_block))
+  int adr_vector;
+  adr_vector = ad_acon(sym, 0); /* &cmn_vector/tp_vector */
+      tili = _make_mp_get_threadprivate(adr_cm, size, adr_vector);
+      *tmpthr = ad3ili(IL_STA, tili, adr_vector, addnme(NT_VAR, sym, 0, 0));
+      tili = ll_make_kmpc_threadprivate_cached(adr_cm, size, adr_vector);
+./tools/flang2/flang2exe/expsmp.cpp
+  putnzint("flg.vect", mlg.vect);
+  mlg.vect = 0;
+  case TY_VECT:
+    r = appendstring1("vect");
+  case TY_VECT:
+./tools/flang2/flang2exe/mwd.cpp
+static int savevectflag;
+  savevectflag = flg.vect;
+  /* Vectorizer settings */
+  int vect_val;
+  register_integer_arg(arg_parser, "vect", &vect_val, 0);
+  /* Vectorizer settings */
+  flg.vect |= vect_val;
+  if (flg.vect & 0x10)
+  if (flg.vect & 0x20)
+    flg.x[36] |= 0x1;  /* vcache is on the stack for -Mvect */
+  flg.vect = savevectflag;
+./tools/flang2/flang2exe/main.cpp.orig
+  /** Number of floating point / vector registers used. */
+                   bool return_vector_as_struct);
+LL_Type *make_vector_lltype(int size, LL_Type *pts_to);
+./tools/flang2/flang2exe/llutil.h.orig
+static int create_thread_private_vector(int, int);
+            tptr = create_thread_private_vector(newsptr, oldsptr);
+              tptr = create_thread_private_vector(psptr, oldsptr);
+              tptr = create_thread_private_vector(psptr, oldsptr);
+          tptr = create_thread_private_vector(sptr, 0);
+             * treadprivate vector will be generated when
+            tptr = create_thread_private_vector(sptr, 0);
+            tptr = create_thread_private_vector(psptr, 0);
+        tptr = create_thread_private_vector(common, 0);
+        /* Link the common block and its vector */
+create_thread_private_vector(int sptr, int host_tpsym)
+     * need to use its threadprivate vector which is also declared in
+     * avoid adding the vector to the gbl.threadprivate list; doing so
+  /* Add the vector to the gbl.threadprivate list */
+/* create the datatype for the vector of pointers,
+./tools/flang2/flang2exe/upper.cpp
+  "shufflevector", "extractvalue", "insertvalue", "malloc", "free", "alloca",
+static char *vect_llvm_intrinsic_name(int);
+static const char *vect_power_intrinsic_name(int);
+static OPERAND *gen_resized_vect(OPERAND *, int, int);
+static OPERAND *gen_vect_compare_operand(int);
+cons_novectorize_metadata(void)
+  LL_MDRef loopVect;
+    lvcomp[0] = ll_get_md_string(cpu_llvm_module, "llvm.loop.vectorize.enable");
+    loopVect = ll_get_md_node(cpu_llvm_module, LL_PlainMDNode, lvcomp, 2);
+                                 "llvm.loop.vectorize.enable");
+                                 "llvm.loop.vectorize.followup_all");
+                                 "llvm.loop.vectorize.followup_vectorized");
+                                 "llvm.loop.vectorize.followup_epilogue");
+    loopVect = ll_get_md_node(cpu_llvm_module, LL_PlainMDNode, lvcomp, 8);
+  ll_extend_md_node(cpu_llvm_module, rv, loopVect);
+cons_vectorize_metadata(void)
+                                 "llvm.loop.vectorize.enable");
+                                 "llvm.loop.vectorize.enable");
+                                 "llvm.loop.vectorize.followup_all");
+                                 "llvm.loop.vectorize.followup_vectorized");
+                                 "llvm.loop.vectorize.followup_epilogue");
+        int opndCount = ili_get_vect_arg_count(call->ilix);
+        DEBUG_ASSERT(retTy->data_type == LL_VECTOR, "vector type expected");
+    // For llvm intrinsics, convert any parameter vectors with 64 overall bits 
+        if(is_vector_x86_mmx(abi->arg[i].type)) {
+    int dontvectorize = (get_llvm_version() >= LL_Version_8_0);
+    LL_MDRef vectorize = (dontvectorize) ? cons_vectorize_metadata()
+                                         : cons_vectorize_metadata();
+    ll_extend_md_node(cpu_llvm_module, md, vectorize);
+          LL_MDRef loop_md = cons_novectorize_metadata();
+   * similar code in llvect.c, cgoptim1.c, and llvm's cgmain.c & llvect.c
+  DTYPE vect_dtype;
+  int vect_size;
+  vect_dtype = ILI_DTyOPND(ilix, 3);
+  vect_size = DTyVecLength(vect_dtype);
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+    if (vect_size != 2 && vect_size != 4 && vect_size != 8 && vect_size != 16)
+    if (vect_size != 4 && vect_size != 8 && vect_size != 16)
+  type_size = zsize_of(DTySeqTyElement(vect_dtype)) * 8;
+  sprintf(buf, "@llvm.%s.v%d%c%d", mstr, vect_size, type, type_size);
+  return gen_call_to_builtin(ilix, buf, op1, make_lltype_from_dtype(vect_dtype),
+  DTYPE vect_dtype;
+  int vect_size; /* number of elements per vector */
+  vect_dtype = ILI_DTyOPND(ilix, 3);
+  vect_size = DTyVecLength(vect_dtype);
+  if (vect_size != 2 && vect_size != 4)
+  if (vect_size == 2)
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+  type_size = zsize_of(DTySeqTyElement(vect_dtype)) * 8;
+  return gen_call_to_builtin(ilix, buf, op1, make_lltype_from_dtype(vect_dtype),
+  DTYPE vect_dtype;
+  int vect_size;
+  vect_dtype = (DTYPE)ILI_OPND(ilix, 3);
+  vect_size = DTyVecLength(vect_dtype);
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+    if (vect_size != 2 && vect_size != 4)
+    if (vect_size != 4 && vect_size != 8)
+  type_size = zsize_of(DTySeqTyElement(vect_dtype)) * 8;
+  sprintf(buf, "@llvm.arm.neon.%s%c.v%d%c%d", mstr, sign, vect_size, type,
+  return gen_call_to_builtin(ilix, buf, op1, make_lltype_from_dtype(vect_dtype),
+      DTYPE vect_dtype = DT_NONE;
+      vect_dtype = ili_get_vect_dtype(ilix);
+      if (vect_dtype) {
+        store_flags = ldst_instr_flags_from_dtype(vect_dtype);
+        if ((DTyVecLength(vect_dtype) == 3) && (ILI_OPC(ilix) == IL_VST)) {
+          v4_llt = make_lltype_sz4v3_from_dtype(vect_dtype);
+          switch (zsize_of(vect_dtype)) {
+            if (DTyVecLength(vect_dtype) != 3)
+        if (vect_dtype) {
+            LL_Type *ty = make_lltype_from_dtype(vect_dtype);
+      if (vect_dtype) {
+          llt_expected = make_ptr_lltype(make_lltype_from_dtype(vect_dtype));
+  DTYPE vect_dtype;
+  vect_dtype = ili_get_vect_dtype(ilix);
+  if (vect_dtype) {
+    llt = make_lltype_from_dtype(vect_dtype);
+    switch (DTY(DTySeqTyElement(vect_dtype))) {
+      if (DT_ISUNSIGNED(DTySeqTyElement(vect_dtype)))
+  INT v[TY_VECT_MAXLEN];
+  INT v[TY_VECT_MAXLEN];
+ * into vector operand <vop>
+gen_insert_vector(OPERAND *vop, OPERAND *sop, int idx)
+ * from vector operand <vop>
+gen_extract_vector(OPERAND *vop, int idx)
+  assert(vop->ll_type->data_type == LL_VECTOR,
+         "gen_extract_vector(): vector type expected for operand\n",
+   \brief Create a new vector
+   vectors to 4 element vectors and vice-versa.
+   Let's assume \p vop is a vector of 4 floats and \p new_size is 3.  This will
+   %0 = shufflevector <4 x float> %vop, <4 x float> undef,
+   This will build a vector of 3 floats with 3 first elements from \p vop.
+gen_resized_vect(OPERAND *vop, int new_size, int start)
+  INT v[TY_VECT_MAXLEN];
+  assert(vop->ll_type->data_type == LL_VECTOR, "expecting vector type",
+  llt = ll_get_vector_type(vop->ll_type->sub_types[0], new_size);
+        get_vcon0_n(get_vector_dtype(DT_INT, new_size), start, new_size));
+        gen_imask(get_vcon(v, get_vector_dtype(DT_INT, new_size)));
+gen_scalar_to_vector_helper(int ilix, int from_ili, LL_Type *ll_vecttype)
+  operand = make_tmp_op(ll_vecttype, make_tmps());
+  undefop = make_undef_op(ll_vecttype);
+  arg = gen_llvm_expr(from_ili, ll_vecttype->sub_types[0]);
+  Curr_Instr->operands = gen_insert_vector(undefop, arg, 0);
+  Curr_Instr->operands->next = make_undef_op(ll_vecttype);
+      get_vector_dtype(DT_INT, ll_vecttype->sub_elements)));
+ * Create a vector from a scalar value represented by 'ilix'
+ * Let's assume ilix needs to be promoted to a vector of 4 floats
+ * %1 = shufflevector <4 x float> %0, <4 x float> undef, <4 x i32> <i32 0, i32
+gen_scalar_to_vector(int ilix, LL_Type *ll_vecttype)
+  return gen_scalar_to_vector_helper(ilix, from_ili, ll_vecttype);
+gen_scalar_to_vector_no_shuffle(int ilix, LL_Type *ll_vecttype)
+  OPERAND *undefop = make_undef_op(ll_vecttype);
+  OPERAND *arg = gen_llvm_expr(from_ili, ll_vecttype->sub_types[0]);
+  OPERAND *operand = gen_insert_vector(undefop, arg, 0);
+gen_temp_to_vector(int from_ili, LL_Type *ll_vecttype)
+  return gen_scalar_to_vector_helper(ilix, from_ili, ll_vecttype);
+gen_convert_vector(int ilix)
+  assert(ll_dst->data_type == LL_VECTOR,
+         "gen_convert_vector(): vector type expected for dst",
+  assert(ll_src->data_type == LL_VECTOR,
+         "gen_convert_vector(): vector type expected for src",
+    assert(0, "gen_convert_vector(): unhandled vector type for dst",
+  assert(0, "gen_convert_vector(): unhandled vector type for src",
+gen_bitcast_vector(int ilix)
+  assert(ll_src->data_type == LL_VECTOR,
+         "gen_bitcast_vector(): source type is not a vector", ll_src->data_type,
+  assert(ll_dst->data_type == LL_VECTOR,
+         "gen_bitcast_vector(): destination type is not a vector",
+  DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+  assert(vect_dtype,
+         "gen_binary_vexpr(): called with non vector type for ilix ", ilix,
+  switch (DTY(DTySeqTyElement(vect_dtype))) {
+    assert(0, "gen_binary_vexpr(): vector type not yet handled for ilix ", ilix,
+x86_promote_to_vector(LL_Type *eTy, LL_Type *vTy, OPERAND *op)
+  op1 = gen_insert_vector(undefop, gen_copy_op(op), 0);
+  op1->next = x86_promote_to_vector(eTy, vTy, next);
+  vTy = ll_get_vector_type(llTy, (isSinglePrec ? 4 : 2));
+  l_l = x86_promote_to_vector(llTy, vTy, l_l);
+  fmaop = gen_extract_vector(fmaop, 0);
+  int vect_type;
+  DTYPE vect_dtype = DT_NONE;
+  /* handle conditional vectorization  where we want the inverse mask -
+    vect_dtype = ili_get_vect_dtype(lhs_ili);
+    num_elem = DTyVecLength(vect_dtype);
+    switch (DTySeqTyElement(vect_dtype)) {
+      vdt = get_vector_dtype(ones_dtype, num_elem);
+      vdt = get_vector_dtype(ones_dtype, num_elem);
+      assert(0, "Unexpected dtype for VNOT", DTySeqTyElement(vect_dtype),
+    mask_type = ll_get_vector_type(bit_type, num_elem);
+      vect_dtype = ili_get_vect_dtype(ilix);
+      switch (DTY(DTySeqTyElement(vect_dtype))) {
+      vect_dtype = ILI_DTyOPND(ilix, 2);
+      lhs_ili = ad1ili(IL_VCON, get_vconm0(vect_dtype));
+      vect_type = DTY(DTySeqTyElement(vect_dtype));
+  vect_dtype = ili_get_vect_dtype(ilix);
+  if (vect_dtype) {
+    instr_type = make_lltype_from_dtype(vect_dtype);
+        gen_temp_to_vector(rhs_ili, make_vtype(DTySeqTyElement(vect_dtype),
+                                               DTyVecLength(vect_dtype)));
+  kind1 = (ty1->data_type == LL_VECTOR) ? ty1->sub_types[0]->data_type
+  kind2 = (ty2->data_type == LL_VECTOR) ? ty2->sub_types[0]->data_type
+  if (ty1->data_type == LL_VECTOR) {
+  if (ty2->data_type == LL_VECTOR) {
+  if (ty1->data_type != LL_VECTOR) {
+  if (ty2->data_type != LL_VECTOR) {
+  vdtype = ili_get_vect_dtype(ilix);
+gen_vsincos_return_type(LL_Type *vecTy)
+  LL_Type *elements[2] = {vecTy, vecTy};
+  const DTYPE dtype = ili_get_vect_dtype(ilix);
+  LL_Type *vecTy = make_lltype_from_dtype(dtype);
+  DTYPE dtypeName = (vecTy->sub_types[0] == floatTy) ? DT_FLOAT : DT_DBLE;
+  LL_Type *retTy = gen_vsincos_return_type(vecTy);
+  OPERAND *opnd = gen_llvm_expr(ILI_OPND(ilix, 1), vecTy);
+  int vecLen = vecTy->sub_elements;
+  int opndCount = ili_get_vect_arg_count(ilix);
+      opnd->next = gen_llvm_expr(mask_arg_ili, vecTy);
+    LL_Type *llt, *vect_lltype, *int_llt = NULL;
+    DTYPE vect_dtype = ILI_DTyOPND(ilix, 3);
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+    llt = make_ptr_lltype(vect_lltype);
+    if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+        (llt->sub_types[0]->data_type == LL_VECTOR) &&
+      LL_Type *vTy = ll_get_vector_type(veleTy, 4);
+    switch (zsize_of(vect_dtype)) {
+                          (MSZ)-2, ldst_instr_flags_from_dtype(vect_dtype));
+    if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+        if (int_llt && (zsize_of(vect_dtype) == 4))
+          operand = make_bitcast(operand, vect_lltype);
+    LL_Type *llt, *vect_lltype, *int_llt = NULL;
+    DTYPE vect_dtype = ILI_DTyOPND(ilix, 3);
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+    llt = make_ptr_lltype(vect_lltype);
+    if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+        (llt->sub_types[0]->data_type == LL_VECTOR) &&
+      LL_Type *vTy = ll_get_vector_type(veleTy, 4);
+    if (vect_lltype->sub_elements != 3) {
+      if (vect_lltype->sub_elements != 3) {
+        switch (zsize_of(vect_dtype)) {
+          if (expected_type && (expected_type->data_type == LL_VECTOR) &&
+      } else if (vect_lltype->sub_elements == 3 && expected_type &&
+        operand = gen_resized_vect(operand, ll_type_bytes(expected_type), 0);
+    if (expected_type && expected_type->data_type == LL_VECTOR &&
+        if (int_llt && (zsize_of(vect_dtype) == 4))
+          operand = make_bitcast(operand, vect_lltype);
+     * what is done with the IL_FAND case, except with vectors.
+    dtype = (DTYPE)ILI_OPND(ilix, 3); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+    dtype = (DTYPE)ILI_OPND(ilix, 3); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+    operand = gen_convert_vector(ilix);
+    operand = gen_bitcast_vector(ilix);
+    operand = gen_scalar_to_vector(
+    intrinsic_name = vect_llvm_intrinsic_name(ilix);
+                      make_lltype_from_dtype(ili_get_vect_dtype(ilix))),
+    intrinsic_name = vect_llvm_intrinsic_name(ilix);
+                      make_lltype_from_dtype(ili_get_vect_dtype(ilix))),
+        make_lltype_from_dtype(ili_get_vect_dtype(ilix)), NULL, I_PICALL);
+    dtype = ili_get_vect_dtype(ilix); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+      assert(false, "gen_llvm_expr(): unexpected vector size", vsize,
+    dtype = ili_get_vect_dtype(ilix); /* get the vector dtype */
+    assert(TY_ISVECT(DTY(dtype)), "gen_llvm_expr(): expected vect type",
+      assert(false, "gen_llvm_expr(): unexpected vector size", vsize,
+    intrinsic_name = vect_llvm_intrinsic_name(ilix);
+    intrinsic_type = make_lltype_from_dtype(ili_get_vect_dtype(ilix));
+    LL_Type *vecTy = make_lltype_from_dtype(ili_get_vect_dtype(ilix));
+      LL_Type *retTy = gen_vsincos_return_type(vecTy);
+      operand = gen_llvm_select_vsincos(op, vecTy, retTy, (opc == IL_VCOS));
+      // standard call to vector sin (or vector cos)
+      OPERAND *opnd = gen_llvm_expr(ILI_OPND(ilix, 1), vecTy);
+      char *name = vect_llvm_intrinsic_name(ilix);
+      operand = gen_call_llvm_intrinsic(name, opnd, vecTy, NULL, I_PICALL);
+    DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+    llTy = make_lltype_from_dtype(vect_dtype);
+         and extract from vectors */
+      OPERAND *op1 = gen_scalar_to_vector_no_shuffle(ilix, vTy);
+      operand = gen_extract_vector(op2, 0);
+         and extract from vectors */
+      OPERAND *op1 = gen_scalar_to_vector(ilix, vTy);
+      operand = gen_extract_vector(op2, 0);
+    LL_Type *vect_lltype, *int_type, *op_lltype;
+    DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+    /* LLVM shufflevector instruction has a mask whose selector takes
+     * the concatenation of two vectors and numbers the elements as
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+    op_lltype = make_lltype_from_dtype(ili_get_vect_dtype(lhs_ili));
+    if (vect_lltype->sub_elements != op1->next->next->ll_type->sub_elements) {
+             vect_lltype->sub_elements, ERR_Severe);
+    operand = ad_csed_instr(I_SHUFFVEC, ilix, vect_lltype, op1,
+    LL_Type *vect_lltype, *int_type, *select_type, *op1_subtype,
+    DTYPE vect_dtype = ili_get_vect_dtype(ilix);
+    vect_lltype = make_lltype_from_dtype(vect_dtype);
+      op1 = gen_vect_compare_operand(mask_ili);
+      num_elem = DTyVecLength(vect_dtype);
+      select_type = ll_get_vector_type(int_type, num_elem);
+      num_elem = DTyVecLength(vect_dtype);
+      select_type = ll_get_vector_type(int_type, num_elem);
+      asrt(op1->ll_type->data_type == LL_VECTOR);
+          vdt = get_vector_dtype(DT_FLOAT, num_elem);
+          vdt = get_vector_dtype(DT_DBLE, num_elem);
+        /* type of the compare is the operands: convert from vect_dtype  */
+        compare_ll_type = make_lltype_from_dtype(vect_dtype);
+    op1->next = gen_llvm_expr(lhs_ili, vect_lltype);
+    op1->next->next = gen_llvm_expr(rhs_ili, vect_lltype);
+    operand = ad_csed_instr(I_SELECT, ilix, vect_lltype, op1,
+    operand = gen_vect_compare_operand(ilix);
+      expected_type = operand->ll_type; /* turn into bit-vector */
+      if ((operand->ll_type->data_type == LL_VECTOR) &&
+          (expected_type->data_type == LL_VECTOR) &&
+        operand = gen_resized_vect(operand, expected_type->sub_elements, 0);
+gen_vect_compare_operand(int mask_ili)
+  DTYPE vect_dtype, elem_dtype;
+         "gen_vect_compare_operand(): expected vector compare", mask_opc,
+  vect_dtype = ili_get_vect_dtype(mask_ili);
+  elem_dtype = DTySeqTyElement(vect_dtype);
+  num_elem = DTyVecLength(vect_dtype);
+  instr_type = ll_get_vector_type(int_type, num_elem);
+  compare_ll_type = make_lltype_from_dtype(vect_dtype);
+    assert(false, "gen_vect_compare_operand(): unsupported dtype", elem_dtype,
+  /* type of the instruction is a bit-vector: use instr_type */
+} /* gen_vect_compare_operand */
+vect_llvm_intrinsic_name(int ilix)
+  assert(IL_VECT(opc), "vect_llvm_intrinsic_name(): not vect ili", ilix,
+  dtype = ili_get_vect_dtype(ilix);
+  assert(DTY(dtype) == TY_VECT, "vect_llvm_intrinsic_name(): not vect dtype",
+    assert(0, "vect_llvm_intrinsic_name(): unhandled opc", opc, ERR_Fatal);
+    assert(0, "vect_llvm_intrinsic_name(): unhandled type", type, ERR_Fatal);
+} /* vect_llvm_intrinsic_name */
+    operand->ll_type = make_vector_lltype(vsize, op_type);
+           VECTOR_DTYPE(DTYPEG(sptr)))
+  DTYPE vect_dtype;
+  vect_dtype = get_vector_dtype(dtype, sz);
+  return make_lltype_from_dtype(vect_dtype);
+  } else if (ty1->data_type == LL_PTR && ty2->data_type == LL_VECTOR &&
+  if (dtype && DTY(dtype) == TY_VECT)
+bool is_vector_x86_mmx(LL_Type *type) {
+  /* Check if type is a vector with 64 bits overall. Works on pointer types. */
+  if(t->data_type == LL_VECTOR &&
+./tools/flang2/flang2exe/cgmain.cpp
+  case LL_VECTOR:
+compute_ir_feature_vector(LLVMModuleRef module, enum LL_IRVersion vers)
+  compute_ir_feature_vector(new_module, llvm_ir_version);
+  case LL_VECTOR:
+  \brief Get a vector type <tt> \<num x elem\> </tt>
+ll_get_vector_type(LL_Type *type, unsigned num_elements)
+  new_type.data_type = LL_VECTOR;
+  case LL_CallConv_X86_VectorCall:
+    return "x86_vectorcallcc";
+  case LL_VECTOR:
+./tools/flang2/flang2exe/ll_structure.cpp.orig
+   * Always add a 4th element to a  3-element vector constant
+static int vc0[TY_MAX + 1][TY_VECT_MAXLEN];
+static int vc1[TY_MAX + 1][TY_VECT_MAXLEN];
+static int vcm0[TY_MAX + 1][TY_VECT_MAXLEN];
+  int arrsize = (TY_MAX + 1) * TY_VECT_MAXLEN;
+/** \brief Get a vector constant of a zero which suits the element type.
+  INT v[TY_VECT_MAXLEN];
+ * get a vector constant of a one which suits the element type.
+  INT one, v[TY_VECT_MAXLEN];
+  INT v[TY_VECT_MAXLEN];
+ * get a vector constant by expanding a scalar
+  INT v[TY_VECT_MAXLEN];
+  case TY_VECT:
+    strcpy(b, "vector constant");
+./tools/flang2/flang2exe/symtab.cpp
+       * in other cases (vectorizer), the qjsr's created may have
+ * i.e., a double complex vector of length 1
+ * a double complex vector of length 1
+ * vector abi will pass the complex double packed in a single register or
+ * vector abi will pass the complex double packed in a single register or
+ * complex is the same as a struct of two parts; or, we can follow the vector
+ * ABI which views a complex scalar as a vector complex vector of length 1,
+  if (!XBIT_VECTORABI_FOR_SCALAR)
+ * complex is the same as a struct of two parts; or, we can follow the vector
+ * ABI which views a complex scalar as a vector complex vector of length 1,
+ * i.e., the complex is 'packed'.  For now, we use the 'vector abi'.
+  if (!XBIT_VECTORABI_FOR_SCALAR)
+    if (IL_VECT(ILI_OPC(args[i].arg))) {
+      if (IL_VECT(ILI_OPC(args[i].arg))) {
+          assert(false, "ad_func(): unhandled vect ILI type",
+ *   [sv]   - scalar vector
+ *   [L]    - vector length, i.e., 2, 4, 8, 16
+ * widthc  - 's' (scalar), 'v' (vector)
+ *            N (vector length` N) (2, 4, 8, 16, ...)
+vect_math(MTH_FN fn, char *root, int nargs, DTYPE vdt, int vopc, int vdt1,
+  if (DTY(vdt) != TY_VECT) {
+    interr("vect_math: dtype is not vector", vdt, ERR_Severe);
+    vdt = get_vector_dtype(DT_DBLE, 2);
+     * DTY(vdt+2) -- vect_len
+      interr("vect_math: unexpected element dtype", DTySeqTyElement(vdt),
+         * a vector double relaxed math version of pow & tan does not exist
+      assert(0, "vect_math, unexpected dtype", DTySeqTyElement(vdt), ERR_Fatal);
+    vdt_mask = get_vector_dtype(vdt_mask, num_elem);
+    interr("vect_math: unexpected number of args", nargs, ERR_Severe);
+  // FIXME: looks like a bug: DTY(aVectorLength)?
+ *   [sv]   - scalar vector
+ *   [L]    - vector length, i.e., 2, 4, 8, 16
+   * widthc  - width indicator: 's' (scalar), 'v' (vector),
+   *           or a vector length (2, 4, 8, ..); if length
+      widthc = 'v'; /* vector length is passed */
+ *   [sv]   - scalar vector
+ *   [L]    - vector length, i.e., 2, 4, 8, 16
+   * widthc  - 's' (scalar), 'v' (vector)
+   *           N (vector length` N) (2, 4, 8, 16, ...)
+   * widthc - width indicator: 's' (scalar), 'v' (vector)
+    if (ili_get_vect_dtype(ilix)) {
+      mask_ili,   /* for potential mask with vector intrinsics */
+       * For the non-vector version of zeusmp, there's roughly a 50%
+       * -Mvect is huge given that IL_SIGN & IL_DSIGN are now blockers
+       * to vectorization.
+       * For the non-vector version of zeusmp, there's roughly a 50%
+       * -Mvect is huge given that IL_SIGN & IL_DSIGN are now blockers
+       * to vectorization.
+      goto do_vect2;
+      goto do_vect1;
+      goto do_vect2;
+  /***** { do not forget to update ili_get_vect_dtype() { *****/
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+    goto do_vect1;
+  do_vect1:
+                     vect_math(mth_fn, root, 1, DTypeILIOpnd(ilip, 2), opc, 0, 0, false),
+                     vect_math(mth_fn, root, 2, DTypeILIOpnd(ilip, 2), opc, 0, 0, true),
+    goto do_vect2;
+    goto do_vect2;
+  do_vect2:
+                     vect_math(mth_fn, root, 2, DTypeILIOpnd(ilip, 3), opc, 0, 0, false),
+                     vect_math(mth_fn, root, 3, DTypeILIOpnd(ilip, 3), opc, 0, 0, true),
+    assert(IL_VECT(ILI_OPC(op1)), "addarth():expected vector opc", ILI_OPC(op1),
+    vdt1 = ili_get_vect_dtype(op1);
+    if (IL_VECT(ILI_OPC(op2))) {
+      vdt2 = ili_get_vect_dtype(op2);
+                     vect_math(mth_fn, root, 2, DTypeILIOpnd(ilip, 3), opc, vdt1, vdt2, false),
+                     vect_math(mth_fn, root, 3, DTypeILIOpnd(ilip, 3),   opc, vdt1, vdt2, true),
+    /***** }  do not forget to update ili_get_vect_dtype() } *****/
+/** \brief If a VECT ili, return its dtype, 0 otherwise.
+ili_get_vect_arg_count(int ilix)
+    return ili_get_vect_arg_count(ILI_OPND(ilix, 1));
+  if (IL_VECT(ILI_OPC(ilix))) {
+ili_get_vect_dtype(int ilix)
+    return ili_get_vect_dtype(ILI_OPND(ilix, 1));
+  if (!IL_VECT(ILI_OPC(ilix)))
+    interr("ili_get_vect_dtype missing case for ili opc", ILI_OPC(ilix),
+llmk_math_name(char *buff, int fn, int vectlen, bool mask, DTYPE res_dt)
+  strcpy(buff + 1, make_math_name((MTH_FN)fn, vectlen, mask, res_dt));
+make_math_name(MTH_FN fn, int vectlen, bool mask, DTYPE res_dt)
+  if (vectlen == 1 && (override_abi || XBIT_VECTORABI_FOR_SCALAR))
+    /* use vector ABI for scalar routines */
+  sprintf(name, fstr, ftype, dt_to_mthtype(res_dt), fn2str[fn], vectlen,
+make_math_name_vabi(MTH_FN fn, int vectlen, bool mask, DTYPE res_dt)
+   * Need an override for llvect since it may emit its own calls to the
+  name = make_math_name(fn, vectlen, mask, res_dt);
+make_math(MTH_FN fn, SPTR *fptr, int vectlen, bool mask, DTYPE res_dt,
+  fname = make_math_name(fn, vectlen, mask, res_dt);
+./tools/flang2/flang2exe/iliutil.cpp
+resource vector masks there are for this ili, (3) is used to determine when
+./tools/flang2/docs/ili.n
+describe vector streaming calls
+the vectorizer may hoist an invarant reciprocal, but the residual will
+alternate code for vectorization;
+vectorized code is executed if count is
+notransform (no hlvect); also novector sets this bit
+norecog (no llvect); also novector sets this bit
+don't perform idiom vector recognition for the PIII
+must be allowed by default, detection needs to be added to the vectorizer
+Turn on alpha-level experimental vectorizer features.
+Turn on beta-level experimental vectorizer features.
+When using the new math naming scheme for scalar routines, follow the 'vector'
+(if the vectorizer is on.)   [ in optutil.c - cp_loop. ]
+Reserved for low-level vectorizer.
+High level vectorizer - maximum size of loop nests to process.
+Low-level vectorizer - cache vectors only if strip size >= n.
+Low-level vectorizer - amount of cache used by low-level vectorizer.
+High-level vectorizer - size of on-chip cache (x86 only).
+Low-level vectorizer - maximum strip size of loops with non-invariant
+complex vectors.
+Low-level vectorizer - modify behavior.
+Inhibit vector intrinsics recognition.
+(860 only) Permit parallel inner loops to contain invariant vectors.
+a vectorizable loop).
+in llvect for hammer, disable enhanced array reference alignment testing
+Inhibit the 2nd pass of the high-level vectorizer
+this is that LRE forces a loop to be vectorised using xmm registers
+cost of vectorising the loop using smaller vector registers.  For
+Allow conditional vectorization containing reductions (experimental)
+Disable LLVM vectorization containing SELECT 
+Low-level vectorizer - maximum loop iteration count; 0 means
+Beta fast- and/or relaxed- math scalar/vector versions of certain intrinsics.
+LLVM - disable extended conditional vectorization in all loops where the
+Allow loops containing stack-based variables to be vectorized.
+of certain single precision vector loads.  This instruction is inserted
+Turn off calculation of condtitional vectorization possibilities
+Disable llvect from generating vectorization code for conditionals
+Disable llvect from generating masked fdiv fp routine for conditionals
+Disable conditional vectorization for compound predicates
+Don't check conditional vectorization masks for all 0's or 1's (short circuiting)
+Conditional vectorization: turn off extended CSE for code outside current block
+Conditional vectorization: don't use mask vector intrinsics
+Treat scalars the old way - NOP analysis not affected by conditional vect
+Allow chained control dependence with conditional vectorization
+Allow complex chained control dependence with conditional vectorization
+Turn off vectorization with assigments to logical compares
+For llvm compilers, do vectorize max/min operations
+For llvm compilers, don't construct vector ILI trees with math intrinsic calls
+For LLVM compilers, enable vectorization with small ints on rhs
+For LLVM compilers, don't allow scalar expansion with vector temps within loops
+Native x86 compilers, don't vectorize conditionals with any "OR" predicates`
+LLVM compilers, don't perform newton's method within llvect
+Allow CVECT with just one link to flow down this value without merge
+LLVM compilers, don't perform vectorization on induction iterators
+i860 low-level vectorizer: Maximum number of elements over which
+cache vector. The span between A(i+k1) and A(i+k2) is defined to be
+Hammer and x8632 low-level vectoriser:
+Don't generate prefetches in vectorised loops or loops that are
+unrolled by the vectoriser.
+Don't vectorise loops (though the vectoriser can unroll them).
+Don't unroll a vector loop body.
+Prefetch one vector iteration ahead.
+Disable the vectorisation profitability test for real*4 loads and
+Enable vectorisation and llvect unrolling of loops containing
+Disable all vectorisation profitability tests.
+Don't vectorise loops that are "too big".
+Disable unrolling of non-vectorised loops by the vectoriser.
+Don't peel vectorised loops that contain non-stride-1 loads.
+Don't vectorize loops that have a lexically forward anti-flow
+In llvect, when checking whether a load and store with different addresses
+Don't vectorise loops that contain a store to an array element whose
+Vectorize loops with a constant small loop count if possible.
+in induc.c to inhibit all induc optimizations on loops that been vectorized.
+Use multiple registers to accumulate a vectorised reduction, i.e. use
+unrolled vector loop body.  By default the same register is used to
+accumulate the reduction in all copies of the unrolled vector loop body.
+Double the default number of vector loop unrolls for AMD processors >=
+Don't vectorise or unroll a loop that contains conditional multiple blocks.
+Allow vectorizing multiple blocks and 64-bit selects.
+High-level vectorizer:  loop-splitting heuristic; number of array loads/stores
+High-level vectorizer:  loop-splitting heuristic; number of floating point
+High-level vectorizer behavior modification.
+Permit external calls in vectorized loops.
+Don't enter hlv_vectorize() for a particular routine
+Limit vectorization on functions based upon heuristics
+LRE: run vanilla LRE before vectorizer; default is after vectorizer
+LRE: run LRE with X heuristic before vectorizer; also runs full LRE after vectorizer
+Algebraic transformation; llvect overflow
+Disallow prefetchnta auto-generation in llvect.c
+This x-flag is set by the command-line option -Mvect=simd:128.  It
+restricts vectorisation to a vector length of 128 bits even if the
+target processor supports larger vector lengths.
+This x-flag is set by the command-line option -Mvect=simd:256.  It
+vector length of at least 256 bits and restricts vectorisation to 256
+bits even if the target processor supports larger vector lengths.
+Do not replace a vectorised expression of the form 
+(+-(a(i) * b(i)) +- c(i)) or (c(i) +- (a(i) * b(i))) by a vector FMA
+This x-flag is set by the command-line option -Mvect=simd:512.  It
+vector length of at least 512 bits and restricts vectorisation to 512
+bits even if the target processor supports larger vector lengths.
+If a user-written prefetch inhibits vectorization, do not attempt to replace
+Use TLS to implemement OpenMP threadprivates instead of TP vectors. Has no
+Used to specify loop threshold for entering vectorization
+Used to specify stripmine size for scalar expansion (STRIPSIZE in hlvect.h)
+Allow 16-byte misaligned memory operands in vector arithmetic instructions
+and maximize the usage of memory operands in vector arithmetic instructions.
+vect prefetch limit
+iteration count passed to llvect
+vect prefetch distance
+hammer/src/llvect.c for full details.
+Vectorizer messages
+Hammer llvect and CG.  (NOTE: continued from 135)
+of the vector fastmath intrinsic functions, which take zmm register
+Disable the vectorisation of loops containing ILIs that operate on the
+ __f<type><data type>_<name>_<vectlen><mask>
+ <vectlen>   : 1 (scalar), 2, 4, 8, 16
+For AVX, generate 'vzeroupper' instructions even if -Mvect=simd:128
+-Mvect=simd:128.
+instructions in vectorised and unrolled loops:
+if the vector loop processes 128 bytes of data per iteration; and
+Halve the unroll factor that is used for AVX 256-bit vectorised loops
+per vector iteration.
+Disable the vectorisation of loops that contain any of the following:
+Don't insert syncthreads calls for vector synchronization; this limits vector length == 32 for vector/nonparallel loops
+Replace VLDU/VSTU of vect3 dtypes with bcopy calls - temporary front-end
+work-around for bugs in llc with unaligned vect3 references.
+Disable workaround to mark x86 dp vector math calls as not varargs for Fortran
+Allow new fast math power vector routines when real base elements are different 
+Allow non-tightly nested vector/worker loops
+was specified as only worker or vector.
+The default OpenACC vector length
+VPS - vector private shared; inverted: vector private arrays do not get put into local memory
+Optimize vector0/worker0 sections of code
+Accelerator: Don't move planned vector loops outwards
+gang-vector mode, ignore 'worker' dimension
+gang-worker mode, ignore 'vector' dimension
+Allow expressions in vector() and vector_length() clauses
+A loop with a user annotation of 'vector' implicitly scheduled as 'shortloop'
+don't generate vector loop tests or strip loop branches if we know the
+trip count is less than the vector length
+Threshhold value for conditional vectorization short circuiting.
+Don't depend on warp-synchronous execution, insert syncs even with vector(32).
+Experimenting with changing placement of synchronizations for calls to vector routines.
+global vector-32 mode; GPU code uses vector length of 32 for nvidia
+don't go into vector-32 mode; GPU code will not restrict to vector length of 32 for
+Non-zero value enable -Mvect=fastfuse.  This flag is/must be passed only when
+to enable -Mvect=fastfuse.  default value is 10.
+Disable vector sync optimization - add vector syncs after every worker/vector loop
+Enable gang-vector mode globally
+Enable gang-vector mode only with gang/worker/vector routines or calls to them
+Disable gang-vector mode entirely
+Enable gang-worker mode only with gang/worker/vector routines or calls to them
+Enable vector-32 mode for NVIDIA GPUs globally
+Enable vector-32 mode only with gang/worker/vector routines or calls to them
+Disable vector-32 entirely
+Set the default vector_length for OpenACC scheduling for NVIDIA
+Set the default vector_length for OpenACC scheduling for AMD
+Set the default vector_length for OpenACC scheduling for Generic OpenCL
+Interchange vector ploops outwards
+OpenMP Threadprivate TLS/TPvector implementation control.
+./tools/flang2/docs/xflag.n
+ * AVX512vl (vector length) instructions.
+./runtime/libpgmath/lib/x86_64/cpuid8664.h
+ *  vector fastexpf.s
+ *  vector sinle precision exp
+ *  vector sinle precision pow
+ *  vector double precision exp(relaxed)
+ *  vector double precision exp(relaxed)
+ *  vector single precision tangent - 128
+ *  vector single precision tangent - 256
+ *  vector double precision tangent
+ *  vector double precision tangent
+./runtime/libpgmath/lib/x86_64/relaxed/relaxedmath_vex.h
+ *  vector sine
+	vmovapd	%xmm0, %xmm1		/* Move input vector */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+ *  vector cosine
+	vmovapd	%xmm0, %xmm1		/* Move input vector */
+ *  A vector implementation of the double precision SINCOS() function.
+	vmovapd	%xmm0, %xmm1		/* Move input vector */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+ *  vector sine
+	vmovaps	%xmm0, %xmm1		/* Move input vector */
+ *  vector cosine
+	vmovaps	%xmm0, %xmm1		/* Move input vector */
+ *  A vector implementation of the single precision SINCOS() function.
+	vmovaps	%xmm0, %xmm1		/* Move input vector */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+ *  A vector implementation of the exp libm function.
+ *  vector fastexpf.s
+/* Fast vector natural logarithm code goes here... */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+/* Fast vector natural logarithm code goes here... */
+/* Causing inconsistent results between vector and scalar versions (FS#21062) */
+ *  vector fastcoshf.s
+ *  vector fastsinhf.s
+ *  A vector implementation of the cosh libm function.
+ *  A vector implementation of the sinh libm function.
+ *  vector sinle precision exp
+ *  vector double precision exp
+ *  vector sinle precision sin
+ *  vector double precision sin
+ *  vector sinle precision cos
+ *  vector double precision cos
+ *  vector single precision log
+ *  vector double precision log
+ *  vector sinle precision log10
+ *  vector double precision log10
+ *  vector sinle precision sinh
+ *  vector double precision sinh
+ *  vector sinle precision cosh
+ *  vector double precision cosh
+ *  vector sinle precision sincos
+ *  vector double precision sincos
+ *  vector sinle precision pow
+ *  vector double precision pow
+ *  vector single precision tangent - 128 bit
+ *  vector single precision tangent - 256 bit
+ *  vector double precision tangent - 128 bit
+ *  vector double precision tangent - 256 bit
+./runtime/libpgmath/lib/x86_64/fast/fastmath_vex.h
+ *  vector sinle precision mod
+ *  vector double precision mod
+./runtime/libpgmath/lib/x86_64/fast/fastmod_vex.h
+ *  vector single precision complex div
+ *  vector and scalar single precision complex div - vec and FMA4 versions.
+ *  a packed vector and then falls through to the vector version.
+ *  vector single precision complex div
+ *  Double precision complex div (scalar) using vector instructions
+ *  Double precision complex div (scalar) using vector instructions
+ *  Double precision complex div (scalar) using vector instructions
+ *  vector double precision div
+ *  vector single precision complex div
+ *  vector double precision div
+./runtime/libpgmath/lib/x86_64/fast/fastcdiv.h
+ *  vector fastexpf.s
+ *  A vector implementation of the exp libm function.
+/* Fast vector natural logarithm code goes here... */
+ *  vector sine
+	movaps	%xmm0, %xmm1		/* Move input vector */
+ *  vector sine
+	movapd	%xmm0, %xmm1		/* Move input vector */
+ *  vector cosine
+	movaps	%xmm0, %xmm1		/* Move input vector */
+ *  vector cosine
+	movapd	%xmm0, %xmm1		/* Move input vector */
+ *  vector fastsinhf.s
+ *  A vector implementation of the sinh libm function.
+ *  vector fastcoshf.s
+ *  A vector implementation of the cosh libm function.
+ *  A vector implementation of the single precision SINCOS() function.
+	movaps	%xmm0, %xmm1		/* Move input vector */
+ *  A vector implementation of the double precision SINCOS() function.
+	movapd	%xmm0, %xmm1		/* Move input vector */
+/* Fast vector natural logarithm code goes here... */
+./runtime/libpgmath/lib/x86_64/fast/fastmath.h
+ * Define scalar and vector formats.
+	sv_cv1,		// single complex - vector
+	sv_sv4,		// single vector
+	sv_dv2,		// double vector
+	sv_cv2,		// single complex vector
+	sv_zv1,		// double complex vector
+	sv_sv8,		// single vector
+	sv_dv4,		// double vector
+	sv_cv4,		// single complex vector
+	sv_zv2,		// double complex vector
+	sv_sv16,	// single vector
+	sv_dv8,		// double vector
+	sv_cv8,		// single complex vector
+	sv_zv4,		// double complex vector
+	sv_sv4m,	// single vector
+	sv_dv2m,	// double vector
+	sv_cv2m,	// single complex vector
+	sv_zv1m,	// double complex vector
+	sv_sv8m,	// single vector
+	sv_dv4m,	// double vector
+	sv_cv4m,	// single complex vector
+	sv_zv2m,	// double complex vector
+	sv_sv16m,	// single vector
+	sv_dv8m,	// double vector
+	sv_cv8m,	// single complex vector
+	sv_zv4m,	// double complex vector
+	sv_e	sv;	// Scalar/vector type
+// _sv: scalar/vector types
+./runtime/libpgmath/lib/common/mth_tbldefs.h
+ * These functions are used in returning two vector arguments from a
+ * VectorType
+ * FunctionNameReturning2Vectors(vector_type x)
+ *   VectorType sine;
+ *   VectorType cossine;
+ * But, because the our compiler ABI uses the same vector registers
+ * Now function FunctionNameReturning2Vectors becomes:
+ * extern VectorType return2VectorType(VectorType, VectorType);
+ * VectorType
+ * FunctionNameReturning2Vectors(vector_type x)
+ *   VectorType sine;
+ *   VectorType cossine;
+ *   return (return2VectorType(sine,cosine));
+__mth_return2vectors(void)
+  __attribute__ ((alias ("__mth_return2vectors")));
+ * vector types.
+        __attribute__ ((weak, alias ("__mth_return2vectors")));
+./runtime/libpgmath/lib/common/mth_vreturns.c
+    stats_by_type   = 1<<1,         // By type, scalar, vector
+   *    <SV> is the scalar/vector size designator/descriptor.
+      "sv4\t4*32-bit real vector\t\tdv2\t2*64-bit real vector\n"
+      "cv2\t2*32-bit complex vector\t\tzv1\t2*64-bit complex vector(packed)\n"
+      "sv8\t8*32-bit real vector\t\tdv4\t4*64-bit real vector\n"
+      "cv4\t4*32-bit complex vector\t\tzv2\t2*64-bit complex vector\n"
+      "sv16\t16*32-bit real vector\t\tdv8\t8*64-bit real vector\n"
+      "cv8\t8*32-bit complex vector\t\tzv4\t4*64-bit complex vector\n"
+./runtime/libpgmath/lib/common/dispatch.c
+ * But the POWER architectures needs the 32-bit integer vectors to
+ * be the full 128-bits of a vector register.
+ * Real/complex passed as vectors of length 1.
+./runtime/libpgmath/lib/common/mth_128defs_init.c
+// For vector versions. sqrt(2.0) / 2.0
+// High precision vector log coefficients
+// Medium precision vector log coefficients
+// Low precision vector log coefficients
+./runtime/libpgmath/lib/common/log/fma3/rslog_defs.h
+ * But the POWER architectures needs the 32-bit integer vectors to
+ * be the full 128-bits of a vector register.
+./runtime/libpgmath/lib/common/powi/pxpowi.c
+ * But the POWER architectures needs the 32-bit integer vectors to
+ * be the full 128-bits of a vector register.
+./runtime/libpgmath/lib/common/powi/gdpowi2.c
+     * Check whether all exponents in vector b are 1.0, and if so take
+./runtime/libpgmath/lib/common/pow/fma3/vdpow2.cpp
+ * The POWER architecture is (currently?) limited to 128-bit vector registers.
+./runtime/libpgmath/lib/common/pow/fma3/vspow4.cpp
+     * Check whether all exponents in vector b are 1.0, and if so take
+./runtime/libpgmath/lib/common/pow/fma3/vdpow4.cpp
+     * Check whether all exponents in vector b are 1.0, and if so take
+./runtime/libpgmath/lib/common/pow/fma3/vdpow8.cpp
+ * But the POWER architectures needs the 32-bit integer vectors to
+ * be the full 128-bits of a vector register.
+./runtime/libpgmath/lib/common/mth_xintrinsics.c
+ * But the POWER architectures needs the 32-bit integer vectors to
+ * be the full 128-bits of a vector register.
+ * Real/complex passed as vectors of length 1.
+./runtime/libpgmath/lib/common/mth_128defs_stats.c
+#define LOG2VECTLENDP 2
+#define VECTLENDP (1 << LOG2VECTLENDP)
+#define LOG2VECTLENSP (LOG2VECTLENDP+1)
+#define VECTLENSP (1 << LOG2VECTLENSP)
+./runtime/libpgmath/lib/common/helperavx2.h
+ * 	Vector compare in the AVX/AVX2 extensions set a resulting
+ * 	vector register with a -1 (32 or 64-bit) where the results of the
+./runtime/libpgmath/lib/common/mth_avx512helper.h
+ * regards to elements other than 0 (first in the vector).
+ * because the scalar versions of the intrinsics copied the vector version
+ * (element 0) in to vector of the same precision.
+typedef vector float __m128;
+typedef vector double __m128d;
+typedef vector VINT int __m128i;
+ * from corresponding vector elements.
+  vec_st((vector unsigned char)a, 0, t);
+  vec_st((vector unsigned int)a, 0, t);
+  vec_st((vector unsigned int) a, 0, t);
+      t[i] = vec_extract((vector unsigned int)b, i);
+ * Quick way to determine whether any element in a vector mask
+#define _mm_extract_ps(_v,_i) vec_extract((vector int)_v,_i)
+ * Vector op constant
+#define	_mm_slli_epi64(_v,_c) (__m128i)vec_sl((vector unsigned long)_v,vec_splats((unsigned long)_c))
+#define	_mm_sllv_epi64(_v,_w) vec_sl((__m128i)_v,(vector unsigned long)_w)
+./runtime/libpgmath/lib/common/xmm2altivec.h
+ * But the POWER architectures needs the 32-bit integer vectors to
+ * be the full 128-bits of a vector register.
+ * Real/complex passed as vectors of length 1.
+./runtime/libpgmath/lib/common/mth_128defs.c
+#define LOG2VECTLENDP 1
+#define VECTLENDP (1 << LOG2VECTLENDP)
+#define LOG2VECTLENSP (LOG2VECTLENDP+1)
+#define VECTLENSP (1 << LOG2VECTLENSP)
+  double a[VECTLENDP];
+  float a[VECTLENSP];
+./runtime/libpgmath/lib/common/helperavx2_128.h
+#define LOG2VECTLENDP 3
+#define VECTLENDP (1 << LOG2VECTLENDP)
+#define LOG2VECTLENSP (LOG2VECTLENDP+1)
+#define VECTLENSP (1 << LOG2VECTLENSP)
+  double s[VECTLENDP];
+  float s[VECTLENSP];
+./runtime/libpgmath/lib/common/helperavx512f.h
+typedef	double	vrd2_t	__attribute__((vector_size(2*sizeof(double))));
+typedef	double	vrd4_t	__attribute__((vector_size(4*sizeof(double))));
+typedef	double	vrd8_t	__attribute__((vector_size(8*sizeof(double))));
+typedef	float	vrs4_t	__attribute__((vector_size(4*sizeof(float))));
+typedef	float	vrs8_t	__attribute__((vector_size(8*sizeof(float))));
+typedef	float	vrs16_t	__attribute__((vector_size(16*sizeof(float))));
+ * Vector structures cannot be made up of structures contaning real and
+ * As such, complex vector structures are in name only and simply
+typedef	double	vcd1_t	__attribute__((vector_size(2*sizeof(double))));
+typedef	double	vcd2_t	__attribute__((vector_size(4*sizeof(double))));
+typedef	double	vcd4_t	__attribute__((vector_size(8*sizeof(double))));
+typedef	float	vcs1_t	__attribute__((vector_size(2*sizeof(float))));
+typedef	float	vcs2_t	__attribute__((vector_size(4*sizeof(float))));
+typedef	float	vcs4_t	__attribute__((vector_size(8*sizeof(float))));
+typedef	float	vcs8_t	__attribute__((vector_size(16*sizeof(float))));
+typedef	int32_t	vis2_t	__attribute__((vector_size(2*sizeof(int32_t))));
+typedef	int32_t	vis4_t	__attribute__((vector_size(4*sizeof(int32_t))));
+typedef	int32_t	vis8_t	__attribute__((vector_size(8*sizeof(int32_t))));
+typedef	int32_t	vis16_t	__attribute__((vector_size(16*sizeof(int32_t))));
+typedef	int64_t	vid2_t	__attribute__((vector_size(2*sizeof(int64_t))));
+typedef	int64_t	vid4_t	__attribute__((vector_size(4*sizeof(int64_t))));
+typedef	int64_t	vid8_t	__attribute__((vector_size(8*sizeof(int64_t))));
+ * POWER architecture needs the 32-bit integer vector array to be defined as a
+ * full vector size - not required for X86-64 architectures.
+./runtime/libpgmath/lib/common/mth_intrinsics.h
+    set(SRC_VECTOR fd_sincos_vector.cpp)
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=2" "fd_sincos_4_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=4" "fd_sincos_8_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=8" "fd_sincos_16_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=8" "fd_sincos_16_knl")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=2" "fd_cos_4_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=4" "fd_cos_8_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=8" "fd_cos_16_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=8" "fd_cos_16_knl")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINE -DVL=2" "fd_sin_4_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINE -DVL=4" "fd_sin_8_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DSINE -DVL=8" "fd_sin_16_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DSINE -DVL=8" "fd_sin_16_knl")
+    set(SRC_VECTOR fd_sincos_vector.cpp)
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=2" "fd_sincos_4_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=4" "fd_sincos_8_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=8" "fd_sincos_16_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=8" "fd_sincos_16_knl")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=2" "fd_cos_4_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=4" "fd_cos_8_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=8" "fd_cos_16_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=8" "fd_cos_16_knl")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINE -DVL=2" "fd_sin_4_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINE -DVL=4" "fd_sin_8_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DSINE -DVL=8" "fd_sin_16_avx2")
+    libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DSINE -DVL=8" "fd_sin_16_knl")
+./runtime/libpgmath/lib/common/sincos/CMakeLists.txt
+ * vector types.
+#define VFLOATRETURN    __mth_return2vectors
+./runtime/libpgmath/lib/common/sincos/gsincos.cpp
+extern  "C" vdouble __mth_return2vectors(const vdouble, const vdouble);
+    return  __mth_return2vectors(rs, rc);
+./runtime/libpgmath/lib/common/sincos/fd_sincos_vector.cpp
+ * for all vector types.
+#define VFLOATRETURN    __mth_return2vectors
+./runtime/libpgmath/lib/common/sincos/gsincos.c
+  typedef float  vrs4_t __attribute__((vector_size(4 * sizeof(float))));
+  typedef double vrd2_t __attribute__((vector_size(2 * sizeof(double))));
+  typedef float  vrs4_t __attribute__((vector_size(4 * sizeof(float))));
+  typedef double vrd2_t __attribute__((vector_size(2 * sizeof(double))));
+  typedef int32_t vis4_t __attribute__((vector_size(4 * sizeof(int32_t))));
+  typedef int64_t vid2_t __attribute__((vector_size(2 * sizeof(int64_t))));
+ * from corresponding vector elements.
+ * Quick way to determine whether any element in a vector mask
+ * Vector op constant
+./runtime/libpgmath/lib/common/arm64intrin.h
+extern  "C" vfloat __mth_return2vectors(const vfloat, const vfloat);
+        return  __mth_return2vectors(rs, rc);
+    return  __mth_return2vectors(rs, rc);
+./runtime/libpgmath/lib/common/sincosf/fs_sincos_vector.cpp
+set(SRC_VECTOR fs_sincos_vector.cpp)
+libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=4" "fs_sincos_4_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=8" "fs_sincos_8_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=16" "fs_sincos_16_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DSINCOS -DVL=16" "fs_sincos_16_knl")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=4" "fs_cos_4_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=8" "fs_cos_8_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=16" "fs_cos_16_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DCOSINE -DVL=16" "fs_cos_16_knl")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINE -DVL=4" "fs_sin_4_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX2_FLAGS}" "${DEFINITIONS} -DSINE -DVL=8" "fs_sin_8_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${AVX512_FLAGS}" "${DEFINITIONS} -DSINE -DVL=16" "fs_sin_16_avx2")
+libmath_add_object_library("${SRC_VECTOR}" "${KNL_FLAGS}" "${DEFINITIONS} -DSINE -DVL=16" "fs_sin_16_knl")
+./runtime/libpgmath/lib/common/sincosf/CMakeLists.txt
+ * using Intel AVX-512 vectors in to two calls of the corresponding AVX2
+./runtime/libpgmath/lib/common/mth_z2yy.h
+typedef double  vrd2_t  __attribute__((vector_size(2*sizeof(double))));
+typedef double  vrd4_t  __attribute__((vector_size(4*sizeof(double))));
+typedef double  vrd8_t  __attribute__((vector_size(8*sizeof(double))));
+typedef	float	vrs4_t	__attribute__((vector_size(4*sizeof(float))));
+typedef	float	vrs8_t	__attribute__((vector_size(8*sizeof(float))));
+typedef	float	vrs16_t	__attribute__((vector_size(16*sizeof(float))));
+ * Vector structures cannot be made up of structures contaning real and
+ * As such, complex vector structures are in name only and simply
+typedef double  vcd1_t  __attribute__((vector_size(2*sizeof(double))));
+typedef double  vcd2_t  __attribute__((vector_size(4*sizeof(double))));
+typedef double  vcd4_t  __attribute__((vector_size(8*sizeof(double))));
+typedef float   vcs1_t  __attribute__((vector_size(2*sizeof(float))));
+typedef float   vcs2_t  __attribute__((vector_size(4*sizeof(float))));
+typedef float   vcs4_t  __attribute__((vector_size(8*sizeof(float))));
+typedef float   vcs8_t  __attribute__((vector_size(16*sizeof(float))));
+typedef	int32_t	vis2_t	__attribute__((vector_size(2*sizeof(int32_t))));
+typedef	int32_t	vis4_t	__attribute__((vector_size(4*sizeof(int32_t))));
+typedef	int32_t	vis8_t	__attribute__((vector_size(8*sizeof(int32_t))));
+typedef	int32_t	vis16_t	__attribute__((vector_size(16*sizeof(int32_t))));
+typedef	int64_t	vid2_t	__attribute__((vector_size(2*sizeof(int64_t))));
+typedef	int64_t	vid4_t	__attribute__((vector_size(4*sizeof(int64_t))));
+typedef	int64_t	vid8_t	__attribute__((vector_size(8*sizeof(int64_t))));
+        printf("%s: %s mask vectors\n",
+./runtime/libpgmath/test/pgmath_test.h
+  string(REPLACE "-fno-tree-vectorize" "-ftree-vectorize" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+  string(REPLACE "-fno-tree-vectorize" "-ftree-vectorize" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+  string(REPLACE "-fno-tree-slp-vectorize" "-ftree-slp-vectorize" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+  string(REPLACE "-fno-tree-slp-vectorize" "-ftree-slp-vectorize" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+./runtime/libpgmath/CMakeLists.txt
+ * using Intel AVX-512 vectors in to two calls of the corresponding AVX2\n\
+function func_pow_decl_vect(name, frp, sd, ik)
+function func_pow_decl_vect_di(name, frp)
+function func_pow_decl_vect_sk(name, frp)
+      func_pow_decl_vect(name, frp, sd, ik)
+      func_pow_decl_vect_di(name, frp)
+      func_pow_decl_vect_sk(name, frp)
+./runtime/libpgmath/tools/mth_z2yy.awk
+    # For vector register size == 128, it would be faster to use the
+  # X86-64 tests assume input vector is return if mask is all zero.
+  # X86-64 tests assume input vector is return if mask is all zero.
+./runtime/libpgmath/tools/mth_mask.awk
+  # Vector types
+function func_pow_decl_vect(name, frp, sd, ik)
+function func_pow_decl_vect_sk(name, frp)
+    # Cases 1..3 can be handled by func_pow_decl_vect().
+      func_pow_decl_vect_sk(name, frp)
+      func_pow_decl_vect(name, frp, sd, ik)
+        if (sd == "z") { continue; } # No vector version
+./runtime/libpgmath/tools/mth_generic_frp.awk
+ * For vectored i/o, start reads or writes
+./runtime/flang/async.h
+/* pack, optional vector arg present.  pack masked elements of array
+   elements of vector */
+                        void *vb,         /* vector base */
+                        F90_Desc *vector) /* vector descriptor */
+  __INT_T i, mask_is_array, more_array, more_vector, mval;
+  if (vector == NULL || F90_TAG_G(vector) != __DESC)
+    __fort_abort("PACK: invalid vector descriptor");
+  if (F90_GSIZE_G(result) == 0 || F90_GSIZE_G(vector) == 0)
+  vf = (char *)vb + DIST_SCOFF_G(vector) * F90_LEN_G(vector);
+  vindex = F90_DIM_LBOUND_G(vector, 0);
+  more_array = more_vector = 1;
+  while (more_array & more_vector) {
+       the next result element and also advance to the next vector
+      more_vector &= I8(next_index)(&rindex, result);
+      more_vector &= I8(next_index)(&vindex, vector);
+     the remainder of the result with the corresponding vector
+  while (more_vector) {
+    I8(__fort_get_scalar)(la, vf, vector, &vindex);
+    more_vector &= I8(next_index)(&rindex, result);
+    more_vector &= I8(next_index)(&vindex, vector);
+                          DCHAR(vb),        /* vector char base */
+                          F90_Desc *vector  /* vector descriptor */
+                          DCLEN64(vb))        /* vector char len */
+		      result, array, mask, vector);
+                          DCHAR(vb),        /* vector char base */
+                          F90_Desc *vector  /* vector descriptor */
+                          DCLEN(vb))        /* vector char len */
+            vector, (__CLEN_T)CLEN(rb), (__CLEN_T)CLEN(ab), (__CLEN_T)CLEN(vb));
+/* pack, optional vector arg absent.  pack masked elements of array
+                            F90_Desc *vector  /* vector descriptor */
+                            F90_Desc *vector  /* vector descriptor */
+                           vector, (__CLEN_T)CLEN(rb), (__CLEN_T)CLEN(ab));
+                            void *vb,         /* vector base */
+                            F90_Desc *vector, /* vector descriptor */
+  vindex = F90_DIM_LBOUND_G(vector, 0);
+    /* if the mask is true, move the next vector element to the
+      I8(__fort_get_scalar)(la, vb, vector, &vindex);
+      I8(next_index)(&vindex, vector);
+                              DCHAR(vb),        /* vector char base */
+                              F90_Desc *vector, /* vector descriptor */
+                              DCLEN64(vb)         /* vector char len */
+			  result, vector, mask, field);
+                              DCHAR(vb),        /* vector char base */
+                              F90_Desc *vector, /* vector descriptor */
+                              DCLEN(vb)         /* vector char len */
+  ENTFTN(UNPACKC, unpackc)(CADR(rb), CADR(vb), mb, CADR(fb), result, vector,
+./runtime/flang/pack.c
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_cplx8str1.F95
+ * Fio_asy_start - for vectored i/o, start reads or writes
+./runtime/flang/async.c
+   corresponding vector section of the array and shifting them the
+./runtime/flang/cshift.c
+    /* matrix vector multiply */
+    /* vector matrix multiply */
+./runtime/flang/mmreal8.c
+  integer, parameter :: min_blocked_mult = 15000 !Complex calculations not vectorized on OpenPower.
+./runtime/flang/pgf90_mmul_cmplx16.h
+    /* matrix vector multiply */
+    /* vector matrix multiply */
+./runtime/flang/mmcmplx16.c
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_cplx16str1.F95
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_int1str1.F95
+    /* matrix vector multiply */
+    /* vector matrix multiply */
+./runtime/flang/mmreal4.c
+  /* result is vectored, array is unvectored */
+  /* result is vectored, array is unvectored */
+  /* result is vectored, array is unvectored */
+./runtime/flang/scatter_minval.c
+/* print a strided vector */
+void I8(__fort_print_vector)(char *msg, void *adr, __INT_T str, __INT_T cnt,
+./runtime/flang/dbug.c
+     else ! don't conjugate a - if ta != 2, it is just a complex vector
+./runtime/flang/vmmul_cmplx8.F95
+/* initialize i/o condition handling bit vector and iostat address */
+./runtime/flang/descFioUtil.c
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_int2str1.F95
+  integer, parameter :: min_blocked_mult = 1750  !Complex calculations not vectorized on OpenPower.
+./runtime/flang/pgf90_mmul_cmplx8.h
+ * The seed vector is advanced by n elements and the resulting pseudo-random
+ * performed by matrix-vector multiplication, multiplying a matrix from the
+       * Advance vector of size LONG_LAG of seed_lf values by 2**m.
+       * Matrix-vector multiplication is performed from seed_lf[old_offset]
+./runtime/flang/rnum.c
+      n   = vector length
+      v   = vector base address
+      vs  = vector stride
+      m   = mask vector address
+      ms  = mask vector stride
+      n   = vector length
+      lr  = local result vector
+      rr  = remote result vector
+      lv  = local min/max value vector
+      rv  = remote min/max value vector
+   RTYP = result & vector type
+./runtime/flang/red.h
+/* note: dimensions in order vector are zero-based. */
+  /* don't really need the shape vector because the shape is already
+  I8(__fort_fetch_int_vector)(shpb, shpd, shape, r);
+  /* get the order vector */
+    I8(__fort_fetch_int_vector)(ordb, ordd, order, r);
+  /* loop -- transfer matching column vector sections and advance
+./runtime/flang/reshape.c
+  /* result is vectored, array is unvectored */
+  /* result is vectored, array is unvectored */
+  /* result is vectored, array is unvectored */
+./runtime/flang/scatter_maxval.c
+/* fetch the i'th element of an integer vector */
+/* store the i'th element of an integer vector */
+/* fetch integer vector */
+void I8(__fort_fetch_int_vector)(void *b, F90_Desc *d, int *vec, int veclen)
+    __fort_abort("fetch_vector: non-unit rank");
+      __fort_abort("fetch_int_vector: non-integer type");
+/* store integer vector */
+void I8(__fort_store_int_vector)(void *b, F90_Desc *d, int *vec, int veclen)
+    __fort_abort("store_int_vector: non-unit rank");
+        __fort_abort("store_int_vector: non-integer type");
+./runtime/flang/util.c
+    /* matrix vector multiply */
+    /* vector matrix multiply */
+./runtime/flang/mmcmplx8.c
+static void I8(fetch_vector)(void *ab, F90_Desc *as, __INT_T *vector,
+    __fort_abort("fetch_vector: incorrect argument rank");
+      __fort_abort("fetch_vector: argument inaccessible");
+    *vector++ = I8(fetch_int)(la, as);
+static void I8(store_vector)(void *ab, F90_Desc *as, __INT_T *vector,
+    __fort_abort("store_vector: incorrect argument rank");
+      I8(store_int)(la, as, *vector);
+    ++vector;
+static void I8(store_vector_int)(void *ab, F90_Desc *as, int *vector,
+    __fort_abort("store_vector_int: incorrect argument rank");
+      I8(store_int)(la, as, *vector);
+    ++vector;
+  __INT_T aextent, i, idm, ncp, px, rank, textent, vector[MAXDIMS];
+      vector[i] = DIST_DPTR_TSTRIDE_G(ad) * F90_DPTR_LBOUND_G(ad) +
+    I8(store_vector)(lb, lb_s, vector, rank);
+      vector[i] = DIST_DPTR_TSTRIDE_G(ad) * DPTR_UBOUND_G(ad) +
+    I8(store_vector)(ub, ub_s, vector, rank);
+        vector[i] = DIST_DPTR_TSTRIDE_G(ad);
+        vector[i] = 0;
+    I8(store_vector)(stride, stride_s, vector, rank);
+      vector[i] = DIST_DPTR_TAXIS_G(ad);
+    I8(store_vector)(axis_map, axis_map_s, vector, rank);
+  __INT_T i, rank, vector[MAXDIMS];
+      vector[i] = DIST_DPTR_BLOCK_G(ud);
+    I8(store_vector)(axis_info, axis_info_s, vector, rank);
+      vector[i] = pd->shape;
+    I8(store_vector)(proc_shape, proc_shape_s, vector, p->rank);
+      vector[i] = 1;
+    I8(store_vector)(plb, plb_s, vector, rank);
+      vector[i] = DIST_DPTR_PSHAPE_G(ud);
+    I8(store_vector)(pub, pub_s, vector, rank);
+      vector[i] = DIST_DPTR_PSTRIDE_G(ud);
+    I8(store_vector)(pstride, pstride_s, vector, rank);
+      vector[i] = DIST_DPTR_NO_G(dd);
+    I8(store_vector)(low_shadow, low_shadow_s, vector, rank);
+      vector[i] = DIST_DPTR_PO_G(dd);
+    I8(store_vector)(high_shadow, high_shadow_s, vector, rank);
+  __INT_T alignee_axis[MAXDIMS], vector[MAXDIMS];
+      vector[i] = F90_DPTR_LBOUND_G(ud);
+    I8(store_vector)(lb, lb_s, vector, rank);
+      vector[i] = DPTR_UBOUND_G(ud);
+    I8(store_vector)(ub, ub_s, vector, rank);
+        vector[i] = alignee_axis[i];
+        vector[i] = DIST_INFO_G(alignee, i);
+        vector[i] = (DIST_DPTR_PAXIS_G(ud) > 0) ? DIST_DPTR_PSHAPE_G(ud) : 1;
+    I8(store_vector)(axis_info, axis_info_s, vector, rank);
+  __INT_T i, idm, n, rank, vector[MAXDIMS];
+      vector[i] = DIST_DPTR_TSTRIDE_G(ad) * F90_DPTR_LBOUND_G(ad) +
+    I8(store_vector)(lb, lb_s, vector, rank);
+      vector[i] = DIST_DPTR_TSTRIDE_G(ad) * DPTR_UBOUND_G(ad) +
+    I8(store_vector)(ub, ub_s, vector, rank);
+      vector[i] = DIST_DPTR_TSTRIDE_G(ad);
+    I8(store_vector)(stride, stride_s, vector, rank);
+      vector[i] = DIST_DPTR_TAXIS_G(ad);
+    I8(store_vector)(axis_map, axis_map_s, vector, rank);
+  __INT_T i, rank, vector[MAXDIMS];
+      vector[i] = DIST_DPTR_BLOCK_G(ud);
+    I8(store_vector)(axis_info, axis_info_s, vector, rank);
+      vector[i] = pd->shape;
+    I8(store_vector)(proc_shape, proc_shape_s, vector, p->rank);
+      vector[i] = 1;
+    I8(store_vector)(plb, plb_s, vector, rank);
+      vector[i] = DIST_DPTR_PSHAPE_G(ud);
+    I8(store_vector)(pub, pub_s, vector, rank);
+      vector[i] = DIST_DPTR_PSTRIDE_G(ud);
+    I8(store_vector)(pstride, pstride_s, vector, rank);
+      vector[i] = DIST_DPTR_NO_G(dd);
+    I8(store_vector)(low_shadow, low_shadow_s, vector, rank);
+      vector[i] = DIST_DPTR_PO_G(dd);
+    I8(store_vector)(high_shadow, high_shadow_s, vector, rank);
+  __INT_T alignee_axis[MAXDIMS], vector[MAXDIMS];
+      vector[i] = F90_DPTR_LBOUND_G(ud);
+    I8(store_vector)(lb, lb_s, vector, rank);
+      vector[i] = DPTR_UBOUND_G(ud);
+    I8(store_vector)(ub, ub_s, vector, rank);
+        vector[i] = alignee_axis[i];
+        vector[i] = DIST_INFO_G(alignee, i);
+        vector[i] = (DIST_DPTR_PAXIS_G(ud) > 0) ? DIST_DPTR_PSHAPE_G(ud) : 1;
+    I8(store_vector)(axis_info, axis_info_s, vector, rank);
+  __INT_T i, dim, rank, vector[MAXDIMS];
+      vector[i] = F90_DIM_LBOUND_G(g, i);
+    I8(store_vector)(lbound_b, lbound_s, vector, rank);
+  __INT_T i, extent, rank, vector[MAXDIMS];
+    vector[i] = extent;
+  I8(store_vector)(shape_b, shape_s, vector, rank);
+  __INT_T i, dim, rank, vector[MAXDIMS];
+      vector[i] = DIM_UBOUND_G(g, i);
+    I8(store_vector)(ubound_b, ubound_s, vector, rank);
+  I8(fetch_vector)(index_b, index_s, index, p->rank);
+  I8(store_vector)(index_b, index_s, index, p->rank);
+  /* get the local index vector */
+  I8(fetch_vector)(l_index_b, l_index_s, index, F90_RANK_G(gs));
+  /* return the global index vector */
+  I8(store_vector)(g_index_b, g_index_s, index, F90_RANK_G(gs));
+  /* get the global index vector */
+  I8(fetch_vector)(g_index_b, g_index_s, gindex, F90_RANK_G(gs));
+    I8(store_vector)(l_index_b, l_index_s, lindex, F90_RANK_G(gs));
+      I8(store_vector)(procs_b, procs_s, &procno, 1);
+      I8(store_vector)(procs_b, procs_s, procs, repl.ncopies);
+    I8(store_vector)(blkcnt_b, blkcnt_s, blkcnt, F90_RANK_G(gs));
+  I8(store_vector_int)(shape, shape_s, GET_DIST_TCPUS_ADDR, 1);
+./runtime/flang/query.c
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_int8str1.F95
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_real8str1.F95
+   section d.  pcoord is an integer vector of size MAXDIMS which saves the
+   vector. */
+    /* now construct the shape vector, using the prime factors
+       from largest to smallest.  keep the shape vector sorted in
+   dimension followed by a bitmask indicating vector dimensions (not
+./runtime/flang/dist.c
+/* vector of data item entries */
+./runtime/flang/fioStructs.h
+     else ! don't conjugate a - if ta != 2, it is just a complex vector
+./runtime/flang/vmmul_cmplx16.F95
+void I8(__fort_print_vector)(char *msg, void *adr, __INT_T str, __INT_T cnt,
+void I8(__fort_fetch_int_vector)(void *b, F90_Desc *d, int *vec, int veclen);
+void I8(__fort_store_int_vector)(void *b, F90_Desc *d, int *vec, int veclen);
+./runtime/flang/fioMacros.h
+  short share;      /* bit vector of file sharing values TBD */
+./runtime/flang/global.h
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_real4str1.F95
+            ! load s1 temp vector
+            ! load s1 temp vector
+./runtime/flang/mmul_int4str1.F95
+/* ENTFTN(comm_free) function: free channels, vectors, schedule structures */
+/* local setup for each element of unvectored array */
+  /* construct vectored array index tuple */
+/* loop over local elements of unvectored array, checking mask */
+                           int uoff0,      /* unvectored array element offset */
+                           int dim)        /* unvectored array/mask dimension */
+      z->ui[dim - 1] = ubl; /* unvectored array index */
+          /* mask/index aligned with unvectored. local
+             blocks should synchronize with unvectored array */
+          /* mask/index not aligned with unvectored (but
+             local wherever unvectored is local). need to
+             unvectored block */
+/* loop over local elements of unvectored array, no mask */
+                              int uoff0, /* unvectored array element offset */
+                              int dim)        /* unvectored array dimension */
+      z->ui[dim - 1] = ubl; /* unvectored array index */
+          /* index aligned with unvectored. local blocks
+             should synchronize with unvectored array */
+          /* index not aligned with unvectored (but local
+             wherever unvectored is local). need to set up
+             unvectored block */
+/* u = unvectored, v = vectored, x = index */
+  repl_t u_repl; /* unvectored array replication descriptor */
+  z->conform_x_u = 0; /* index conforms with unvectored */
+  z->aligned_x_u = 0; /* index aligned with unvectored */
+  z->aligned_v_u = 0; /* vectored aligned with unvectored */
+  z->aligned_u_v = 0; /* unvectored aligned with vectored */
+    /* if any vectored dim is not indirectly indexed... */
+     subscripted by each unvectored axis */
+         unvectored dimension. mask axis permutation is not
+         unvectored array rank */
+        printf("%d %s unvectored array:\n", lcpu, z->what);
+      /* indirection in this vectored array dimension */
+        /* index axes are a permutation of the unvectored
+          /* set up inverse mapping from unvectored axis to
+             list of vectored axis/index axis pairs */
+        /* set up inverse mapping from unvectored axis to list
+           of vectored axis/index axis pairs */
+          printf("%d %s unvectored array:\n", lcpu, z->what);
+      /* no indirection in this vectored array dimension */
+        /* this vectored axis is directly indexed by a
+           specified unvectored axis */
+          gathscat_abort(z->what, "invalid unvectored axis");
+        /* this vectored axis is directly indexed by the
+           corresponding unvectored axis */
+    /* check if vectored and unvectored arrays are identically
+    /* ... or if any mapped dimension of the vectored array is
+    /* ... or if any directly indexed dimension of the vectored
+       dimension of the unvectored array */
+  /* set up cyclic loops over unvectored section */
+     unvectored array replication group */
+         loop over all local unvectored elements to determine
+         loop over all local unvectored elements to determine
+    /* roff     = unaggregated offsets in remote vectored array */
+    /* loff     = unaggregated offsets in local unvectored array */
+./runtime/flang/scatter.c
+  double datas; /* number of data vectors sent */
+  double datar; /* number of data vectors received */
+  double datac; /* number of data vectors copied */
+  struct cinfo *cptr; /* pointer to vector of lines info */
+./runtime/flang/cprof.h
+  int vx;                /* vectored array axis */
+  __INT_T *xmap;     /* map index axis -> unvectored axis */
+  int *roff;        /* offsets in remote vectored array */
+  int *loff;        /* offsets in local unvectored array */
+  /* masks with bits selected by vectored array dim... */
+  int conform_x_u; /* index conforms with unvectored */
+  int aligned_x_u; /* index aligned with unvectored */
+  int aligned_v_u; /* vectored aligned with unvectored */
+  int aligned_u_v; /* unvectored aligned with vectored */
+  int ui[MAXDIMS]; /* unvectored array index */
+  /* each unvectored array axis has it own list identifying the
+     vectored axis/index axis pairs which it indexes. */
+  xstuff *xhead[MAXDIMS]; /* unvectored axis -> first xlist entry */
+  gathscat_dim dim[MAXDIMS]; /* per vectored-dimension parameters */
+./runtime/flang/scatter.h
+	vector_size is 1 for non arrays
+                     int vector_size,assign_func_ptr assign_op)
+			               (size_t) (class_size * vector_size),
+				       (size_t)(class_size * vector_size),
+    for (i = 0; i < vector_size; ++i) {
+	vector_size is 1 for non arrays
+                       int vector_size,assign_func_ptr assign_op,
+				    (size_t)(class_size * vector_size),
+  for (i = 0; i < vector_size; ++i) {
+                     int vector_size, assign_func_ptr assign_op)
+     for (i = 0; i < vector_size; ++i) {
+./runtime/flangrti/llcrit.c

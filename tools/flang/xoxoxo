@@ -1,0 +1,159 @@
+144:  LL_Version_3_1 = 31,
+145:  LL_Version_3_2 = 32,
+146:  LL_Version_3_4 = 34,
+147:  LL_Version_3_5 = 35,
+148:  LL_Version_3_6 = 36,
+149:  LL_Version_3_7 = 37,
+150:  LL_Version_3_8 = 38,
+151:  LL_Version_3_9 = 39,
+152:  LL_Version_4_0 = 40,
+153:  LL_Version_5_0 = 50,
+154:  LL_Version_6_0 = 60,
+155:  LL_Version_7_0 = 70,
+156:  LL_Version_8_0 = 80,
+157:  LL_Version_9_0 = 90,
+158:  LL_Version_trunk = 1023
+199:  return feature->version >= LL_Version_3_4;
+208:  return feature->version >= LL_Version_3_4;
+217:  return feature->version < LL_Version_3_4;
+226:  return feature->version >= LL_Version_3_4;
+235:  return feature->version <= LL_Version_3_5;
+241:  return feature->version >= LL_Version_3_6;
+250:  return feature->version >= LL_Version_3_6;
+260:  return feature->version >= LL_Version_3_7;
+270:  return feature->version >= LL_Version_3_7;
+279:  return feature->version < LL_Version_3_7;
+288:  return feature->version >= LL_Version_3_7;
+298:  return feature->version < LL_Version_3_7;
+309:  return feature->version >= LL_Version_3_7;
+318:  return feature->version >= LL_Version_3_7;
+327:  return feature->version >= LL_Version_3_7;
+339:  return feature->version < LL_Version_3_7;
+348:  return feature->version >= LL_Version_3_7;
+358:  return feature->version >= LL_Version_3_7;
+367:  return feature->version >= LL_Version_3_8;
+376:  return feature->version >= LL_Version_7_0;
+385:  return feature->version >= LL_Version_8_0;
+395:  return feature->version >= LL_Version_9_0;
+404:  return feature->version >= LL_Version_9_0;
+410:  return feature->version >= LL_Version_3_8;
+419:  return feature->version >= LL_Version_3_9;
+431:  return feature->version >= LL_Version_4_0;
+438:  return feature->version >= LL_Version_5_0;
+445:  return feature->version >= LL_Version_5_0;
+452:  return feature->version >= LL_Version_5_0;
+458:  return feature->version >= LL_Version_5_0;
+464:#define ll_feature_use_addrspacecast(f) ((f)->version >= LL_Version_3_4)
+465:#define ll_feature_debug_info_global_aliases(f) ((f)->version >= LL_Version_3_4)
+466:#define ll_feature_debug_info_pre34(f) ((f)->version < LL_Version_3_4)
+467:#define ll_feature_emit_nvvmir_version(f) ((f)->version >= LL_Version_3_4)
+468:#define ll_feature_versioned_dw_tag(f) ((f)->version <= LL_Version_3_5)
+469:#define ll_feature_omit_metadata_type(f) ((f)->version >= LL_Version_3_6)
+470:#define ll_feature_debug_info_mdlocation(f) ((f)->version >= LL_Version_3_6)
+471:#define ll_feature_alias_flags_first(f) ((f)->version >= LL_Version_3_7)
+473:  ((f)->version >= LL_Version_3_7)
+475:  ((f)->version < LL_Version_3_7)
+476:#define ll_feature_explicit_gep_load_type(f) ((f)->version >= LL_Version_3_7)
+477:#define ll_feature_metadata_args_struct(f) ((f)->version < LL_Version_3_7)
+478:#define ll_feature_use_specialized_mdnodes(f) ((f)->version >= LL_Version_3_7)
+480:  ((f)->version >= LL_Version_3_7)
+482:  ((f)->version >= LL_Version_3_7)
+484:  ((f)->version < LL_Version_3_7)
+485:#define ll_feature_debug_info_DI_syntax(f) ((f)->version >= LL_Version_3_7)
+487:  ((f)->version >= LL_Version_3_7)
+488:#define ll_feature_debug_info_ver38(f) ((f)->version >= LL_Version_3_8)
+489:#define ll_feature_debug_info_ver70(f) ((f)->version >= LL_Version_7_0)
+490:#define ll_feature_debug_info_ver80(f) ((f)->version >= LL_Version_8_0)
+491:#define ll_feature_debug_info_ver90(f) ((f)->version >= LL_Version_9_0)
+493:  ((f)->version >= LL_Version_9_0)
+494:#define ll_feature_use_distinct_metadata(f) ((f)->version >= LL_Version_3_8)
+495:#define ll_feature_subprogram_not_in_cu(f) ((f)->version >= LL_Version_3_9)
+496:#define ll_feature_from_global_to_md(f) ((f)->version >= LL_Version_4_0)
+497:#define ll_feature_use_5_diexpression(f) ((f)->version >= LL_Version_5_0)
+498:#define ll_feature_create_dimodule(f) ((f)->version >= LL_Version_5_0)
+499:#define ll_feature_has_diextensions(f) ((f)->version >= LL_Version_5_0)
+500:#define ll_feature_no_file_in_namespace(f) ((f)->version >= LL_Version_5_0)
+./tools/flang2/flang2exe/ll_structure.h
+41:  return flg.x[249] ? ((LL_IRVersion)flg.x[249]) : LL_Version_3_2;
+426:    if (vers >= LL_Version_3_7)
+./tools/flang2/flang2exe/ll_structure.cpp
+1735:      && (get_llvm_version() >= LL_Version_3_7)) {
+./tools/flang2/flang2exe/cgmain.cpp.orig
+1485:      if (get_llvm_version() >= LL_Version_3_8) {
+./tools/flang2/flang2exe/llassem.cpp.orig
+1485:      if (get_llvm_version() >= LL_Version_3_8) {
+./tools/flang2/flang2exe/llassem.cpp
+144:  LL_Version_3_1 = 31,
+145:  LL_Version_3_2 = 32,
+146:  LL_Version_3_4 = 34,
+147:  LL_Version_3_5 = 35,
+148:  LL_Version_3_6 = 36,
+149:  LL_Version_3_7 = 37,
+150:  LL_Version_3_8 = 38,
+151:  LL_Version_3_9 = 39,
+152:  LL_Version_4_0 = 40,
+153:  LL_Version_5_0 = 50,
+154:  LL_Version_6_0 = 60,
+155:  LL_Version_7_0 = 70,
+156:  LL_Version_trunk = 1023
+197:  return feature->version >= LL_Version_3_4;
+206:  return feature->version >= LL_Version_3_4;
+215:  return feature->version < LL_Version_3_4;
+224:  return feature->version >= LL_Version_3_4;
+233:  return feature->version <= LL_Version_3_5;
+239:  return feature->version >= LL_Version_3_6;
+248:  return feature->version >= LL_Version_3_6;
+258:  return feature->version >= LL_Version_3_7;
+268:  return feature->version >= LL_Version_3_7;
+277:  return feature->version < LL_Version_3_7;
+286:  return feature->version >= LL_Version_3_7;
+296:  return feature->version < LL_Version_3_7;
+307:  return feature->version >= LL_Version_3_7;
+316:  return feature->version >= LL_Version_3_7;
+325:  return feature->version >= LL_Version_3_7;
+337:  return feature->version < LL_Version_3_7;
+346:  return feature->version >= LL_Version_3_7;
+356:  return feature->version >= LL_Version_3_7;
+365:  return feature->version >= LL_Version_3_8;
+374:  return feature->version >= LL_Version_7_0;
+380:  return feature->version >= LL_Version_3_8;
+389:  return feature->version >= LL_Version_3_9;
+401:  return feature->version >= LL_Version_4_0;
+408:  return feature->version >= LL_Version_5_0;
+415:  return feature->version >= LL_Version_5_0;
+423:  return feature->version >= LL_Version_5_0;
+432:  return feature->version >= LL_Version_5_0;
+438:#define ll_feature_use_addrspacecast(f) ((f)->version >= LL_Version_3_4)
+439:#define ll_feature_debug_info_global_aliases(f) ((f)->version >= LL_Version_3_4)
+440:#define ll_feature_debug_info_pre34(f) ((f)->version < LL_Version_3_4)
+441:#define ll_feature_emit_nvvmir_version(f) ((f)->version >= LL_Version_3_4)
+442:#define ll_feature_versioned_dw_tag(f) ((f)->version <= LL_Version_3_5)
+443:#define ll_feature_omit_metadata_type(f) ((f)->version >= LL_Version_3_6)
+444:#define ll_feature_debug_info_mdlocation(f) ((f)->version >= LL_Version_3_6)
+445:#define ll_feature_alias_flags_first(f) ((f)->version >= LL_Version_3_7)
+447:  ((f)->version >= LL_Version_3_7)
+449:  ((f)->version < LL_Version_3_7)
+450:#define ll_feature_explicit_gep_load_type(f) ((f)->version >= LL_Version_3_7)
+451:#define ll_feature_metadata_args_struct(f) ((f)->version < LL_Version_3_7)
+452:#define ll_feature_use_specialized_mdnodes(f) ((f)->version >= LL_Version_3_7)
+454:  ((f)->version >= LL_Version_3_7)
+456:  ((f)->version >= LL_Version_3_7)
+458:  ((f)->version < LL_Version_3_7)
+459:#define ll_feature_debug_info_DI_syntax(f) ((f)->version >= LL_Version_3_7)
+461:  ((f)->version >= LL_Version_3_7)
+462:#define ll_feature_debug_info_ver38(f) ((f)->version >= LL_Version_3_8)
+463:#define ll_feature_debug_info_ver70(f) ((f)->version >= LL_Version_7_0)
+464:#define ll_feature_use_distinct_metadata(f) ((f)->version >= LL_Version_3_8)
+465:#define ll_feature_subprogram_not_in_cu(f) ((f)->version >= LL_Version_3_9)
+466:#define ll_feature_from_global_to_md(f) ((f)->version >= LL_Version_4_0)
+467:#define ll_feature_use_5_diexpression(f) ((f)->version >= LL_Version_5_0)
+468:#define ll_feature_create_dimodule(f) ((f)->version >= LL_Version_5_0)
+470:#define ll_feature_has_diextensions(f) ((f)->version >= LL_Version_5_0)
+474:#define ll_feature_no_file_in_namespace(f) ((f)->version >= LL_Version_5_0)
+./tools/flang2/flang2exe/ll_structure.h.orig
+1741:      && (get_llvm_version() >= LL_Version_3_7)) {
+./tools/flang2/flang2exe/cgmain.cpp
+41:  return flg.x[249] ? ((LL_IRVersion)flg.x[249]) : LL_Version_3_2;
+425:    if (vers >= LL_Version_3_7)
+./tools/flang2/flang2exe/ll_structure.cpp.orig
+grep: input file ‘./xoxoxo’ is also the output
