@@ -3848,8 +3848,10 @@ void Clang::ConstructJob(Compilation &C, const JobAction &JA,
     CmdArgs.push_back("-disable-llvm-verifier");
 
   // Discard value names in assert builds unless otherwise specified.
-  if (Args.hasFlag(options::OPT_fdiscard_value_names,
-                   options::OPT_fno_discard_value_names, !IsAssertBuild))
+  if (Args.hasArg(options::OPT_fdiscard_value_names))
+    CmdArgs.push_back("-discard-value-names");
+
+  if (IsAssertBuild && !Args.hasArg(options::OPT_fno_discard_value_names))
     CmdArgs.push_back("-discard-value-names");
 
   // Set the main file name, so that debug info works even with
