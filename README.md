@@ -1,4 +1,4 @@
-## Marvell Semiconductor port of flang based on LLVM 9.0.0.
+## Marvell Semiconductor port of flang based on LLVM 9.0.1.
 ## Includes LLVM, flang, clang, Polly, compiler-rt, OpenMP, lld, plus a large number of Marvell internal patches.
 ==============================================================================================
 
