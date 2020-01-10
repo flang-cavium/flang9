@@ -436,23 +436,79 @@ SET(FTN_SUPPORT_DESC_DEP
 set(I8_FILES_DIR I8_sources)
 
 # Fortran files with macros as module names need to be preprocessed.
-add_custom_command(
-  OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
-  COMMAND "${CMAKE_C_COMPILER}" -E
-  "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8
-  > "${I8_FILES_DIR}/ieee_arithmetic.F95"
-  COMMENT "Preprocessing ieee_arithmetic.F95"
-  VERBATIM
-)
+if(${TARGET_ARCHITECTURE} STREQUAL "aarch64")
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8 -D__aarch64__
+    > "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMENT "Preprocessing ieee_arithmetic.F95"
+    VERBATIM
+    )
 
-add_custom_command(
-  OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
-  COMMAND "${CMAKE_C_COMPILER}" -E
-  "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8
-  > "${I8_FILES_DIR}/ieee_exceptions.F95"
-  COMMENT "Preprocessing ieee_exceptions.F95"
-  VERBATIM
-)
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8 -D__aarch64__
+    > "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMENT "Preprocessing ieee_exceptions.F95"
+    VERBATIM
+    )
+elseif(${TARGET_ARCHITECTURE} STREQUAL "x86_64")
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8 -D__x86_64__
+    > "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMENT "Preprocessing ieee_arithmetic.F95"
+    VERBATIM
+    )
+
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8 -D__x86_64__
+    > "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMENT "Preprocessing ieee_exceptions.F95"
+    VERBATIM
+    )
+elseif(${TARGET_ARCHITECTURE} STREQUAL "ppc64le")
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8 -D__ppc64le__
+    > "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMENT "Preprocessing ieee_arithmetic.F95"
+    VERBATIM
+    )
+
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8 -D__ppc64le__
+    > "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMENT "Preprocessing ieee_exceptions.F95"
+    VERBATIM
+    )
+else()
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8
+    > "${I8_FILES_DIR}/ieee_arithmetic.F95"
+    COMMENT "Preprocessing ieee_arithmetic.F95"
+    VERBATIM
+    )
+
+  add_custom_command(
+    OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMAND "${CMAKE_C_COMPILER}" -E
+    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8
+    > "${I8_FILES_DIR}/ieee_exceptions.F95"
+    COMMENT "Preprocessing ieee_exceptions.F95"
+    VERBATIM
+    )
+endif()
 
 # The files lists FTN_INTRINSICS_DESC_DEP and FTN_SUPPORT_DESC_DEP need to be compiled twice (with and without 'DESC_I8' compile definition). So an actual copy is made in a temp file on which this is done.
 

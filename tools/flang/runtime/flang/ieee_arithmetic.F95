@@ -1,4 +1,4 @@
-! 
+!
 ! Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
 !
 ! Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +12,7 @@
 ! WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ! See the License for the specific language governing permissions and
 ! limitations under the License.
-! 
+!
 
 #ifndef DESC_I8
 #define IEEE_ARITHMETIC ieee_arithmetic
@@ -24,6 +24,7 @@ module IEEE_ARITHMETIC
 
   use ieee_exceptions
   use, intrinsic :: iso_c_binding
+
 #ifdef PGDLL
 !DEC$ ATTRIBUTES DLLEXPORT :: IEEE_ARITHMETIC
 #endif
@@ -41,29 +42,29 @@ module IEEE_ARITHMETIC
   integer, private, parameter :: round_lo = -1
   integer, private, parameter :: round_hi = 3
 
-#ifdef TARGET_LINUX_ARM
+#if defined(__aarch64__)
   integer, private, parameter :: FE_TONEAREST  = 0
-#ifdef TARGET_LLVM_ARM64
   integer, private, parameter :: FE_DOWNWARD   = X'00800000'
   integer, private, parameter :: FE_UPWARD     = X'00400000'
-#else
+  integer, private, parameter :: FE_TOWARDZERO = X'00c00000'
+#elif defined(__arm__)
+  integer, private, parameter :: FE_TONEAREST  = 0
   integer, private, parameter :: FE_DOWNWARD   = X'00400000'
   integer, private, parameter :: FE_UPWARD     = X'00800000'
-#endif
   integer, private, parameter :: FE_TOWARDZERO = X'00c00000'
-#else
-#ifdef TARGET_LINUX_POWER
+#elif defined(__ppc64le__)
   integer, private, parameter :: FE_TONEAREST  = 0
   integer, private, parameter :: FE_TOWARDZERO = 1
   integer, private, parameter :: FE_UPWARD     = 2
   integer, private, parameter :: FE_DOWNWARD   = 3
-#else
+#elif defined(__x86_64__)
   ! These are from fenv.h on linux64
   integer, private, parameter :: FE_TONEAREST  = 0
   integer, private, parameter :: FE_DOWNWARD   = 1024
   integer, private, parameter :: FE_UPWARD     = 2048
   integer, private, parameter :: FE_TOWARDZERO = 3072
-#endif
+#else
+#error "Unknown ISA!"
 #endif
 
   type(ieee_round_type), parameter :: ieee_nearest = ieee_round_type(0)
@@ -1099,3 +1100,4 @@ contains
   end function
 
 end module IEEE_ARITHMETIC
+

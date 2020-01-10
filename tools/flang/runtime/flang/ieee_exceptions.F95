@@ -1,4 +1,4 @@
-! 
+!
 ! Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
 !
 ! Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +12,7 @@
 ! WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ! See the License for the specific language governing permissions and
 ! limitations under the License.
-! 
+!
 
 #ifndef DESC_I8
 #define IEEE_EXCEPTIONS ieee_exceptions
@@ -21,6 +21,7 @@
 #endif
 
 module IEEE_EXCEPTIONS
+
 #ifdef PGDLL
 !DEC$ ATTRIBUTES DLLEXPORT :: IEEE_EXCEPTIONS
 #endif
@@ -39,7 +40,7 @@ module IEEE_EXCEPTIONS
   !   ieee_set_status
   !
   ! These are from fenv.h on linux64
-#if defined(TARGET_LINUX_ARM) || defined(TARGET_LINUX_ARM64)
+#if defined(__arm__) || defined(__aarch64__)
   integer, private, parameter :: FE_INVALID   = 1
   integer, private, parameter :: FE_DIVBYZERO = 2
   integer, private, parameter :: FE_OVERFLOW  = 4
@@ -47,7 +48,7 @@ module IEEE_EXCEPTIONS
   integer, private, parameter :: FE_INEXACT   = 16
   integer, private, parameter :: FE_DENORM    = 0
   ! FE_DENORM is not currently supported on arm 
-#elif defined(TARGET_LINUX_POWER)
+#elif defined(__ppc64le__)
   ! FE_DENORM is not supported on Power
   integer, private, parameter :: FE_INVALID   = X'20000000'
   integer, private, parameter :: FE_DIVBYZERO = X'04000000'
@@ -430,3 +431,4 @@ contains
   end subroutine
 
 end module IEEE_EXCEPTIONS
+
