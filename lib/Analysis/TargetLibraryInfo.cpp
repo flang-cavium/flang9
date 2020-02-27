@@ -29,7 +29,7 @@ static cl::opt<TargetLibraryInfoImpl::VectorLibrary> ClVectorLibrary(
                           "Intel SVML library"),
                clEnumValN(TargetLibraryInfoImpl::SLEEF, "SLEEF",
                           "SIMD Library for Evaluating Elementary Functions"),
-               clEnumValN(TargetLibraryInfoImpl::SLEEF, "PGMATH",
+               clEnumValN(TargetLibraryInfoImpl::PGMATH, "PGMATH",
                           "PGI Fortran Vectorized Math Library")));
 
 static cl::opt<unsigned> MaxVectorWidthForTarget(
